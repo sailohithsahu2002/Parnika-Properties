@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Parnika Properties</title>
+    <meta name="description" content="Parnika Properties is a trusted Hyderabad real estate developer delivering premium yet affordable homes with transparency and quality.">
+    <style>
+      body{
+        margin:0;
+        font-family:'Segoe UI',Arial,sans-serif;
+        background:#f4f6f9;
+        color:#1e293b;
+        line-height:1.7;
+      }
+      header{
+        background:#0f172a;
+        color:#fff;
+        padding:16px 60px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        gap:20px;
+        position:sticky;
+        top:0;
+        z-index:1000;
+      }
+      .logo-section {
+        display:flex;
+        align-items:center;
+        gap:12px;
+        white-space:nowrap;
+      }
+      .logo-section img {
+        height:50px;
+        width:auto;
+        object-fit:contain;
+        flex-shrink:0;
+      }
+      .logo-section h2 {
+        font-size:24px;
+        font-weight:600;
+        margin:0;
+        white-space:nowrap;
+      }
+      .logo-section {
+        text-decoration:none;
+        color:inherit;
+        cursor:pointer;
+        transition:opacity 0.3s ease;
+      }
+      .logo-section:hover {
+        opacity:0.8;
+      }
+      nav{
+        display:flex;
+        align-items:center;
+        gap:20px;
+      }
+      nav a{
+        color:#fff;
+        margin-left:20px;
+        text-decoration:none;
+        font-weight:500;
+      }
+      nav a:hover{text-decoration:underline}
+
+      .hamburger {
+        display:none;
+        flex-direction:column;
+        cursor:pointer;
+        gap:6px;
+        position:relative;
+        z-index:1001;
+      }
+      .hamburger span {
+        width:28px;
+        height:3px;
+        background:#facc15;
+        border-radius:2px;
+        transition:all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transform-origin:center;
+      }
+      .hamburger.active span:nth-child(1) {
+        transform:translateY(10px) rotate(45deg);
+      }
+      .hamburger.active span:nth-child(2) {
+        opacity:0;
+        transform:scaleX(0);
+      }
+      .hamburger.active span:nth-child(3) {
+        transform:translateY(-10px) rotate(-45deg);
+      }
+
+      .menu-overlay {
+        display:none;
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.5);
+        z-index:999;
+      }
+
+      .menu-overlay.active {
+        display:block;
+      }
+
+      @media(max-width:768px){
+        header{padding:14px 20px}
+        .hamburger{display:flex}
+        nav{
+          position:fixed;
+          top:70px;
+          right:0;
+          width:70%;
+          max-width:250px;
+          height:auto;
+          max-height:calc(100vh - 70px);
+          background:#0f172a;
+          flex-direction:column;
+          gap:0;
+          padding:20px 20px 20px 20px;
+          transform:translateX(100%);
+          transition:transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          box-shadow:-8px 0 16px rgba(0,0,0,0.3);
+          z-index:1000;
+          overflow-y:auto;
+        }
+        nav.active{transform:translateX(0)}
+        nav a{
+          margin:0;
+          padding:16px 0;
+          border-bottom:1px solid rgba(255,255,255,0.1);
+          display:block;
+          font-size:16px;
+        }
+      }
+
+      section{
+        padding:70px 20px;
+        max-width:1200px;
+        margin:auto;
+      }
+
+      .section-title{
+        text-align:center;
+        font-size:34px;
+        margin-bottom:50px;
+      }
+
+      .highlight{
+        color:#0f172a;
+        font-weight:600;
+      }
+
+      .about-block{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:40px;
+        align-items:center;
+        margin-bottom:70px;
+      }
+
+      .about-block img{
+        width:80%;
+        border-radius:18px;
+        box-shadow:0 12px 30px rgba(0,0,0,.15);
+      }
+
+      .card{
+        background:#fff;
+        padding:35px;
+        border-radius:20px;
+        box-shadow:0 12px 30px rgba(0,0,0,.08);
+        margin-bottom:40px;
+      }
+
+      ul{
+        padding-left:20px;
+      }
+      ul li{
+        margin-bottom:10px;
+      }
+
+      .status-section{
+        background:#ffffff;
+        padding:60px 20px;
+        margin-top:80px;
+        border-radius:20px;
+        box-shadow:0 12px 30px rgba(0,0,0,.08);
+      }
+
+      .status-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+        gap:30px;
+        max-width:1000px;
+        margin:auto;
+        text-align:center;
+      }
+
+      .status-box h3{
+        font-size:36px;
+        color:#0f172a;
+        margin-bottom:10px;
+      }
+
+      .status-box p{
+        font-size:16px;
+        color:#475569;
+        font-weight:500;
+      }
+
+      .status-icon{
+        font-size:42px;
+        margin-bottom:12px;
+      }
+
+      footer{
+        background:#0f172a;
+        color:#fff;
+        text-align:center;
+        padding:12px;
+      }
+
+      @media(max-width:900px){
+        .about-block{
+          grid-template-columns:1fr;
+        }
+      }
+      @media(max-width:768px){
+        header{padding:14px 20px}
+        section{padding:50px 20px}
+        .section-title{font-size:26px}
+        .about-block{margin-bottom:50px}
+        .card{padding:25px}
+        .status-grid{gap:20px}
+        .status-box h3{font-size:28px}
+      }
+      @media(max-width:600px){
+        header{padding:12px 16px}
+        section{padding:30px 16px}
+        .section-title{font-size:22px}
+        .about-block img{width:100%}
+        .card{padding:20px}
+        .status-box{margin-bottom:20px}
+        .status-box h3{font-size:24px}
+        .status-box p{font-size:14px}
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="./index.html" class="logo-section">
+        <img src="./Images/Logo.jpeg" alt="Parnika Properties Logo">
+        <h2>Parnika Properties</h2>
+      </a>
+      <nav>
+        <a href="/index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+    <div class="menu-overlay"></div>
+    <section>
+
+      <h2 class="section-title">About Parnika Properties</h2>
+
+      <div class="about-block">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Real Estate Building">
+        <div>
+          <h3>Who We Are</h3>
+          <p>
+            <span class="highlight">Parnika Properties</span> is a Hyderabad-based real estate developer
+            dedicated to building <span class="highlight">quality homes</span> that blend modern design,
+            comfort, and affordability.
+          </p>
+          <p>
+            We develop residential projects in <span class="highlight">fast-growing, well-connected locations</span>,
+            ensuring long-term value and peaceful living for families.
+          </p>
+        </div>
+      </div>
+
+  
+      <div class="about-block">
+        <div>
+          <h3>Our Experience & Approach</h3>
+          <p>
+            Our team consists of experienced professionals in
+            <span class="highlight">planning, construction, and customer support</span>.
+            Every project is designed with attention to ventilation, quality materials,
+            and lifestyle amenities.
+          </p>
+          <p>
+            From concept to completion, we follow
+            <span class="highlight">structured processes</span> and transparent communication.
+          </p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc" alt="Construction Planning">
+      </div>
+
+      <div class="card">
+        <h3>Our Vision</h3>
+        <p>
+          To become one of Hyderabad’s
+          <span class="highlight">most trusted real estate brands</span>
+          by delivering high-quality homes and ethical business practices.
+        </p>
+
+        <h3>Our Mission</h3>
+        <ul>
+          <li>Well-designed homes at <span class="highlight">fair & transparent pricing</span></li>
+          <li>High-quality construction with timely delivery</li>
+          <li>Complete transparency in documentation</li>
+          <li>Strong customer support from enquiry to possession</li>
+        </ul>
+      </div>
+
+    
+      <div class="about-block">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Teamwork">
+        <div>
+          <h3>Our Core Values</h3>
+          <ul>
+            <li><strong>Integrity:</strong> Honest dealings & commitments</li>
+            <li><strong>Quality:</strong> Superior construction standards</li>
+            <li><strong>Customer First:</strong> Every decision starts with customers</li>
+            <li><strong>Transparency:</strong> Clear communication & pricing</li>
+            <li><strong>Innovation:</strong> Modern layouts & smart living</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="status-section">
+        <h2 class="section-title">Our Status</h2>
+
+        <div class="status-grid">
+          <div class="status-box">
+            <div class="status-icon">🏗️</div>
+            <h3 class="counter" data-target="5">0</h3>
+            <p>Years of Experience</p>
+          </div>
+
+          <div class="status-box">
+            <div class="status-icon">🏘️</div>
+            <h3 class="counter" data-target="5">0</h3>
+            <p>Projects Delivered</p>
+          </div>
+
+          <div class="status-box">
+            <div class="status-icon">😊</div>
+            <h3 class="counter" data-target="300">0</h3>
+            <p>Happy Families</p>
+          </div>
+
+          <div class="status-box">
+            <div class="status-icon">🤝</div>
+            <h3 class="counter" data-target="100">0</h3>
+            <p>Trust & Transparency</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>© 2026 Parnika Properties. All Rights Reserved.</p>
+    </footer>
+    <a href="https://wa.me/919866711002" target="_blank"
+    style="position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;padding:14px 18px;border-radius:50px;font-weight:600;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.3)">
+    💬
+    </a>
+
+    <script>
+      const hamburger = document.querySelector('.hamburger');
+      const nav = document.querySelector('nav');
+      const menuOverlay = document.querySelector('.menu-overlay');
+
+      function toggleMenu() {
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+      }
+
+      hamburger.addEventListener('click', toggleMenu);
+
+      menuOverlay.addEventListener('click', function(){
+        hamburger.classList.remove('active');
+        nav.classList.remove('active');
+        menuOverlay.classList.remove('active');
+      });
+
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function(){
+          hamburger.classList.remove('active');
+          nav.classList.remove('active');
+          menuOverlay.classList.remove('active');
+        });
+      });
+
+      const counters = document.querySelectorAll('.counter');
+      const speed = 300;
+
+      const startCounters = () => {
+        counters.forEach(counter => {
+          const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const inc = Math.max(1, Math.floor(target / speed));
+
+            if(count < target){
+              counter.innerText = count + inc;
+              setTimeout(updateCount, 30);
+            } else {
+              counter.innerText = target + "+";
+            }
+          };
+          updateCount();
+        });
+      };
+
+      const observer = new IntersectionObserver(entries => {
+        if(entries[0].isIntersecting){
+          startCounters();
+          observer.disconnect();
+        }
+      },{threshold:0.4});
+
+      observer.observe(document.querySelector('.status-section'));
+    </script>
+  </body>
+</html>

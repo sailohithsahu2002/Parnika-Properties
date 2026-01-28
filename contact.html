@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Parnika Properties</title>
+    <meta name="description" content="Contact Parnika Properties for premium flats in Hyderabad. Book site visit today." />
+    <style>
+      body{
+        margin:0;
+        font-family:'Segoe UI',Arial,sans-serif;
+        background:#f4f6f9;
+        color:#1e293b;
+      }
+
+      /* HEADER */
+      header{
+        background:#0f172a;
+        color:#fff;
+        padding:16px 60px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        gap:20px;
+        position:sticky;
+        top:0;
+        z-index:1000;
+      }
+      .logo-section {
+        display:flex;
+        align-items:center;
+        gap:12px;
+        white-space:nowrap;
+      }
+      .logo-section img {
+        height:50px;
+        width:auto;
+        object-fit:contain;
+        flex-shrink:0;
+      }
+      .logo-section h2 {
+        font-size:24px;
+        font-weight:600;
+        margin:0;
+        white-space:nowrap;
+      }
+      .logo-section {
+        text-decoration:none;
+        color:inherit;
+        cursor:pointer;
+        transition:opacity 0.3s ease;
+      }
+      .logo-section:hover {
+        opacity:0.8;
+      }
+      nav{
+        display:flex;
+        align-items:center;
+        gap:20px;
+      }
+      nav a{
+        color:#fff;
+        margin-left:20px;
+        text-decoration:none;
+        font-weight:500;
+      }
+      nav a:hover{text-decoration:underline}
+
+      .hamburger {
+        display:none;
+        flex-direction:column;
+        cursor:pointer;
+        gap:6px;
+        position:relative;
+        z-index:1001;
+      }
+      .hamburger span {
+        width:28px;
+        height:3px;
+        background:#facc15;
+        border-radius:2px;
+        transition:all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transform-origin:center;
+      }
+      .hamburger.active span:nth-child(1) {
+        transform:translateY(10px) rotate(45deg);
+      }
+      .hamburger.active span:nth-child(2) {
+        opacity:0;
+        transform:scaleX(0);
+      }
+      .hamburger.active span:nth-child(3) {
+        transform:translateY(-10px) rotate(-45deg);
+      }
+
+      .menu-overlay {
+        display:none;
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.5);
+        z-index:999;
+      }
+
+      .menu-overlay.active {
+        display:block;
+      }
+
+      @media(max-width:768px){
+        header{padding:14px 20px}
+        .hamburger{display:flex}
+        nav{
+          position:fixed;
+          top:70px;
+          right:0;
+          width:70%;
+          max-width:250px;
+          height:auto;
+          max-height:calc(100vh - 70px);
+          background:#0f172a;
+          flex-direction:column;
+          gap:0;
+          padding:20px 20px 20px 20px;
+          transform:translateX(100%);
+          transition:transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          box-shadow:-8px 0 16px rgba(0,0,0,0.3);
+          z-index:1000;
+          overflow-y:auto;
+        }
+        nav.active{transform:translateX(0)}
+        nav a{
+          margin:0;
+          padding:16px 0;
+          border-bottom:1px solid rgba(255,255,255,0.1);
+          display:block;
+          font-size:16px;
+        }
+        nav a::after{
+          display:none;
+        }
+      }
+
+      /* PAGE HEADER */
+      .page-header{
+        text-align:center;
+        padding:70px 20px 40px;
+      }
+      .page-header h1{
+        font-size:34px;
+        margin-bottom:10px;
+      }
+      .page-header p{
+        max-width:700px;
+        margin:auto;
+        font-size:17px;
+        color:#475569;
+      }
+
+      /* SECTION */
+      section{
+        max-width:1100px;
+        margin:auto;
+        padding:20px 20px 80px;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        gap:30px;
+        min-height:calc(100vh - 300px);
+      }
+
+      .contact-box{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:40px;
+      }
+
+      .box{
+        background:#fff;
+        padding:25px;
+        border-radius:14px;
+        box-shadow:0 8px 28px rgba(0,0,0,.08);
+      }
+
+      .box h3{
+        margin-top:0;
+        margin-bottom:10px;
+        font-size:22px;
+      }
+      .contact-info p{
+        margin:10px 0;
+        font-size:16px;
+        color:#475569;
+      }
+      .contact-info a{
+        color:inherit;
+        text-decoration:none;
+      }
+
+      .map-toggle{
+        display:flex;
+        gap:10px;
+        margin:16px 0;
+      }
+      .map-btn{
+        padding:10px 18px;
+        border-radius:20px;
+        border:1px solid #e2e8f0;
+        background:#f8fafc;      
+        color:#000;             
+        cursor:pointer;
+        font-weight:500;
+        transition:0.3s ease;
+      }
+      .map-btn.active{
+        background:#0f172a;      
+        color:#fff;              
+        border-color:#0f172a;
+      }
+
+      iframe{
+        width:100%;
+        height:260px;
+        border:0;
+        border-radius:14px;
+        margin-top:10px;
+      }
+
+      form {
+        display:flex;
+        flex-direction:column;
+        gap:15px;
+      }
+      input,textarea{
+        width:90%;
+        padding:14px 16px;
+        border-radius:8px;
+        border:1px solid #cbd5e1;
+        font-size:15px;
+        font-family:'Segoe UI',Arial,sans-serif;
+        color:#1e293b;
+      }
+      input:focus,textarea:focus {
+        outline:none;
+        border-color:#2563eb;
+        box-shadow:0 0 0 3px rgba(37,99,235,0.1);
+      }
+      textarea{
+        resize:none;
+        height:120px;
+      }
+
+      button{
+        background:#2563eb;
+        color:#fff;
+        border:none;
+        padding:14px 28px;
+        border-radius:8px;
+        font-size:16px;
+        font-weight:600;
+        cursor:pointer;
+        transition:0.3s;
+        align-self:flex-start;
+      }
+      button:hover{
+        background:#1d4ed8;
+        transform:translateY(-2px);
+        box-shadow:0 8px 16px rgba(37,99,235,0.2);
+      }
+      
+      footer{
+        background:#0f172a;
+        color:#fff;
+        text-align:center;
+        padding:20px;
+        font-size:14px;
+      }
+
+      @media(max-width:768px){
+        header{padding:14px 20px}
+        .page-header{padding:60px 20px 30px}
+        .page-header h1{font-size:28px}
+        .page-header p{font-size:15px}
+        section{padding:20px 16px 60px}
+        .contact-box{grid-template-columns:1fr;gap:30px}
+        .box{padding:20px}
+        .box h3{font-size:20px}
+        input,textarea{padding:10px 12px;margin-bottom:12px;font-size:14px}
+        textarea{height:100px}
+        button{padding:12px 16px;font-size:14px}
+        iframe{height:220px}
+      }
+      @media(max-width:600px){
+        header{padding:12px 16px}
+        .page-header{padding:40px 16px 20px}
+        .page-header h1{font-size:24px}
+        .page-header p{font-size:14px}
+        section{padding:16px;padding-bottom:60px}
+        .box{padding:16px}
+        .contact-info p{font-size:15px;margin:8px 0}
+        input,textarea{width:90%;padding:10px}
+        iframe{height:200px;margin-top:8px}
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <a href="./index.html" class="logo-section">
+        <img src="./Images/Logo.jpeg" alt="Parnika Properties Logo">
+        <h2>Parnika Properties</h2>
+      </a>
+      <nav>
+        <a href="./index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+    <div class="menu-overlay"></div>
+
+    <div class="page-header">
+      <h1>Contact Parnika Properties</h1>
+      <p>
+        Looking for premium and affordable flats in Hyderabad?
+        Get in touch with us to book a site visit or receive complete project details.
+      </p>
+    </div>
+    <section>
+      <div class="contact-box">
+
+        <div class="box contact-info">
+          <h3>Get in Touch</h3>
+          <p><strong>Parnika Properties</strong></p>
+
+          <p>📞 <a href="tel:+919866711002">+91 98667 11002</a></p>
+          <p>📞 <a href="tel:+918897377477">+91 88973 77477</a></p>
+          <p>📧 <a href="mailto:parnikapropertieshyd@gmail.com">parnikapropertieshyd@gmail.com</a></p>
+
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7609.005380764216!2d78.3467775!3d17.531237499999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8d00182f0791%3A0x265b5d733b562217!2sMRI%20Residency!5e0!3m2!1sen!2sin!4v1769489671601!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <!-- FORM -->
+         <div class="box">
+      <h3>Enquiry Form</h3>
+      <form onsubmit="sendWhatsApp(); return false;">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        <input type="email" id="email" placeholder="Email">
+        <textarea id="message" placeholder="Message"></textarea>
+        <button type="submit">Send Enquiry</button>
+      </form>
+    </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Parnika Properties. All Rights Reserved.
+    </footer>
+
+    <a href="https://wa.me/918897377477" target="_blank"
+    style="position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;
+    padding:14px 18px;border-radius:50px;font-weight:600;text-decoration:none;
+    box-shadow:0 8px 20px rgba(0,0,0,.3)">💬</a>
+
+    <script>
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+    const menuOverlay = document.querySelector('.menu-overlay');
+
+    function toggleMenu() {
+      hamburger.classList.toggle('active');
+      nav.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+
+    menuOverlay.addEventListener('click', function(){
+      hamburger.classList.remove('active');
+      nav.classList.remove('active');
+      menuOverlay.classList.remove('active');
+    });
+
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function(){
+        hamburger.classList.remove('active');
+        nav.classList.remove('active');
+        menuOverlay.classList.remove('active');
+      });
+    });
+
+    function sendWhatsApp() {
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      const text =
+        `Hello Parnika Properties,
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Message: ${message}`;
+
+      window.open(
+        "https://wa.me/918897377477?text=" + encodeURIComponent(text),
+        "_blank"
+      );
+    }
+    </script>
+
+  </body>
+</html>
