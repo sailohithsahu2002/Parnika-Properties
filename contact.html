@@ -13,6 +13,22 @@
         color:#1e293b;
       }
 
+      /* animations & responsive typography */
+      @keyframes fadeInUp {
+        from{opacity:0;transform:translateY(20px)}
+        to{opacity:1;transform:translateY(0)}
+      }
+      section, .box, .contact-info, .page-header, h1, h2, h3, form, iframe {
+        opacity:0;
+        animation:fadeInUp 0.8s ease-out forwards;
+      }
+      h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+      h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+      h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
+
+p { text-align: justify; }
+.page-header p { text-align: center; }
+
       /* HEADER */
       header{
         background:#0f172a;
@@ -414,6 +430,18 @@ Message: ${message}`;
         "_blank"
       );
     }
+
+    // animate contact page elements when visible
+    const contactObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.style.opacity='1';
+          entry.target.style.animation='fadeInUp 0.8s ease-out forwards';
+          contactObserver.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.2});
+    [...document.querySelectorAll('section, .box, .contact-info, .page-header, form, iframe')].forEach(el=>contactObserver.observe(el));
     </script>
 
   </body>

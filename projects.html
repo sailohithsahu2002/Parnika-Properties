@@ -16,6 +16,22 @@
   --text:#1e293b;
 }
 
+/* animations & fluid typography */
+@keyframes fadeInUp {
+  from { opacity:0; transform:translateY(20px); }
+  to { opacity:1; transform:translateY(0); }
+}
+section, .project, .content, .actions, .additional-images, h1, h2, h3, .btn {
+  opacity:0;
+  animation:fadeInUp 0.8s ease-out forwards;
+}
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
+
+p { text-align: justify; }
+.additional-images p { text-align: center; }
+
 *{box-sizing:border-box}
 body{
   margin:0;
@@ -177,7 +193,8 @@ h1{
   background:var(--card);
   border-radius:16px;
   box-shadow:0 12px 30px rgba(0,0,0,.08);
-  margin-bottom:60px;
+  margin:0 auto 60px;
+  max-width:1000px;
   overflow:hidden;
 }
 
@@ -249,12 +266,13 @@ ul li{
   text-decoration:none;
   font-weight:600;
   display:inline-block;
+  transition:opacity 0.3s ease, transform 0.3s ease;
 }
 .btn.secondary{
   background:#e5e7eb;
   color:#111827;
 }
-.btn:hover{opacity:.9}
+.btn:hover{opacity:.9; transform: translateY(-2px) scale(1.02);}
 
 /* extra section styling for added images */
 .additional-images {
@@ -481,49 +499,54 @@ footer{
       <a href="Documents/patancheru pdf.pdf" target="_blank" class="btn">📄 Download Brochure</a>
     </div>
 
-    <div class="additional-images">
-      <h3>Platinum Avenue - IV Block-A & B</h3>
-      <p>Another premium segment within the Platinum Avenue series offering similar high-quality 2 BHK apartments with all the amenities and advantages that our flagship projects boast. Clear documentation, vastu compliance, and excellent rental/resale potential make this block a great investment.</p>
-     
+    </div>
+</div>
 
-      <!-- <div class="actions">
-        <a href="Images/Typical Floor Plan.pdf" target="_blank" class="btn secondary">📄 Typical Floor Plan</a>
-      </div> -->
-      <div class="image-grid">
-        <img src="Images/platinum avenue block-IV Block A.jpeg" alt="Platinum Avenue -IV Block A">
-        <img src="Images/platinum avenue block-IV Block B.jpeg" alt="Platinum Avenue -IV Block B">
+<!-- new project card for Block-A & B -->
+<div class="project">
+  <div class="image-box">
+    <img src="Images/platinum avenue block-IV Block A.jpeg" alt="Platinum Avenue -IV Block A">
+    <img src="Images/platinum avenue block-IV Block B.jpeg" alt="Platinum Avenue -IV Block B">
+  </div>
+  <div class="content">
+    
+    <h2>Platinum Avenue - IV Block-A & B</h2>
+
+    <div class="grid">
+      <div>
+        <h4>Highlights</h4>
+        <ul>
+          <li>2 BHK premium apartments</li>
+          <li>Vaastu compliant homes</li>
+          <li>Clear documentation</li>
+          <li>High rental & resale value</li>
+          <li>Peaceful surroundings</li>
+        </ul>
       </div>
+
+      <div>
+        <h4>Amenities</h4>
+        <ul>
+          <li>Mini Gym & Play Area</li>
+          <li>CCTV Surveillance</li>
+          <li>Lift & Power Backup</li>
+          <li>24/7 Security</li>
+          <li>Car Parking</li>
+        </ul>
+      </div>
+
+  
+    </div>
+
+    <p>Another premium segment within the Platinum Avenue series offering similar high-quality 2 BHK apartments with all the amenities and advantages that our flagship projects boast. Clear documentation, vastu compliance, and excellent rental/resale potential make this block a great investment.</p>
+    <div class="actions">
+      <a href="contact.html" class="btn">Book Site Visit</a>
+      <a href="Images/Typical Floor Plan.pdf" target="_blank" class="btn">📄 Download Brochure</a>
     </div>
   </div>
 </div>
- <div class="grid">
-        <div>
-          <h4>Highlights</h4>
-          <ul>
-            <li>2 BHK premium apartments</li>
-            <li>Vaastu compliant homes</li>
-            <li>Clear documentation</li>
-            <li>High rental & resale value</li>
-            <li>Peaceful surroundings</li>
-          </ul>
-        </div>
-        <div>
-          <h4>Amenities</h4>
-          <ul>
-            <li>Mini Gym & Play Area</li>
-            <li>CCTV Surveillance</li>
-            <li>Lift & Power Backup</li>
-            <li>24/7 Security</li>
-            <li>Car Parking</li>
-          </ul>
-        </div>
-      </div>
 
 
-              <div class="actions">
-                <a href="contact.html" class="btn">Book Site Visit</a>
-                <a href="Images/Typical Floor Plan.pdf" target="_blank" class="btn">📄 Download Brochure</a>
-              </div>
 
 <div class="project">
 <div class="image-box">

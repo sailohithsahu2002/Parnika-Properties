@@ -9,6 +9,24 @@
   <meta name="author" content="Parnika Properties">
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
+    /* reset list styles to avoid default numbers or bullets */
+    ul, ol { list-style:none; padding-left:0; }
+
+
+/* animations & fluid typography */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate, section, .card, .gallery-item, .project, .box, .about-block, .status-box, .hero-content, .features li, .why-box, .about-features li {
+  opacity:0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); transition: color 0.3s ease; }
+h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); transition: color 0.3s ease; }
+h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
 
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -160,7 +178,10 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  padding: 60px 0; /* add vertical breathing room */
 }
+
+.hero-content { padding: 0 30px 40px; /* extra bottom space */ }
 
 .hero-overlay {
   position: absolute;
@@ -190,8 +211,9 @@
 }
 
 .hero-content h1 span {
-  color: #facc15;
+  color: #eec00a;
   display: block;
+  margin-top: 0.75em; /* more breathing room above second line */
 }
 
 .hero-content p {
@@ -263,9 +285,11 @@
     }
     .section-title {
       text-align:center;
-      font-size:36px;
-      margin-bottom:50px;
-      color:#0f172a;
+      font-size:42px;
+      font-weight:600;
+      margin-bottom:60px;
+      letter-spacing:1px;
+      color:#111;
       position:relative;
     }
     .section-title::after {
@@ -295,6 +319,84 @@
       position:absolute;
       left:0;
       color:#16a34a;
+    }
+    /* about section styling */
+    #about p {
+      max-width:900px;
+      margin:0 auto 18px;
+      font-size:16px;
+      color:#475569;
+      line-height:1.7;
+      text-align:justify;
+    }
+    /* about section list styling */
+    .about-features ul {
+      max-width:800px;
+      margin:20px auto 30px;
+      list-style:disc inside;
+      padding-left:20px;
+      color:#1e293b;
+      font-size:16px;
+      line-height:1.6;
+    }
+    /* Why Choose Us section styling (revised) */
+    #why {
+      padding: 80px 0;
+      background: #f8f9fb;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0; /* no gaps between boxes */
+    }
+
+    .why-box {
+      padding: 40px 30px;
+      background: #ffffff;
+      border: 1px solid #eee;
+      transition: all 0.4s ease;
+    }
+
+    .why-box h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #111;
+    }
+
+    .why-box p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .why-box:hover {
+      background: #0f172a;
+      color: #fff;
+    }
+
+    .why-box:hover h3,
+    .why-box:hover p {
+      color: #fff;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
    
@@ -558,20 +660,69 @@
 
 <section id="about">
   <h2 class="section-title">About Parnika Properties</h2>
-  <p style="max-width:900px; margin:auto; font-size:16px; color:#475569; text-align:center;">
-    Parnika Properties is a trusted real estate developer in Hyderabad, offering premium yet affordable homes. We focus on high-growth locations, modern designs, and transparent service.
+  <p>
+    Parnika Properties is a trusted name in premium real estate solutions, committed to delivering excellence, transparency, and long-term value.
+  </p>
+  <p>
+    We specialize in residential and commercial property services, offering carefully selected properties that meet modern lifestyle standards and investment expectations.
+  </p>
+  <p>
+    At Parnika Properties, we believe real estate is not just about buying and selling — it’s about building trust, creating opportunities, and helping our clients make confident decisions.
+  </p>
+  <p>
+    Our expert team combines market knowledge, ethical practices, and personalized service to ensure a seamless property journey from consultation to final transaction.
+  </p>
+  <div class="about-features">
+    <ul>
+      <li>Premium residential properties</li>
+      <li>High-growth investment opportunities</li>
+      <li>Commercial property solutions</li>
+      <li>End-to-end legal & documentation support</li>
+    </ul>
+  </div>
+  <p>
+    Our mission is to redefine property experiences with professionalism, integrity, and unmatched service quality.
   </p>
 </section>
 
-<section>
-  <h2 class="section-title">Why Choose Us?</h2>
-  <ul class="features">
-    <li>Prime Locations near IT hubs & ORR Exit 3</li>
-    <li>Quality Construction with modern design</li>
-    <li>Affordable Pricing & High Value</li>
-    <li>Transparent Documentation</li>
-    <li>Trusted by Happy Families</li>
-  </ul>
+<section id="why">
+  <div class="container">
+    <h2 class="section-title">Why Choose Us</h2>
+
+    <div class="why-grid">
+
+      <div class="why-box">
+        <h3>Trusted & Transparent</h3>
+        <p>Complete transparency at every stage. No hidden costs. Just clear communication and honest guidance.</p>
+      </div>
+
+      <div class="why-box">
+        <h3>Market Expertise</h3>
+        <p>Strong real estate insights and pricing strategies that help you make confident and profitable decisions.</p>
+      </div>
+
+      <div class="why-box">
+        <h3>Premium Portfolio</h3>
+        <p>Carefully curated residential and commercial properties aligned with modern lifestyle standards.</p>
+      </div>
+
+      <div class="why-box">
+        <h3>End-to-End Support</h3>
+        <p>From consultation to documentation and registration, we manage everything seamlessly.</p>
+      </div>
+
+      <div class="why-box">
+        <h3>Client-First Approach</h3>
+        <p>We focus on building long-term relationships through reliability and service excellence.</p>
+      </div>
+
+      <div class="why-box">
+        <h3>Professional Excellence</h3>
+        <p>High standards, ethical practices, and commitment to delivering premium service quality.</p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <section id="projects">
@@ -712,6 +863,19 @@ Message: ${message}`;
     "_blank"
   );
 }
+
+// animate elements when they scroll into view
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.style.opacity='1';
+      entry.target.style.animation='fadeInUp 0.8s ease-out forwards';
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.2});
+
+[...document.querySelectorAll('section, .card, .gallery-item, .project, .box, .about-block, .status-box, .hero-content, .features li, .why-box, .about-features li')].forEach(el=>observer.observe(el));
 </script>
 
 </body>

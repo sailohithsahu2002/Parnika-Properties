@@ -13,6 +13,22 @@
         color:#1e293b;
         line-height:1.7;
       }
+
+      /* animations & fluid typography */
+      @keyframes fadeInUp {
+        from { opacity:0; transform:translateY(20px); }
+        to { opacity:1; transform:translateY(0); }
+      }
+      section, .about-block, .card, .status-box, h1, h2, h3 {
+        opacity:0;
+        animation:fadeInUp 0.8s ease-out forwards;
+      }
+      h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+      h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+      h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
+
+p { text-align: justify; }
+.section-title, .about-block p { text-align: center; }
       header{
         background:#0f172a;
         color:#fff;
@@ -155,6 +171,15 @@
         font-weight:600;
       }
 
+      .quote {
+        font-style:italic;
+        text-align:center;
+        max-width:800px;
+        margin:40px auto;
+        color:#475569;
+        font-size:1.1rem;
+      }
+
       .about-block{
         display:grid;
         grid-template-columns:1fr 1fr;
@@ -201,6 +226,18 @@
         text-align:center;
       }
 
+      .status-box{
+        background:#fff;
+        padding:25px 15px;
+        border-radius:14px;
+        box-shadow:0 8px 24px rgba(0,0,0,.06);
+        transition:transform 0.3s, box-shadow 0.3s;
+        text-align:center;
+      }
+      .status-box:hover{
+        transform: translateY(-6px);
+        box-shadow:0 12px 32px rgba(0,0,0,.1);
+      }
       .status-box h3{
         font-size:36px;
         color:#0f172a;
@@ -214,8 +251,9 @@
       }
 
       .status-icon{
-        font-size:42px;
-        margin-bottom:12px;
+        font-size:48px;
+        margin-bottom:14px;
+        display:block;
       }
 
       footer{
@@ -223,7 +261,11 @@
         color:#fff;
         text-align:center;
         padding:12px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
       }
+      footer p{ margin:0; }
 
       @media(max-width:900px){
         .about-block{
@@ -280,13 +322,13 @@
         <div>
           <h3>Who We Are</h3>
           <p>
-            <span class="highlight">Parnika Properties</span> is a Hyderabad-based real estate developer
-            dedicated to building <span class="highlight">quality homes</span> that blend modern design,
-            comfort, and affordability.
+            Parnika Properties is a forward-thinking real estate company dedicated to delivering premium property solutions with integrity and precision.
           </p>
           <p>
-            We develop residential projects in <span class="highlight">fast-growing, well-connected locations</span>,
-            ensuring long-term value and peaceful living for families.
+            We specialize in residential and commercial real estate services, guiding clients through every stage of their property journey with professionalism and care. Our foundation is built on trust, market expertise, and a commitment to long-term relationships.
+          </p>
+          <p>
+            We don’t just facilitate transactions — we create value-driven experiences that help individuals and investors make confident, informed decisions.
           </p>
         </div>
       </div>
@@ -296,14 +338,20 @@
         <div>
           <h3>Our Experience & Approach</h3>
           <p>
-            Our team consists of experienced professionals in
-            <span class="highlight">planning, construction, and customer support</span>.
-            Every project is designed with attention to ventilation, quality materials,
-            and lifestyle amenities.
+            At Parnika Properties, our approach combines strategic market insight with personalized service.
           </p>
           <p>
-            From concept to completion, we follow
-            <span class="highlight">structured processes</span> and transparent communication.
+            With strong industry understanding and deep knowledge of evolving property trends, we ensure every client receives tailored solutions aligned with their goals.
+          </p>
+          <p>Our approach is:</p>
+          <ul class="approach-list">
+            <li>✔ Client-centric and relationship-focused</li>
+            <li>✔ Transparent in communication and documentation</li>
+            <li>✔ Data-driven in pricing and investment analysis</li>
+            <li>✔ Detail-oriented from consultation to final registration</li>
+          </ul>
+          <p>
+            We believe success in real estate comes from clarity, strategy, and execution — and that’s exactly what we deliver.
           </p>
         </div>
         <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc" alt="Construction Planning">
@@ -312,17 +360,22 @@
       <div class="card">
         <h3>Our Vision</h3>
         <p>
-          To become one of Hyderabad’s
-          <span class="highlight">most trusted real estate brands</span>
-          by delivering high-quality homes and ethical business practices.
+          To become a trusted and respected real estate brand known for excellence, transparency, and sustainable growth.
+        </p>
+        <p>
+          We envision creating communities, building investment confidence, and setting new standards in property services through innovation and ethical practices.
         </p>
 
         <h3>Our Mission</h3>
+        <p>
+          Our mission is to simplify the property journey by offering premium services, expert guidance, and seamless execution.
+        </p>
+        <p>We aim to:</p>
         <ul>
-          <li>Well-designed homes at <span class="highlight">fair & transparent pricing</span></li>
-          <li>High-quality construction with timely delivery</li>
-          <li>Complete transparency in documentation</li>
-          <li>Strong customer support from enquiry to possession</li>
+          <li>Provide carefully curated property options</li>
+          <li>Deliver transparent and reliable transactions</li>
+          <li>Build long-term client relationships</li>
+          <li>Create sustainable value for homeowners and investors</li>
         </ul>
       </div>
 
@@ -332,14 +385,15 @@
         <div>
           <h3>Our Core Values</h3>
           <ul>
-            <li><strong>Integrity:</strong> Honest dealings & commitments</li>
-            <li><strong>Quality:</strong> Superior construction standards</li>
-            <li><strong>Customer First:</strong> Every decision starts with customers</li>
-            <li><strong>Transparency:</strong> Clear communication & pricing</li>
-            <li><strong>Innovation:</strong> Modern layouts & smart living</li>
+            <li><strong>Integrity:</strong> We operate with honesty, ethics, and complete transparency in every transaction.</li>
+            <li><strong>Excellence:</strong> We strive for superior service quality and professional standards in everything we do.</li>
+            <li><strong>Commitment:</strong> We are dedicated to delivering results and exceeding client expectations.</li>
+            <li><strong>Accountability:</strong> We take full responsibility for every step of the process, ensuring clarity and trust.</li>
+            <li><strong>Customer First:</strong> Our clients are at the center of our business. Their goals become our priority.</li>
           </ul>
         </div>
       </div>
+      <p class="quote">“At Parnika Properties, we don’t just sell properties — we build trust, create opportunities, and shape futures.”</p>
 
       <div class="status-section">
         <h2 class="section-title">Our Status</h2>
@@ -350,19 +404,16 @@
             <h3 class="counter" data-target="5">0</h3>
             <p>Years of Experience</p>
           </div>
-
           <div class="status-box">
             <div class="status-icon">🏘️</div>
             <h3 class="counter" data-target="5">0</h3>
             <p>Projects Delivered</p>
           </div>
-
           <div class="status-box">
             <div class="status-icon">😊</div>
             <h3 class="counter" data-target="300">0</h3>
             <p>Happy Families</p>
           </div>
-
           <div class="status-box">
             <div class="status-icon">🤝</div>
             <h3 class="counter" data-target="100">0</h3>
@@ -435,6 +486,18 @@
       },{threshold:0.4});
 
       observer.observe(document.querySelector('.status-section'));
+
+      // animate other elements on scroll
+      const animObs = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            entry.target.style.opacity='1';
+            entry.target.style.animation='fadeInUp 0.8s ease-out forwards';
+            animObs.unobserve(entry.target);
+          }
+        });
+      },{threshold:0.2});
+      [...document.querySelectorAll('section, .about-block, .card, .status-box')].forEach(el=>animObs.observe(el));
     </script>
   </body>
 </html>
