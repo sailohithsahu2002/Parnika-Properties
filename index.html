@@ -8,25 +8,36 @@
   <meta name="keywords" content="Parnika Properties, flats in Patancheru, flats in Manikonda, 2 BHK Hyderabad .">
   <meta name="author" content="Parnika Properties">
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    /* reset list styles to avoid default numbers or bullets */
-    ul, ol { list-style:none; padding-left:0; }
-
-
-/* animations & fluid typography */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+    :root {
+  /* heading scale variables ensure identical text sizes everywhere */
+  --h1-size: clamp(2rem, 5vw, 3.5rem); /* same as our-services */
+  --h2-size: clamp(1.75rem, 4vw, 3rem); /* upgraded to match services page */
+  --h3-size: 30px; /* fixed-size identical to services heading */
 }
 
-.animate, section, .card, .gallery-item, .project, .box, .about-block, .status-box, .hero-content, .features li, .why-box, .about-features li {
+* { margin:0; padding:0; box-sizing:border-box; }
+/* reset list styles to avoid default numbers or bullets */
+ul, ol { list-style:none; padding-left:0; }
+
+/* single professional fade-in animation used throughout */
+@keyframes fadeIn {
+  0% { opacity:0; transform:translateY(15px); }
+  100% { opacity:1; transform:translateY(0); }
+}
+
+.animate, section, .card, .gallery-item, .project, .box, .about-block, .status-box, .hero-content, .features li, .why-box, .about-features li,
+header h1, header h2, header h3 {
   opacity:0;
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); transition: color 0.3s ease; }
-h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); transition: color 0.3s ease; }
-h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
+/* bumped sizes to align with services page */
+h2 { font-size: clamp(1.75rem, 4vw, 3rem); }
+h3 { font-size: 30px; }
+
+h1 { font-size: var(--h1-size); transition: color 0.3s ease; }
+h2 { font-size: var(--h2-size); transition: color 0.3s ease; }
+h3 { font-size: var(--h3-size); }
 
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -45,7 +56,13 @@ h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
       position:sticky;
       top:0;
       z-index:1000;
+      border-radius:8px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.15);
     }
+    /* ensure header text is uniform size */
+    header, header * { font-size:16px; }
+
+    
     .logo-section {
       display:flex;
       align-items:center;
@@ -83,8 +100,26 @@ h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
       margin-left:20px;
       text-decoration:none;
       font-weight:500;
+      font-size:18px; /* match services page */
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay:0.2s;
     }
     nav a:hover { text-decoration:underline; }
+
+    .social-icons {
+      display:flex;
+      gap:12px;
+    }
+    .social-icons a {
+      color:#fff;
+      width:24px;
+      height:24px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:opacity 0.3s;
+    }
+    .social-icons a:hover { opacity:0.7; }
 
     .hamburger {
       display:none;
@@ -172,8 +207,9 @@ h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
   position: relative;
   width: 100%;
   min-height: 600px;
-  margin-top: 0;
-  border-radius: 16px;
+  margin-top: 20px; /* add gap from sticky header */
+  margin-bottom: 40px; /* more space below for separation */
+  border-radius: 20px; /* curved corners for better aesthetics */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,9 +225,28 @@ h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(15,23,42,0.75), rgba(15,23,42,0.6));
+  /* very light overlay so video shows clearly */
+  background: rgba(0,0,0,0.10);
   z-index: 1;
 }
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px);
+  z-index: 0;
+}
+
+/* simple drop‑in animation for hero content */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-content.animate { animation: fadeInDown 1s ease-out forwards; }
 
 .hero-content {
   position: relative;
@@ -200,6 +255,10 @@ h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
   max-width: 900px;
   padding: 0 30px;
   color: #fff;
+}
+
+.hero-content h1, .hero-content p {
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
 
 .hero-content h1 {
@@ -242,6 +301,111 @@ h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
+/* achievements styling */
+#achievements { text-align: center; background: linear-gradient(135deg, #7896d6 0%, #262a35 100%); color:#fff; padding:40px 0; border-radius:8px; margin:0 auto; max-width:1200px; }
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0 50px;
+  justify-items: center;
+}
+.stat-box {
+  background: #fff;
+  padding: 20px 15px;
+  border-radius: 4px; /* more rectangular */
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  text-align: center;
+  font-size: 14px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: default;
+  min-width: 180px;
+}
+@keyframes blink {
+  0%,50%,100% { opacity:1; }
+  25%,75% { opacity:0.3; }
+}
+.stat-icon { font-size: 36px; margin-bottom: 8px; animation: blink 1.5s infinite; }
+.stat-number {
+  font-size: 40px;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 8px;
+  display: block;
+}
+.stat-label { font-size: 16px; color:#111; }
+.stat-plus { font-size: 40px;  }
+
+.stat-box:hover {
+  transform: translateY(-4px);
+  /* box-shadow: 0 12x 36px rgba(0,0,0,.12); */
+  box-shadow: 0 12px 36px rgba(0,0,0,.12);
+}
+
+/* count-up animation (simple scale) */
+@keyframes popIn {
+  from { transform: scale(0.6); opacity:0; }
+  to { transform: scale(1); opacity:1; }
+}
+.stat-number { animation: popIn 0.6s ease-out forwards; }
+.stat-box:nth-child(1) .stat-number { animation-delay: 0.1s; }
+.stat-box:nth-child(2) .stat-number { animation-delay: 0.3s; }
+.stat-box:nth-child(3) .stat-number { animation-delay: 0.5s; }
+.stat-box:nth-child(4) .stat-number { animation-delay: 0.7s; }
+
+/* vision/mission/goals */
+#vision-mission { background: #f8f9fb; padding: 40px 20px; }
+#vision-mission .section-title { margin-bottom: 40px; }
+#vision-mission .subtitle { display: block; font-size: 0.8em; font-weight:400; margin-top: 8px; color:#555; }
+.vm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 0;
+}
+.vm-box  {
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 4px; /* straighter edges */
+  box-shadow: 0 4px 16px rgba(0,0,0,.06);
+  font-size: 18px;
+  line-height: 1.6;
+  opacity:0;
+  animation: fadeInUp 0.8s ease-out forwards;
+  transition: background 0.3s, color 0.3s;
+}
+.vm-box:hover {
+  background: #2563eb;
+  color: #fff;
+}
+.vm-box:hover .stat-icon,
+.vm-box:hover strong { color: #fff; }
+/* staggered entry */
+.vm-box:nth-child(1) { animation-delay: 0.2s; }
+.vm-box:nth-child(2) { animation-delay: 0.4s; }
+.vm-box:nth-child(3) { animation-delay: 0.6s; }
+.vm-box strong { display: block; margin-bottom: 8px; font-size: 20px; }
+.vm-box:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,.12); }
+
+@media(max-width:768px) {
+  .vm-box { font-size: 16px; padding: 20px; }
+  #vision-mission .section-title { font-size: 28px; }
+  #vision-mission .subtitle { font-size: 0.75em; }
+  /* achievement numbers resizing */
+  .stat-number { font-size: 32px; }
+}
+
+@media(max-width:600px) {
+  #vision-mission { padding: 40px 16px; }
+  .vm-box { font-size: 15px; padding: 18px; }
+  #vision-mission .section-title { font-size: 24px; }
+}
+
 .primary-btn {
   background: #facc15;
   color: #0f172a;
@@ -279,7 +443,7 @@ h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
 }
     /* Sections */
     section {
-      padding:80px 20px;
+      padding:60px 20px;
       max-width:1200px;
       margin:auto;
     }
@@ -287,7 +451,7 @@ h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
       text-align:center;
       font-size:42px;
       font-weight:600;
-      margin-bottom:60px;
+      margin-bottom:40px;
       letter-spacing:1px;
       color:#111;
       position:relative;
@@ -341,10 +505,9 @@ h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
     }
     /* Why Choose Us section styling (revised) */
     #why {
-      padding: 80px 0;
+      padding: 10px 0;
       background: #f8f9fb;
     }
-
     .container {
       width: 90%;
       max-width: 1200px;
@@ -477,21 +640,14 @@ h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
 
 #gallery .grid img:hover {
   transform: scale(1.05);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 400px) {
   #gallery .grid {
     grid-template-columns: repeat(2, 1fr); 
   }
 }
-
-@media screen and (max-width: 600px) {
-  #gallery .grid {
-    grid-template-columns: 1fr; 
-  }
-}
-
 
     .contact-box {
       display:grid;
@@ -528,35 +684,33 @@ h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
       font-weight:500;
       transition:0.3s;
     }
+    form button {
+      background:#2563eb;
+      color:#fff;
+      border:none;
+      padding:14px 22px;
+      font-size:16px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:500;
+      transition:0.3s;
+    }
     form button:hover { background:#1d4ed8; }
 
     iframe {
       width:100%;
-      height:300px;
+      height:200px; /* reduced map height */
       border:0;
       border-radius:12px;
       margin-top:15px;
     }
 
-    .map-toggle { display:flex; gap:10px; margin-bottom:15px; }
-    .map-btn {
-      background:#fff;
-      border:1px solid #e2e8f0;
-      padding:8px 14px;
-      border-radius:6px;
-      cursor:pointer;
-      transition:0.3s;
-    }
-    .map-btn.active {
-      background:#0f172a;
-      color:#fff;
-      border-color:#0f172a;
-    }
+    /* map-toggle styles removed – using static map embed */
 
     footer {
       background:#0f172a;
       color:#fff;
-      padding:25px;
+      padding:10px;
       text-align:center;
       font-size:16px;
     }
@@ -581,7 +735,7 @@ h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
 
     @media(max-width:768px){
       .contact-box { grid-template-columns:1fr; }
-      .hero { min-height:500px; border-radius:12px; }
+      .hero { min-height:500px; border-radius:16px; }
       .hero-content { padding:0 20px; }
       .hero-content h1 { font-size:44px; line-height:1.2; margin-bottom:16px; }
       .hero-content h1 span { display:block; }
@@ -614,10 +768,21 @@ h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
       .page-header h1 { font-size:26px !important; }
       .page-header p { font-size:15px; }
     }
+
+    @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
   </style>
 </head>
 <body>
-
+  
 <header>
   <a href="index.html" class="logo-section">
     <img src="Images/Logo.jpeg" alt="Parnika Properties Logo">
@@ -626,10 +791,34 @@ h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
+    <a href="our-services.html">Services</a>
     <a href="projects.html">Projects</a>
     <a href="gallery.html">Gallery</a>
     <a href="contact.html">Contact</a>
+
   </nav>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.407.593 24 1.324 24h11.495v-9.294H9.691v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.676V1.324C24 .593 23.407 0 22.676 0z"/>
+        </svg>
+      </a>
+      <a href="https://in.pinterest.com/parnikapropertieshyd/" target="_blank" aria-label="Pinterest">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" fill="currentColor">
+          <path d="M496 256c0 137-111 248-248 248S0 393 0 256 111 8 248 8s248 111 248 248zm-276.4 39.7c-5.1 22.3-10 43.5-21.4 64.5-6 11.3-13.3 22-23.9 28.3-7.3 4.3-16 4.9-23.7 3-17.5-4.1-18.2-17.3-9-32.6 6-10 10.9-20.6 14.3-31.5 4.4-15.4 8-30.9 11.2-46.5 3.2-15.4 6-31.2 8.7-46.9 1.9-11.1 3.6-22.3 5.4-33.4 3.1-19.8 6.4-39.6 9.7-59.4 1-5.9 1.8-12 .1-17.8-3.4-15-18.4-23-33.1-17.5-15.6 6-28.1 18-37.1 33.1-22.3 36.9-34.4 77.6-34.4 120.2 0 14.6 1.4 29.2 3.9 43.6 4.2 23.8 13.7 46.4 28.4 64.5 6.6 7.6 14.3 14.2 22.7 19.2 10.9 6.7 23 10.7 35.3 13.6 2.3 .6 4.6 1 6.9 1.4 13.1 2 26.6 3.6 39.8 5.4 14.9 1.9 28.4-4.3 34.8-17.9 6.3-13.6 3.8-27.5 2.2-41.4-2.6-22.4-5.2-44.7-7.5-67.1zm-104.8-86.7c-13.8-3.4-22.7-17-19.3-30.8 3.4-13.8 17-22.7 30.8-19.3 13.8 3.4 22.7 17 19.3 30.8-3.4 13.8-17 22.7-30.8 19.3z"/>
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/parnikaproperties_hyd/" target="_blank" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+          <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.6 339 255.9 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.3c0 14.9-12.1 27-27 27-14.9 0-27-12.1-27-27s12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.3-93.7s-58-34.6-93.7-36.3c-37-2.1-147.9-2.1-184.9 0-35.7 1.7-67.3 9.9-93.7 36.3s-34.6 58-36.3 93.7c-2.1 37-2.1 147.9 0 184.9 1.7 35.7 9.9 67.3 36.3 93.7s58 34.6 93.7 36.3c37 2.1 147.9 2.1 184.9 0 35.7-1.7 67.3-9.9 93.7-36.3s34.6-58 36.3-93.7c2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.4 42.4-29.4 11.7-99.2 9-132.4 9s-103 .2-132.4-9c-19.6-7.8-34.7-22.9-42.4-42.4-11.7-29.4-9-99.2-9-132.4s-.2-103 9-132.4c7.8-19.6 22.9-34.7 42.4-42.4 29.4-11.7 99.2-9 132.4-9s103-.2 132.4 9c19.6 7.8 34.7 22.9 42.4 42.4 11.7 29.4 9 99.2 9 132.4s.2 103-9 132.4z"/>
+        </svg>
+      </a>
+      <a href="https://web.telegram.org/k/#@ParnikaHydFlats" target="_blank" aria-label="Telegram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+          <path d="M446.7 74.3c-2.8-9.7-11.9-15.3-21.4-13.5L25.3 180.1c-10.4 2.4-17.5 12-16.3 22.5 1.2 10.4 9.9 18.1 20.3 18.1h79.1l-11.4 120.6c-1.6 16.9 13.1 30.6 30 28.1l41.9-8.7 80 94.3c10.8 12.7 29.1 8.4 34.1-7.9l153.1-449.2c2.5-7.2 .3-15-6-19.7z"/>
+        </svg>
+      </a>
+    </div>
   <div class="hamburger">
     <span></span>
     <span></span>
@@ -639,20 +828,64 @@ h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
 <div class="menu-overlay"></div>
 
 <section class="hero" id="home">
+  <!-- <video class="hero-video" autoplay muted playsinline>
+    <source src="videos/video1.mp4"type="video/mp4">
+    <source src="videos/video4.mp4" type="video/mp4">
+  </video> -->
+  <video id="heroVideo" class="hero-video" autoplay muted playsinline>
+    <source src="videos/video1.mp4" type="video/mp4">
+  </video>
   <div class="hero-overlay"></div>
-
-  
-  <div class="hero-content">
-    <h1>Find Your <span>Dream Home</span></h1>
-    <p>
-      Explore premium <strong>2 BHK flats</strong> in <strong>Manikonda</strong> & <strong>Patancheru</strong>, Hyderabad. Modern amenities, prime locations, and luxury living await you.
-    </p>
+  <div class="hero-content animate">
+    <h1>Trusted Residential &amp; Commercial Developments</h1>
+    <p class="hero-subtext">We build with passion, integrity and vision. Your future, our commitment.</p>
     <div class="hero-buttons">
-      <a href="#projects" class="btn primary-btn">Explore Projects</a>
-      <a href="#contact" class="btn secondary-btn">Book a Site Visit</a>
+      <a href="about.html" class="btn primary-btn">About Us</a>
+      <a href="projects.html" class="btn secondary-btn">View Projects</a>
     </div>
-    <div class="scroll-down">
-      <span>&#x2193;</span>
+  </div>
+</section>
+
+<section id="achievements">
+  <h2 class="section-title">Achievements</h2>
+  <div class="stats-grid">
+    <div class="stat-box" data-target="15">
+      <div class="stat-icon">🕒</div>
+      <div class="stat-number">0<span class="stat-plus">+</span></div>
+      <div class="stat-label">Years of Experience</div>
+    </div>
+    <div class="stat-box" data-target="10000">
+      <div class="stat-icon">😊</div>
+      <div class="stat-number">0<span class="stat-plus">+</span></div>
+      <div class="stat-label">Happy Customers</div>
+    </div>
+    <div class="stat-box" data-target="25">
+      <div class="stat-icon">🏗️</div>
+      <div class="stat-number">0<span class="stat-plus">+</span></div>
+      <div class="stat-label">Successful Projects</div>
+    </div>
+    <div class="stat-box" data-target="100">
+      <div class="stat-icon">📈</div>
+      <div class="stat-number">0<span class="stat-plus">%</span></div>
+      <div class="stat-label">Success Rate</div>
+    </div>
+  </div>
+</section>
+
+<section id="vision-mission">
+  <h2 class="section-title">Core Values<br><span class="subtitle">Excellence built through passion and commitment</span></h2>
+  <div class="vm-grid">
+    <div class="vm-box">
+      👁️ <strong>Vision</strong>
+      <p>To become a trusted real estate brand delivering sustainable, high-quality developments that enhance lifestyles, ensure transparency, and create long-term value for customers and investors.</p>
+    </div>
+    <div class="vm-box">
+      🎯 <strong>Mission</strong>
+      <p>To plan, develop, and deliver residential and commercial projects through quality construction, regulatory compliance, efficient execution, transparent practices, and customer-focused solutions with lasting value.</p>
+    </div>
+    <div class="vm-box">
+      🏁 <strong>Goals</strong>
+      <p>To achieve consistent project excellence, timely delivery, customer satisfaction, sustainable growth, strong partnerships, and long-term profitability across all real estate developments nationwide.</p>
     </div>
   </div>
 </section>
@@ -762,14 +995,21 @@ h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
 <section id="contact">
   <h2 class="section-title">Contact Us</h2>
   <div class="contact-box">
-    <div class="box">
+    <div class="box contact-info">
       <h3>Get in Touch</h3>
-      <p><strong>Parnika Properties</strong></p><br>
-      <p>📞 <a href="tel:+919866711002">+91 98667 11002</a></p>
-      <p>📞 <a href="tel:+918897377477">+91 88973 77477</a></p>
+      <p><strong>Parnika Properties</strong></p>
+
+      <p>📞 <a href="tel:+919866711002">+91 9866711002</a></p>
+      <p>📞 <a href="tel:+918897377477">+91 8897377477</a></p>
       <p>📧 <a href="mailto:sales@parnikaproperties.com">sales@parnikaproperties.com</a></p>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7609.005380764216!2d78.3467775!3d17.531237499999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8d00182f0791%3A0x265b5d733b562217!2sMRI%20Residency!5e0!3m2!1sen!2sin!4v1769489671601!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      <!-- single static map embed -->
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.4968069189963!2d78.34433297493821!3d17.531517983380393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8d00182f0791%3A0x265b5d733b562217!2sMRI%20Residency!5e0!3m2!1sen!2sin!4v1772696730519!5m2!1sen!2sin" width="100%" height="450" style="border:0; border-radius:14px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
     </div>
+    <!-- FORM -->
     <div class="box">
       <h3>Enquiry Form</h3>
       <form onsubmit="sendWhatsApp(); return false;">
@@ -818,32 +1058,21 @@ nav.querySelectorAll('a').forEach(link => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', function(){
-  var maps = {
-    manikonda: {
-      iframe: 'https://www.google.com/maps/embed?pb=!3m2!1sen!2sin!4v1769503112914!5m2!1sen!2sin!6m8!1m7!1sFR3DZKwBE8hV3fcIGus48Q!2m2!1d17.410528!2d78.379033!3f45.62470657064863!4f-3.99049033908922!5f0.7820865974627469',
-      link: 'https://www.google.com/maps/place/17.410528,78.379033',
-      label: '📍 Manikonda, Hyderabad, Telangana'
-    },
-    patancheru: {
-      iframe: 'https://www.google.com/maps/embed?pb=!4v1769063303939!6m8!1m7!1sL53HNwVCQyf-XAObl_3wDw!2m2!1d17.53659732784227!2d78.25672744284006!3f126.43226!4f0!5f0.7820865974627469',
-      link: 'https://www.google.com/maps/place/17.53659732784227,78.25672744284006',
-      label: '📍 Patancheru, Hyderabad, Telangana'
-    }
-  };
-  function setMap(loc){
-    var m=maps[loc];
-    document.getElementById('mapFrame').src=m.iframe;
-    document.getElementById('mapOpenLink').href=m.link;
-    document.getElementById('locationText').innerHTML='<a href="'+m.link+'" target="_blank" style="color:inherit;text-decoration:none">'+m.label+'</a>';
-    document.querySelectorAll('.map-btn').forEach(function(b){b.classList.remove('active');});
-    document.querySelector('.map-btn[data-loc="'+loc+'"]').classList.add('active');
+// animate header elements on load
+document.addEventListener('DOMContentLoaded', () => {
+  const logo = document.querySelector('.logo-section');
+  if (logo) {
+    logo.style.opacity = '1';
+    logo.style.animation = 'fadeInUp 0.8s ease-out forwards';
   }
-  document.querySelectorAll('.map-btn').forEach(function(btn){
-    btn.addEventListener('click',function(){setMap(btn.dataset.loc);});
+  document.querySelectorAll('nav a').forEach((a, idx) => {
+    a.style.opacity = '1';
+    a.style.animation = 'fadeInUp 0.8s ease-out forwards';
+    a.style.animationDelay = (0.2 + idx * 0.1) + 's';
   });
-  setMap('manikonda');
 });
+
+
 
 function sendWhatsApp() {
   const name = document.getElementById("name").value;
@@ -876,6 +1105,65 @@ const observer = new IntersectionObserver((entries)=>{
 },{threshold:0.2});
 
 [...document.querySelectorAll('section, .card, .gallery-item, .project, .box, .about-block, .status-box, .hero-content, .features li, .why-box, .about-features li')].forEach(el=>observer.observe(el));
+
+const stats = document.querySelectorAll('.stat-box');
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+
+      const box = entry.target;
+      const numEl = box.querySelector('.stat-number');
+      const target = parseInt(box.dataset.target);
+
+      let count = 0;
+      const increment = Math.ceil(target / 80);
+
+      const interval = setInterval(() => {
+        count += increment;
+
+        if (count >= target) {
+          count = target;
+          clearInterval(interval);
+        }
+
+        // 🔥 K FORMAT LOGIC
+        if (target >= 1000) {
+          numEl.childNodes[0].data = Math.floor(count / 1000) + "k";
+        } else {
+          numEl.childNodes[0].data = count;
+        }
+
+      }, 20);
+
+      statsObserver.unobserve(box);
+    }
+  });
+}, { threshold: 0.5 });
+
+stats.forEach(stat => statsObserver.observe(stat));
+
+// Hero video playlist
+const heroVideo = document.getElementById("heroVideo");
+
+const videoList = [
+  "videos/video1.mp4",
+  "videos/video4.mp4"
+];
+
+let currentVideo = 0;
+
+heroVideo.addEventListener("ended", function () {
+  currentVideo++;
+  
+  if (currentVideo >= videoList.length) {
+    currentVideo = 0; // start again from first video
+  }
+
+  heroVideo.src = videoList[currentVideo];
+  heroVideo.play();
+});
+
 </script>
 
 </body>
