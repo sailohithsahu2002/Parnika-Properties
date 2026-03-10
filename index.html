@@ -1,513 +1,842 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Parnika Properties | Premium Flats in Hyderabad</title>
-  <meta name="description" content="Buy premium 2 BHK flats in Patancheru & Manikonda with Parnika Properties. Best price, prime locations, trusted builder.">
+  <meta name="description"
+    content="Buy premium 2 BHK flats in Patancheru & Manikonda with Parnika Properties. Best price, prime locations, trusted builder.">
   <meta name="keywords" content="Parnika Properties, flats in Patancheru, flats in Manikonda, 2 BHK Hyderabad .">
   <meta name="author" content="Parnika Properties">
   <style>
     :root {
-  /* heading scale variables ensure identical text sizes everywhere */
-  --h1-size: clamp(2rem, 5vw, 3.5rem); /* same as our-services */
-  --h2-size: clamp(1.75rem, 4vw, 3rem); /* upgraded to match services page */
-  --h3-size: 30px; /* fixed-size identical to services heading */
-}
+      /* heading scale variables ensure identical text sizes everywhere */
+      --h1-size: clamp(2rem, 5vw, 3.5rem);
+      /* same as our-services */
+      --h2-size: clamp(1.75rem, 4vw, 3rem);
+      /* upgraded to match services page */
+      --h3-size: 30px;
+      /* fixed-size identical to services heading */
+    }
 
-* { margin:0; padding:0; box-sizing:border-box; }
-/* reset list styles to avoid default numbers or bullets */
-ul, ol { list-style:none; padding-left:0; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* single professional fade-in animation used throughout */
-@keyframes fadeIn {
-  0% { opacity:0; transform:translateY(15px); }
-  100% { opacity:1; transform:translateY(0); }
-}
+    /* reset list styles to avoid default numbers or bullets */
+    ul,
+    ol {
+      list-style: none;
+      padding-left: 0;
+    }
 
-.animate, section, .card, .gallery-item, .project, .box, .about-block, .status-box, .hero-content, .features li, .why-box, .about-features li,
-header h1, header h2, header h3 {
-  opacity:0;
-  animation: fadeIn 0.8s ease-out forwards;
-}
+    /* single professional fade-in animation used throughout */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(15px);
+      }
 
-/* bumped sizes to align with services page */
-h2 { font-size: clamp(1.75rem, 4vw, 3rem); }
-h3 { font-size: 30px; }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-h1 { font-size: var(--h1-size); transition: color 0.3s ease; }
-h2 { font-size: var(--h2-size); transition: color 0.3s ease; }
-h3 { font-size: var(--h3-size); }
+    .animate,
+    section,
+    .card,
+    .gallery-item,
+    .project,
+    .box,
+    .about-block,
+    .status-box,
+    .hero-content,
+    .features li,
+    .why-box,
+    .about-features li,
+    header h1,
+    header h2,
+    header h3 {
+      opacity: 0;
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    /* bumped sizes to align with services page */
+    h2 {
+      font-size: clamp(1.75rem, 4vw, 3rem);
+    }
+
+    h3 {
+      font-size: 30px;
+    }
+
+    h1 {
+      font-size: var(--h1-size);
+      transition: color 0.3s ease;
+    }
+
+    h2 {
+      font-size: var(--h2-size);
+      transition: color 0.3s ease;
+    }
+
+    h3 {
+      font-size: var(--h3-size);
+    }
 
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
-      background:#f4f6f9;
-      color:#1e293b;
-      line-height:1.6;
+      background: #f4f6f9;
+      color: #1e293b;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      transform: translateY(15px);
+      animation: pageLoad .6s forwards;
     }
-    header {
-      background:#0f172a;
-      color:#fff;
-      padding:16px 60px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
-      position:sticky;
-      top:0;
-      z-index:1000;
-      border-radius:8px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.15);
-    }
-    /* ensure header text is uniform size */
-    header, header * { font-size:16px; }
 
-    
-    .logo-section {
-      display:flex;
-      align-items:center;
-      gap:12px;
-      white-space:nowrap;
+    header {
+      background: #0f172a;
+      color: #fff;
+      padding: 16px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
+
+    /* ensure header text is uniform size */
+    header,
+    header * {
+      font-size: 16px;
+    }
+
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+    }
+
     .logo-section img {
-      height:50px;
-      width:auto;
-      object-fit:contain;
-      flex-shrink:0;
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
     }
+
     .logo-section h2 {
-      font-size:24px;
-      font-weight:600;
-      margin:0;
-      white-space:nowrap;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0;
+      white-space: nowrap;
     }
+
     .logo-section {
-      text-decoration:none;
-      color:inherit;
-      cursor:pointer;
-      transition:opacity 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
     }
+
     .logo-section:hover {
-      opacity:0.8;
+      opacity: 0.8;
     }
-    nav{
-      display:flex;
-      align-items:center;
-      gap:20px;
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
+
     nav a {
-      color:#fff;
-      margin-left:20px;
-      text-decoration:none;
-      font-weight:500;
-      font-size:18px; /* match services page */
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      /* match services page */
       animation: fadeInUp 0.8s ease-out forwards;
-      animation-delay:0.2s;
+      animation-delay: 0.2s;
     }
-    nav a:hover { text-decoration:underline; }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
 
     .social-icons {
-      display:flex;
-      gap:12px;
+      display: flex;
+      gap: 12px;
     }
+
     .social-icons a {
-      color:#fff;
-      width:24px;
-      height:24px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      transition:opacity 0.3s;
+      color: #fff;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s;
     }
-    .social-icons a:hover { opacity:0.7; }
+
+    .social-icons a:hover {
+      opacity: 0.7;
+    }
 
     .hamburger {
-      display:none;
-      flex-direction:column;
-      cursor:pointer;
-      gap:6px;
-      position:relative;
-      z-index:1001;
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      position: relative;
+      z-index: 1001;
     }
+
     .hamburger span {
-      width:28px;
-      height:3px;
-      background:#facc15;
-      border-radius:2px;
-      transition:all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      transform-origin:center;
+      width: 28px;
+      height: 3px;
+      background: #7ac7dd;
+      border-radius: 2px;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-origin: center;
     }
+
     .hamburger.active span:nth-child(1) {
-      transform:translateY(10px) rotate(45deg);
+      transform: translateY(10px) rotate(45deg);
     }
+
     .hamburger.active span:nth-child(2) {
-      opacity:0;
-      transform:scaleX(0);
+      opacity: 0;
+      transform: scaleX(0);
     }
+
     .hamburger.active span:nth-child(3) {
-      transform:translateY(-10px) rotate(-45deg);
+      transform: translateY(-10px) rotate(-45deg);
     }
 
     .menu-overlay {
-      display:none;
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      background:rgba(0,0,0,0.5);
-      z-index:999;
+      display: none;
+      position: fixed;
+      inset: 0;
+      /* Better than top/left/width/height */
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
     }
 
     .menu-overlay.active {
-      display:block;
+      display: block;
     }
 
-    @media(max-width:768px){
-      header{
-        padding:14px 20px;
+    @media(max-width:768px) {
+      header {
+        padding: 14px 20px;
       }
-      .hamburger{
-        display:flex;
+
+      .hamburger {
+        display: flex;
       }
-      nav{
-        position:fixed;
-        top:70px;
-        right:0;
-        width:70%;
-        max-width:250px;
-        height:auto;
-        max-height:calc(100vh - 70px);
-        background:#0f172a;
-        flex-direction:column;
-        gap:0;
-        padding:20px 20px 20px 20px;
-        transform:translateX(100%);
-        transition:transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        box-shadow:-8px 0 16px rgba(0,0,0,0.3);
-        z-index:1000;
-        overflow-y:auto;
+
+      nav {
+        position: fixed;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        max-height: calc(100vh - 70px);
+        background: #0f172a;
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 20px 20px 20px;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        box-shadow: -8px 0 16px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        overflow-y: auto;
       }
-      nav.active{
-        transform:translateX(0);
+
+      nav.active {
+        transform: translateX(0);
       }
-      nav a{
-        margin:0;
-        padding:16px 0;
-        border-bottom:1px solid rgba(255,255,255,0.1);
-        display:block;
-        font-size:16px;
+
+      nav a {
+        margin: 0;
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: block;
+        font-size: 16px;
       }
-      nav a::after{
-        display:none;
+
+      nav a::after {
+        display: none;
       }
     }
 
-.hero {
-  position: relative;
-  width: 100%;
-  min-height: 600px;
-  margin-top: 20px; /* add gap from sticky header */
-  margin-bottom: 40px; /* more space below for separation */
-  border-radius: 20px; /* curved corners for better aesthetics */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  padding: 60px 0; /* add vertical breathing room */
-}
+    /* ================= HERO SECTION ================= */
 
-.hero-content { padding: 0 30px 40px; /* extra bottom space */ }
+    .hero-section {
+      position: relative;
+      max-width: 100%;
+      height: 400px;
+      margin: 25px;
+      border-radius: 30px;
+      overflow: hidden;
+      background: url("Images/hero-image.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 20px 60px;
+      margin-top: 25px;
+      margin-bottom: 20px;
+    }
 
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* very light overlay so video shows clearly */
-  background: rgba(0,0,0,0.10);
-  z-index: 1;
-}
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(3px);
+      z-index: 0;
+    }
 
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: blur(2px);
-  z-index: 0;
-}
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1;
+    }
 
-/* simple drop‑in animation for hero content */
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.hero-content.animate { animation: fadeInDown 1s ease-out forwards; }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      max-width: 700px;
+    }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  max-width: 900px;
-  padding: 0 30px;
-  color: #fff;
-}
+    .hero-content h1 {
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
 
-.hero-content h1, .hero-content p {
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-}
+    .hero-content h1 span {
+      font-weight: 400;
+    }
 
-.hero-content h1 {
-  font-size: 64px;
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 24px;
-  letter-spacing: -1px;
-}
+    .hero-content p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      color: #e5e7eb;
+    }
 
-.hero-content h1 span {
-  color: #eec00a;
-  display: block;
-  margin-top: 0.75em; /* more breathing room above second line */
-}
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+    }
 
-.hero-content p {
-  font-size: 22px;
-  margin-bottom: 40px;
-  line-height: 1.6;
-  color: #e2e8f0;
-}
+    .btn {
+      padding: 14px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
 
-.hero-buttons {
-  margin-bottom: 60px;
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
+    .primary-btn {
+      background: #3b82f6;
+      color: #fff;
+    }
 
-.hero-buttons .btn {
-  padding: 16px 32px;
-  font-weight: 700;
-  font-size: 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  display: inline-block;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
+    .primary-btn:hover {
+      background: #2563eb;
+    }
 
-/* achievements styling */
-#achievements { text-align: center; background: linear-gradient(135deg, #7896d6 0%, #262a35 100%); color:#fff; padding:40px 0; border-radius:8px; margin:0 auto; max-width:1200px; }
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
-  gap: 15px;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px 0 50px;
-  justify-items: center;
-}
-.stat-box {
-  background: #fff;
-  padding: 20px 15px;
-  border-radius: 4px; /* more rectangular */
-  box-shadow: 0 8px 24px rgba(0,0,0,.08);
-  text-align: center;
-  font-size: 14px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: default;
-  min-width: 180px;
-}
-@keyframes blink {
-  0%,50%,100% { opacity:1; }
-  25%,75% { opacity:0.3; }
-}
-.stat-icon { font-size: 36px; margin-bottom: 8px; animation: blink 1.5s infinite; }
-.stat-number {
-  font-size: 40px;
-  font-weight: 700;
-  color: #2563eb;
-  margin-bottom: 8px;
-  display: block;
-}
-.stat-label { font-size: 16px; color:#111; }
-.stat-plus { font-size: 40px;  }
+    .secondary-btn {
+      border: 1px solid #fff;
+      color: #fff;
+    }
 
-.stat-box:hover {
-  transform: translateY(-4px);
-  /* box-shadow: 0 12x 36px rgba(0,0,0,.12); */
-  box-shadow: 0 12px 36px rgba(0,0,0,.12);
-}
+    .secondary-btn:hover {
+      background: #fff;
+      color: #000;
+    }
 
-/* count-up animation (simple scale) */
-@keyframes popIn {
-  from { transform: scale(0.6); opacity:0; }
-  to { transform: scale(1); opacity:1; }
-}
-.stat-number { animation: popIn 0.6s ease-out forwards; }
-.stat-box:nth-child(1) .stat-number { animation-delay: 0.1s; }
-.stat-box:nth-child(2) .stat-number { animation-delay: 0.3s; }
-.stat-box:nth-child(3) .stat-number { animation-delay: 0.5s; }
-.stat-box:nth-child(4) .stat-number { animation-delay: 0.7s; }
+    @media (max-width: 992px) {
+      .hero-section {
+        height: 480px;
+        padding: 0 40px;
+      }
 
-/* vision/mission/goals */
-#vision-mission { background: #f8f9fb; padding: 40px 20px; }
-#vision-mission .section-title { margin-bottom: 40px; }
-#vision-mission .subtitle { display: block; font-size: 0.8em; font-weight:400; margin-top: 8px; color:#555; }
-.vm-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: left;
-  padding: 0;
-}
-.vm-box  {
-  background: #fff;
-  padding: 25px 20px;
-  border-radius: 4px; /* straighter edges */
-  box-shadow: 0 4px 16px rgba(0,0,0,.06);
-  font-size: 18px;
-  line-height: 1.6;
-  opacity:0;
-  animation: fadeInUp 0.8s ease-out forwards;
-  transition: background 0.3s, color 0.3s;
-}
-.vm-box:hover {
-  background: #2563eb;
-  color: #fff;
-}
-.vm-box:hover .stat-icon,
-.vm-box:hover strong { color: #fff; }
-/* staggered entry */
-.vm-box:nth-child(1) { animation-delay: 0.2s; }
-.vm-box:nth-child(2) { animation-delay: 0.4s; }
-.vm-box:nth-child(3) { animation-delay: 0.6s; }
-.vm-box strong { display: block; margin-bottom: 8px; font-size: 20px; }
-.vm-box:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,.12); }
+      .hero-content h1 {
+        font-size: 40px;
+      }
+    }
 
-@media(max-width:768px) {
-  .vm-box { font-size: 16px; padding: 20px; }
-  #vision-mission .section-title { font-size: 28px; }
-  #vision-mission .subtitle { font-size: 0.75em; }
-  /* achievement numbers resizing */
-  .stat-number { font-size: 32px; }
-}
+    @media (max-width: 768px) {
+      .hero-section {
+        height: auto;
+        padding: 60px 20px;
+        text-align: center;
+      }
 
-@media(max-width:600px) {
-  #vision-mission { padding: 40px 16px; }
-  .vm-box { font-size: 15px; padding: 18px; }
-  #vision-mission .section-title { font-size: 24px; }
-}
+      .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
 
-.primary-btn {
-  background: #facc15;
-  color: #0f172a;
-}
+      .hero-content h1 {
+        font-size: 32px;
+      }
 
-.primary-btn:hover {
-  background: #eab308;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(250,204,21,0.3);
-}
+      .hero-content p {
+        font-size: 16px;
+      }
+    }
 
-.secondary-btn {
-  background: rgba(255,255,255,0.15);
-  border: 2px solid #facc15;
-  color: #fff;
-  backdrop-filter: blur(10px);
-}
+    @media (max-width: 480px) {
+      .hero-section {
+        padding: 40px 15px;
+        height: auto;
+      }
 
-.secondary-btn:hover {
-  background: #facc15;
-  color: #0f172a;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(250,204,21,0.4);
-}
+      .hero-content h1 {
+        font-size: 28px;
+      }
 
-.scroll-down {
-  margin-top: 40px;
-}
+      .hero-buttons {
+        flex-direction: column;
+      }
 
-.scroll-down span {
-  display: inline-block;
-  font-size: 28px;
-  animation: bounce 2s infinite;
-  color: #facc15;
-}
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    /* ================= ACHIEVEMENTS SECTION ================= */
+
+    .achievements-section {
+      max-width: 100%;
+      margin: 25px;
+      background: linear-gradient(135deg, #728edb, #02081e);
+      padding: 60px 40px;
+      border-radius: 30px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .achievements-title {
+      letter-spacing: 4px;
+      margin-bottom: 40px;
+      font-size: 25px;
+      opacity: 0.8;
+    }
+
+    .achievements-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .achievement-card {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 16px;
+      padding: 30px 20px;
+      transition: 0.3s ease;
+    }
+
+    .achievement-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-5px);
+    }
+
+    .icon-circle {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      background: #fff;
+      color: #1e3a8a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+
+    .achievement-card h3 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .achievement-card p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 992px) {
+      .achievements-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .achievements-container {
+        grid-template-columns: 1fr;
+      }
+
+      .achievements-section {
+        padding: 40px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .achievements-section {
+        padding: 30px 15px;
+        margin: 20px auto;
+      }
+
+      .achievement-card {
+        padding: 20px 15px;
+      }
+
+      .achievements-title {
+        margin-bottom: 25px;
+        font-size: 12px;
+      }
+    }
+
+    @keyframes blink {
+
+      0%,
+      50%,
+      100% {
+        opacity: 1;
+      }
+
+      25%,
+      75% {
+        opacity: 0.3;
+      }
+    }
+
+    .stat-icon {
+      font-size: 36px;
+      margin-bottom: 8px;
+      animation: blink 1.5s infinite;
+    }
+
+    .stat-number {
+      font-size: 40px;
+      font-weight: 700;
+      color: #2563eb;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 16px;
+      color: #111;
+    }
+
+    .stat-plus {
+      font-size: 40px;
+    }
+
+    .stat-box:hover {
+      transform: translateY(-4px);
+      /* box-shadow: 0 12x 36px rgba(0,0,0,.12); */
+      box-shadow: 0 12px 36px rgba(0, 0, 0, .12);
+    }
+
+    /* count-up animation (simple scale) */
+    @keyframes popIn {
+      from {
+        transform: scale(0.6);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes pageLoad {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .stat-number {
+      animation: popIn 0.6s ease-out forwards;
+    }
+
+    .stat-box:nth-child(1) .stat-number {
+      animation-delay: 0.1s;
+    }
+
+    .stat-box:nth-child(2) .stat-number {
+      animation-delay: 0.3s;
+    }
+
+    .stat-box:nth-child(3) .stat-number {
+      animation-delay: 0.5s;
+    }
+
+    .stat-box:nth-child(4) .stat-number {
+      animation-delay: 0.7s;
+    }
+
+    /* vision/mission/goals */
+    #vision-mission {
+      background: #e4a7d6;
+      border-radius: 30px;
+      max-width: 100%;
+      margin: 25px;
+      padding: 20px 20px;
+    }
+
+    #vision-mission .section-title {
+      margin-bottom: 40px;
+    }
+
+    #vision-mission .subtitle {
+      display: block;
+      font-size: 0.8em;
+      font-weight: 400;
+      margin-top: 8px;
+      color: black;
+    }
+
+    .vm-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: left;
+      padding: 0;
+    }
+
+    .vm-box {
+      background: #ffff;
+      padding: 25px 20px;
+      border-radius: 20px;
+      /* straighter edges */
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .06);
+      font-size: 18px;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .vm-box:hover {
+      background: #7196e6;
+
+      color: #fff;
+    }
+
+    .vm-box:hover .stat-icon,
+    .vm-box:hover strong {
+      color: #fff;
+    }
+
+    /* staggered entry */
+    .vm-box:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .vm-box:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .vm-box:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .vm-box strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .vm-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, .12);
+    }
+
+    @media(max-width:768px) {
+      .vm-box {
+        font-size: 16px;
+        padding: 20px;
+      }
+
+      #vision-mission .section-title {
+        font-size: 28px;
+      }
+
+      #vision-mission .subtitle {
+        font-size: 0.75em;
+      }
+
+      /* achievement numbers resizing */
+      .stat-number {
+        font-size: 32px;
+      }
+    }
+
+    @media(max-width:600px) {
+      #vision-mission {
+        padding: 40px 16px;
+      }
+
+      .vm-box {
+        font-size: 15px;
+        padding: 18px;
+      }
+
+      #vision-mission .section-title {
+        font-size: 24px;
+      }
+    }
+
+    .primary-btn {
+      background: #eab308;
+      color: #0f172a;
+    }
+
+    .primary-btn:hover {
+      background: #eab308;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(250, 204, 21, 0.3);
+    }
+
+    .secondary-btn {
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid #facc15;
+      color: #fff;
+      backdrop-filter: blur(10px);
+    }
+
+    .secondary-btn:hover {
+      background: #facc15;
+      color: #0f172a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(250, 204, 21, 0.4);
+    }
+
+    .scroll-down {
+      margin-top: 40px;
+    }
+
+    .scroll-down span {
+      display: inline-block;
+      font-size: 28px;
+      animation: bounce 2s infinite;
+      color: #022b4d;
+    }
+
     /* Sections */
     section {
-      padding:60px 20px;
-      max-width:1200px;
-      margin:auto;
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
+
     .section-title {
-      text-align:center;
-      font-size:42px;
-      font-weight:600;
-      margin-bottom:40px;
-      letter-spacing:1px;
-      color:#111;
-      position:relative;
+      text-align: center;
+      font-size: 42px;
+      font-weight: 600;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+      color: #111;
+      position: relative;
     }
+
     .section-title::after {
-      content:'';
-      display:block;
-      width:80px;
-      height:4px;
-      background:#2563eb;
-      margin:12px auto 0;
-      border-radius:2px;
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #2563eb;
+      margin: 12px auto 0;
+      border-radius: 2px;
     }
+
     .features {
-      max-width:800px;
-      margin:auto;
-      list-style:none;
-      padding-left:0;
+      max-width: 800px;
+      margin: auto;
+      list-style: none;
+      padding-left: 0;
     }
-  
+
     .features li {
-      margin-bottom:12px;
-      font-size:18px;
-      position:relative;
-      padding-left:25px;
+      margin-bottom: 12px;
+      font-size: 18px;
+      position: relative;
+      padding-left: 25px;
     }
+
     .features li::before {
-      content:"✔";
-      position:absolute;
-      left:0;
-      color:#16a34a;
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #16a34a;
     }
+
+    #about {
+      padding: 60px 20px;
+      max-width: 100%;
+      margin: 25px;
+      background-color: #d9c9d3;
+      border-radius: 30px;
+    }
+
     /* about section styling */
     #about p {
-      max-width:900px;
-      margin:0 auto 18px;
-      font-size:16px;
-      color:#475569;
-      line-height:1.7;
-      text-align:justify;
+      max-width: 900px;
+      margin: 0 auto 18px;
+      font-size: 16px;
+      color: black;
+      line-height: 1.7;
+      text-align: justify;
     }
+
     /* about section list styling */
     .about-features ul {
-      max-width:800px;
-      margin:20px auto 30px;
-      list-style:disc inside;
-      padding-left:20px;
-      color:#1e293b;
-      font-size:16px;
-      line-height:1.6;
+      max-width: 800px;
+      margin: 20px auto 30px;
+      list-style: disc inside;
+      padding-left: 20px;
+      color: #1e293b;
+      font-size: 16px;
+      line-height: 1.6;
     }
+
     /* Why Choose Us section styling (revised) */
     #why {
-      padding: 10px 0;
-      background: #f8f9fb;
+      padding: 10px 10;
+      border-radius: 30px;
+      max-width: 100%;
+      margin: 25px;
+      background: #d9c9d3;
     }
+
     .container {
       width: 90%;
       max-width: 1200px;
@@ -517,13 +846,15 @@ h3 { font-size: var(--h3-size); }
     .why-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0; /* no gaps between boxes */
+      gap: 10px;
+      /* no gaps between boxes */
     }
 
     .why-box {
-      padding: 40px 30px;
+      padding: 60px 50px;
       background: #ffffff;
       border: 1px solid #eee;
+      border-radius: 20px;
       transition: all 0.4s ease;
     }
 
@@ -562,609 +893,1617 @@ h3 { font-size: var(--h3-size); }
       }
     }
 
-   
+
     .grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
-      gap:30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
+
     .card {
-      background:#fff;
-      border-radius:14px;
-      overflow:hidden;
-      box-shadow:0 8px 24px rgba(0,0,0,.08);
-      transition:0.3s;
-      position:relative;
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+      transition: 0.3s;
+      position: relative;
     }
+
     .card:hover {
-      transform:translateY(-8px);
-      box-shadow:0 14px 36px rgba(0,0,0,.15);
+      transform: translateY(-8px);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, .15);
     }
+
     .card img {
-      width:100%;
-      aspect-ratio:4/3;
-      object-fit:cover;
-      display:block;
-      transition:transform 0.3s;
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
     }
-    .card:hover img { transform:scale(1.05); }
+
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
     .card .content {
-      padding:20px;
+      padding: 20px;
     }
+
     .card h3 {
-      font-size:22px;
-      margin-bottom:10px;
-      color:#0f172a;
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #0f172a;
     }
+
     .card p {
-      font-size:15px;
-      color:#475569;
-      margin-bottom:12px;
+      font-size: 15px;
+      color: #475569;
+      margin-bottom: 12px;
     }
+
     .card strong {
-      font-size:16px;
-      color:#2563eb;
+      font-size: 16px;
+      color: #2563eb;
     }
 
-#gallery {
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: auto;
-  text-align: center;
-}
-
-#gallery .section-title {
-  font-size: 32px;
-  margin-bottom: 40px;
-  font-weight: 600;
-  color: #0f172a;
-}
-
-
-#gallery .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-
-#gallery .grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
-  border-radius: 16px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
-}
-
-#gallery .grid img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
-}
-
-@media screen and (max-width: 400px) {
-  #gallery .grid {
-    grid-template-columns: repeat(2, 1fr); 
-  }
-}
-
-    .contact-box {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:40px;
-    }
-    .box {
-      background:#fff;
-      padding:25px;
-      border-radius:14px;
-      box-shadow:0 8px 28px rgba(0,0,0,.08);
-    }
-    .box h3 {
-      font-size:22px;
-      margin-bottom:20px;
-      color:#0f172a;
-    }
-    form input, form textarea {
-      width:100%;
-      padding:12px;
-      margin-bottom:15px;
-      border-radius:8px;
-      border:1px solid #cbd5e1;
-      font-size:15px;
-    }
-    form button {
-      background:#2563eb;
-      color:#fff;
-      border:none;
-      padding:14px 22px;
-      font-size:16px;
-      border-radius:8px;
-      cursor:pointer;
-      font-weight:500;
-      transition:0.3s;
-    }
-    form button {
-      background:#2563eb;
-      color:#fff;
-      border:none;
-      padding:14px 22px;
-      font-size:16px;
-      border-radius:8px;
-      cursor:pointer;
-      font-weight:500;
-      transition:0.3s;
-    }
-    form button:hover { background:#1d4ed8; }
-
-    iframe {
-      width:100%;
-      height:200px; /* reduced map height */
-      border:0;
-      border-radius:12px;
-      margin-top:15px;
+    #gallery {
+      padding: 60px 20px;
+      max-width: 100%;
+      margin: 25px;
+      background-color: #bed8ea;
+      border-radius: 30px;
+      text-align: center;
     }
 
-    /* map-toggle styles removed – using static map embed */
-
-    footer {
-      background:#0f172a;
-      color:#fff;
-      padding:10px;
-      text-align:center;
-      font-size:16px;
+    #gallery .section-title {
+      font-size: 32px;
+      margin-bottom: 40px;
+      font-weight: 600;
+      color: #0f172a;
     }
-    footer a { color:#93c5fd; }
 
-  
+
+    #gallery .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+
+    #gallery .grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    #gallery .grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    @media screen and (max-width: 400px) {
+      #gallery .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* PROJECT MENU */
+    .projects-menu {
+      position: relative;
+    }
+
+    .projects-btn {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    /* MEGA DROPDOWN */
+
+    .mega-projects {
+
+      position: absolute;
+      top: 60px;
+      left: 0;
+
+      width: 200px;
+
+      background: #fff;
+
+      border-radius: 16px;
+
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+
+      /* display:flex; */
+
+      overflow: hidden;
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      transform: translateY(10px);
+
+      transition: all .35s ease;
+
+    }
+
+    /* show dropdown */
+
+    .projects-menu:hover .mega-projects {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .project-link {
+
+      display: block;
+
+      padding: 20px;
+
+      border-bottom: 1px solid #e5e7eb;
+
+      text-decoration: none;
+
+      transition: all .3s ease;
+
+    }
+
+    .project-link:hover {
+      background: #fff;
+      padding-left: 26px;
+    }
+
+    .project-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .project-location {
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    @media (max-width:768px) {
+
+      .mega-projects {
+        position: static;
+        flex-direction: column;
+        width: 100%;
+        box-shadow: none;
+      }
+
+      .project-preview {
+        display: none;
+      }
+
+      .projects-menu:hover .mega-projects {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+      }
+
+    }
+
+    /* GALLERY MENU */
+    .gallery-menu {
+      position: relative;
+    }
+
+    .gallery-btn {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .mega-gallery {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 270px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all .35s ease;
+    }
+
+    .gallery-menu:hover .mega-gallery {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .gallery-link {
+      display: block;
+      padding: 20px;
+      border-bottom: 1px solid #e5e7eb;
+      text-decoration: none;
+      transition: all .3s ease;
+    }
+
+    .gallery-link:hover {
+      background: #fff;
+      padding-left: 26px;
+    }
+
+    .gallery-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .gallery-location {
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    @media (max-width:768px) {
+      .mega-gallery {
+        position: static;
+        flex-direction: column;
+        width: 100%;
+        box-shadow: none;
+      }
+
+      .gallery-menu:hover .mega-gallery {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .footer {
+      margin: 30px 30px 0 30px;
+      border-radius: 30px;
+      background: #be8b5c;
+      color: white;
+      padding-top: 60px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .footer-container {
+      max-width: 1300px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      padding: 0 40px;
+    }
+
+    .footer-logo {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    .footer-about p {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .footer-column h3 {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column a {
+      list-style: none;
+      text-decoration: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #e2e8f0;
+    }
+
+    .footer-column ul li a {
+      color: #e2e8f0;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .footer-column ul li a:hover {
+      color: #fff;
+      padding-left: 5px;
+    }
+
+    @media(max-width:900px) {
+
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+    }
+
+
     .whatsapp-btn {
-      position:fixed;
-      bottom:20px;
-      right:20px;
-      background:#25d366;
-      color:#fff;
-      padding:16px 20px;
-      border-radius:50px;
-      font-weight:600;
-      font-size:18px;
-      text-decoration:none;
-      box-shadow:0 8px 20px rgba(0,0,0,.3);
-      transition:0.3s;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: #fff;
+      padding: 16px 20px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 18px;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .3);
+      transition: 0.3s;
     }
-    .whatsapp-btn:hover { background:#1ebe5d; }
 
-    @media(max-width:768px){
-      .contact-box { grid-template-columns:1fr; }
-      .hero { min-height:500px; border-radius:16px; }
-      .hero-content { padding:0 20px; }
-      .hero-content h1 { font-size:44px; line-height:1.2; margin-bottom:16px; }
-      .hero-content h1 span { display:block; }
-      .hero-content p { font-size:18px; margin-bottom:30px; }
-      .hero-buttons { margin-bottom:40px; gap:12px; }
-      .hero-buttons .btn { padding:14px 24px; font-size:15px; }
-      section { padding:60px 20px; }
-      .section-title { font-size:28px; margin-bottom:40px; }
-      .features li { font-size:16px; }
-      #gallery .grid { grid-template-columns:repeat(2,1fr); gap:15px; }
-      .card .content { padding:15px; }
-      .card h3 { font-size:18px; }
-      form input, form textarea { padding:10px; margin-bottom:12px; }
-      form button { padding:12px 16px; font-size:14px; }
-      .box { padding:20px; }
-      iframe { height:250px; }
-      header { padding:14px 20px; }
+    .whatsapp-btn:hover {
+      background: #1ebe5d;
     }
-    @media(max-width:600px){
-      .hero { min-height:420px; }
-      .hero-content h1 { font-size:32px; margin-bottom:12px; }
-      .hero-content p { font-size:16px; margin-bottom:24px; }
-      .hero-buttons { flex-direction:column; margin-bottom:30px; }
-      .hero-buttons .btn { width:100%; margin:0; }
-      section { padding:40px 16px; }
-      .section-title { font-size:24px; }
-      .features li { font-size:15px; }
-      #gallery .grid { grid-template-columns:1fr; }
-      .card { border-radius:10px; }
-      .page-header h1 { font-size:26px !important; }
-      .page-header p { font-size:15px; }
+
+    @media(max-width:768px) {
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 500px;
+        border-radius: 16px;
+      }
+
+      .hero-content {
+        padding: 0 20px;
+      }
+
+      .hero-content h1 {
+        font-size: 44px;
+        line-height: 1.2;
+        margin-bottom: 16px;
+      }
+
+      .hero-content h1 span {
+        display: block;
+      }
+
+      .hero-content p {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+
+      .hero-buttons {
+        margin-bottom: 40px;
+        gap: 12px;
+      }
+
+      .hero-buttons .btn {
+        padding: 14px 24px;
+        font-size: 15px;
+      }
+
+      section {
+        padding: 60px 20px;
+      }
+
+      .section-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+      }
+
+      .features li {
+        font-size: 16px;
+      }
+
+      #gallery .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .card .content {
+        padding: 15px;
+      }
+
+      .card h3 {
+        font-size: 18px;
+      }
+
+      form input,
+      form textarea {
+        padding: 10px;
+        margin-bottom: 12px;
+      }
+
+      form button {
+        padding: 12px 16px;
+        font-size: 14px;
+      }
+
+      .box {
+        padding: 20px;
+      }
+
+      iframe {
+        height: 250px;
+      }
+
+      header {
+        padding: 14px 20px;
+      }
+    }
+
+    @media(max-width:600px) {
+      .hero {
+        min-height: 420px;
+      }
+
+      .hero-content h1 {
+        font-size: 32px;
+        margin-bottom: 12px;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+        margin-bottom: 24px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        margin-bottom: 30px;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+        margin: 0;
+      }
+
+      section {
+        padding: 40px 16px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      .features li {
+        font-size: 15px;
+      }
+
+      #gallery .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        border-radius: 10px;
+      }
+
+      .page-header h1 {
+        font-size: 26px !important;
+      }
+
+      .page-header p {
+        font-size: 15px;
+      }
     }
 
     @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .projects-section {
+      padding: 80px 40px;
+      font-family: 'Poppins', sans-serif;
+      background: #e0bfd0;
+      max-width: 100%;
+      margin: 25px;
+      border-radius: 30px;
+    }
+
+    .projects-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .mini-title {
+      letter-spacing: 3px;
+      font-size: 40px;
+      color: #3b5bdb;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .projects-header h2 {
+      font-size: 42px;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 0;
+    }
+
+    .projects-header span {
+      color: #2f4ed6;
+    }
+
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, .15);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-info {
+      padding: 20px;
+    }
+
+    .project-info h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    .project-info p {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .project-meta {
+      font-size: 14px;
+      color: #666;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    @media(max-width: 1100px) {
+      .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projects-section {
+        padding: 60px 20px;
+      }
+    }
+
+    @media(max-width: 768px) {
+      .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .projects-header h2 {
+        font-size: 28px;
+      }
+
+      .projects-section {
+        padding: 50px 20px;
+      }
+    }
+
+    @media(max-width: 600px) {
+      .projects-container {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card img {
+        height: 180px;
+      }
+
+      .project-info h3 {
+        font-size: 16px;
+      }
+
+      .project-info p {
+        font-size: 14px;
+      }
+    }
+
+    .footer {
+      margin: 30px 30px 0 30px;
+      border-radius: 30px;
+      background: #be8b5c;
+      color: white;
+      padding-top: 60px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .footer-container {
+      max-width: 1300px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      padding: 0 40px;
+    }
+
+    .footer {
+      margin: 30px 30px 0 30px;
+      border-radius: 30px;
+      background: #be8b5c;
+      color: white;
+      padding-top: 60px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .footer-container {
+      max-width: 1300px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      padding: 0 40px;
+    }
+
+    .footer-logo {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    .footer-about p {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .footer-column h3 {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column a {
+      list-style: none;
+      text-decoration: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #e2e8f0;
+    }
+
+    .footer-column ul li a {
+      color: #e2e8f0;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .footer-column ul li a:hover {
+      color: #fff;
+      padding-left: 5px;
+    }
+
+    @media(max-width:900px) {
+
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+    }
+
+    .contact {
+      line-height: 1.6;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      width: 32px;
+      height: 32px;
+      background: white;
+      color: #2f3f9f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-weight: 600;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .social-icons a:hover {
+      background: #facc15;
+      color: #000;
+    }
+
+    .footer-bottom {
+      margin-top: 50px;
+      background: #3182ce;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      font-size: 13px;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    @media(max-width: 900px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+    }
+
+    @media(max-width: 600px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        gap: 30px;
+      }
+
+      .footer-bottom {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer {
+        margin: 20px 10px 0 10px;
+        padding-top: 40px;
+      }
+    }
+
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 45px;
+      height: 45px;
+      background: #2f6edb;
+      color: white;
+      font-size: 20px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      z-index: 999;
+    }
+
+    #scrollTopBtn:hover {
+      background: #1c4fb5;
+      transform: translateY(-3px);
+    }
+
+    /* ===== Premium Contact Section ===== */
+
+    .new-contact-section {
+      max-width: 100%;
+      min-height: 400px;
+      margin: 25px;
+      padding: 0 5%;
+      /* Equal left & right spacing */
+      position: relative;
+    }
+
+    .new-contact-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("Images/image (2).png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 30px;
+      margin: auto;
+      z-index: -2;
+    }
+
+    .new-contact-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      /* Premium dark overlay */
+      border-radius: 30px;
+      z-index: -1;
+    }
+
+    .contact-content {
+      max-width: 100%;
+      padding: 100px 10px;
+      color: #fff;
+    }
+
+    .contact-content p {
+      font-size: 20px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    /* Premium Button */
+
+    .reach-us-btn {
+      display: inline-block;
+      padding: 20px 40px;
+      background: #4f63e9;
+      color: #ffff;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .reach-us-btn:hover {
+      background: #3948c6;
+      transform: translateY(-3px);
+    }
+
+
+    /* ===== Responsive ===== */
+
+    @media (max-width: 992px) {
+      .contact-overlay {
+        padding: 60px;
+      }
+
+      .contact-content h2 {
+        font-size: 38px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .new-contact-section {
+        padding: 0 4%;
+        margin: 40px auto;
+      }
+
+      .contact-overlay {
+        justify-content: center;
+        text-align: center;
+        padding: 50px 30px;
+      }
+
+      .contact-content {
+        max-width: 100%;
+      }
+
+      .contact-content h2 {
+        font-size: 30px;
+      }
+
+      .contact-content p {
+        font-size: 17px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-overlay {
+        padding: 40px 20px;
+      }
+
+      .contact-content h2 {
+        font-size: 26px;
+      }
+    }
   </style>
 </head>
-<body>
-  
-<header>
-  <a href="index.html" class="logo-section">
-    <img src="Images/Logo.jpeg" alt="Parnika Properties Logo">
-    <h2>Parnika Properties</h2>
-  </a>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="our-services.html">Services</a>
-    <a href="projects.html">Projects</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
 
-  </nav>
+<body>
+
+  <header>
+    <a href="index.html" class="logo-section">
+      <img src="Images/Logo.jpeg" alt="Parnika Properties Logo">
+      <h2>Parnika Properties</h2>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="our-services.html">Our Services</a>
+      <div class="projects-menu">
+
+        <a href="#" class="projects-btn">Our Projects ▾</a>
+
+        <div class="mega-projects">
+
+          <div class="project-list">
+
+            <a href="platinum-avenue.html" class="project-link">
+              <div class="project-title">Platinum Avenue</div>
+              <div class="project-location"></div>
+            </a>
+
+            <a href="platinum-vista.html" class="project-link">
+              <div class="project-title">Platinum Vista</div>
+              <div class="project-location"></div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-menu">
+
+        <a href="#" class="gallery-btn">Gallery ▾</a>
+
+        <div class="mega-gallery">
+
+          <div class="gallery-list">
+
+            <a href="platinum-avenue-gallery.html" class="gallery-link">
+              <div class="gallery-title">Platinum Avenue-gallery</div>
+              <div class="gallery-location"></div>
+            </a>
+
+            <a href="platinum-vista-gallery.html" class="gallery-link">
+              <div class="gallery-title">Platinum Vista-gallery</div>
+              <div class="gallery-location"></div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+      <a href="contact.html">Contact</a>
+
+    </nav>
     <div class="social-icons">
       <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.407.593 24 1.324 24h11.495v-9.294H9.691v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.676V1.324C24 .593 23.407 0 22.676 0z"/>
+          <path
+            d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.407.593 24 1.324 24h11.495v-9.294H9.691v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.676V1.324C24 .593 23.407 0 22.676 0z" />
         </svg>
       </a>
       <a href="https://in.pinterest.com/parnikapropertieshyd/" target="_blank" aria-label="Pinterest">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" fill="currentColor">
-          <path d="M496 256c0 137-111 248-248 248S0 393 0 256 111 8 248 8s248 111 248 248zm-276.4 39.7c-5.1 22.3-10 43.5-21.4 64.5-6 11.3-13.3 22-23.9 28.3-7.3 4.3-16 4.9-23.7 3-17.5-4.1-18.2-17.3-9-32.6 6-10 10.9-20.6 14.3-31.5 4.4-15.4 8-30.9 11.2-46.5 3.2-15.4 6-31.2 8.7-46.9 1.9-11.1 3.6-22.3 5.4-33.4 3.1-19.8 6.4-39.6 9.7-59.4 1-5.9 1.8-12 .1-17.8-3.4-15-18.4-23-33.1-17.5-15.6 6-28.1 18-37.1 33.1-22.3 36.9-34.4 77.6-34.4 120.2 0 14.6 1.4 29.2 3.9 43.6 4.2 23.8 13.7 46.4 28.4 64.5 6.6 7.6 14.3 14.2 22.7 19.2 10.9 6.7 23 10.7 35.3 13.6 2.3 .6 4.6 1 6.9 1.4 13.1 2 26.6 3.6 39.8 5.4 14.9 1.9 28.4-4.3 34.8-17.9 6.3-13.6 3.8-27.5 2.2-41.4-2.6-22.4-5.2-44.7-7.5-67.1zm-104.8-86.7c-13.8-3.4-22.7-17-19.3-30.8 3.4-13.8 17-22.7 30.8-19.3 13.8 3.4 22.7 17 19.3 30.8-3.4 13.8-17 22.7-30.8 19.3z"/>
+          <path
+            d="M496 256c0 137-111 248-248 248S0 393 0 256 111 8 248 8s248 111 248 248zm-276.4 39.7c-5.1 22.3-10 43.5-21.4 64.5-6 11.3-13.3 22-23.9 28.3-7.3 4.3-16 4.9-23.7 3-17.5-4.1-18.2-17.3-9-32.6 6-10 10.9-20.6 14.3-31.5 4.4-15.4 8-30.9 11.2-46.5 3.2-15.4 6-31.2 8.7-46.9 1.9-11.1 3.6-22.3 5.4-33.4 3.1-19.8 6.4-39.6 9.7-59.4 1-5.9 1.8-12 .1-17.8-3.4-15-18.4-23-33.1-17.5-15.6 6-28.1 18-37.1 33.1-22.3 36.9-34.4 77.6-34.4 120.2 0 14.6 1.4 29.2 3.9 43.6 4.2 23.8 13.7 46.4 28.4 64.5 6.6 7.6 14.3 14.2 22.7 19.2 10.9 6.7 23 10.7 35.3 13.6 2.3 .6 4.6 1 6.9 1.4 13.1 2 26.6 3.6 39.8 5.4 14.9 1.9 28.4-4.3 34.8-17.9 6.3-13.6 3.8-27.5 2.2-41.4-2.6-22.4-5.2-44.7-7.5-67.1zm-104.8-86.7c-13.8-3.4-22.7-17-19.3-30.8 3.4-13.8 17-22.7 30.8-19.3 13.8 3.4 22.7 17 19.3 30.8-3.4 13.8-17 22.7-30.8 19.3z" />
         </svg>
       </a>
       <a href="https://www.instagram.com/parnikaproperties_hyd/" target="_blank" aria-label="Instagram">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
-          <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.6 339 255.9 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.3c0 14.9-12.1 27-27 27-14.9 0-27-12.1-27-27s12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.3-93.7s-58-34.6-93.7-36.3c-37-2.1-147.9-2.1-184.9 0-35.7 1.7-67.3 9.9-93.7 36.3s-34.6 58-36.3 93.7c-2.1 37-2.1 147.9 0 184.9 1.7 35.7 9.9 67.3 36.3 93.7s58 34.6 93.7 36.3c37 2.1 147.9 2.1 184.9 0 35.7-1.7 67.3-9.9 93.7-36.3s34.6-58 36.3-93.7c2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.4 42.4-29.4 11.7-99.2 9-132.4 9s-103 .2-132.4-9c-19.6-7.8-34.7-22.9-42.4-42.4-11.7-29.4-9-99.2-9-132.4s-.2-103 9-132.4c7.8-19.6 22.9-34.7 42.4-42.4 29.4-11.7 99.2-9 132.4-9s103-.2 132.4 9c19.6 7.8 34.7 22.9 42.4 42.4 11.7 29.4 9 99.2 9 132.4s.2 103-9 132.4z"/>
+          <path
+            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.6 339 255.9 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.3c0 14.9-12.1 27-27 27-14.9 0-27-12.1-27-27s12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.3-93.7s-58-34.6-93.7-36.3c-37-2.1-147.9-2.1-184.9 0-35.7 1.7-67.3 9.9-93.7 36.3s-34.6 58-36.3 93.7c-2.1 37-2.1 147.9 0 184.9 1.7 35.7 9.9 67.3 36.3 93.7s58 34.6 93.7 36.3c37 2.1 147.9 2.1 184.9 0 35.7-1.7 67.3-9.9 93.7-36.3s34.6-58 36.3-93.7c2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.4 42.4-29.4 11.7-99.2 9-132.4 9s-103 .2-132.4-9c-19.6-7.8-34.7-22.9-42.4-42.4-11.7-29.4-9-99.2-9-132.4s-.2-103 9-132.4c7.8-19.6 22.9-34.7 42.4-42.4 29.4-11.7 99.2-9 132.4-9s103-.2 132.4 9c19.6 7.8 34.7 22.9 42.4 42.4 11.7 29.4 9 99.2 9 132.4s.2 103-9 132.4z" />
         </svg>
       </a>
       <a href="https://web.telegram.org/k/#@ParnikaHydFlats" target="_blank" aria-label="Telegram">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
-          <path d="M446.7 74.3c-2.8-9.7-11.9-15.3-21.4-13.5L25.3 180.1c-10.4 2.4-17.5 12-16.3 22.5 1.2 10.4 9.9 18.1 20.3 18.1h79.1l-11.4 120.6c-1.6 16.9 13.1 30.6 30 28.1l41.9-8.7 80 94.3c10.8 12.7 29.1 8.4 34.1-7.9l153.1-449.2c2.5-7.2 .3-15-6-19.7z"/>
+          <path
+            d="M446.7 74.3c-2.8-9.7-11.9-15.3-21.4-13.5L25.3 180.1c-10.4 2.4-17.5 12-16.3 22.5 1.2 10.4 9.9 18.1 20.3 18.1h79.1l-11.4 120.6c-1.6 16.9 13.1 30.6 30 28.1l41.9-8.7 80 94.3c10.8 12.7 29.1 8.4 34.1-7.9l153.1-449.2c2.5-7.2 .3-15-6-19.7z" />
         </svg>
       </a>
     </div>
-  <div class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</header>
-<div class="menu-overlay"></div>
-
-<section class="hero" id="home">
-  <!-- <video class="hero-video" autoplay muted playsinline>
-    <source src="videos/video1.mp4"type="video/mp4">
-    <source src="videos/video4.mp4" type="video/mp4">
-  </video> -->
-  <video id="heroVideo" class="hero-video" autoplay muted playsinline>
-    <source src="videos/video1.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="hero-content animate">
-    <h1>Trusted Residential &amp; Commercial Developments</h1>
-    <p class="hero-subtext">We build with passion, integrity and vision. Your future, our commitment.</p>
-    <div class="hero-buttons">
-      <a href="about.html" class="btn primary-btn">About Us</a>
-      <a href="projects.html" class="btn secondary-btn">View Projects</a>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </div>
-</section>
+  </header>
+  <div class="menu-overlay"></div>
 
-<section id="achievements">
-  <h2 class="section-title">Achievements</h2>
-  <div class="stats-grid">
-    <div class="stat-box" data-target="15">
-      <div class="stat-icon">🕒</div>
-      <div class="stat-number">0<span class="stat-plus">+</span></div>
-      <div class="stat-label">Years of Experience</div>
-    </div>
-    <div class="stat-box" data-target="10000">
-      <div class="stat-icon">😊</div>
-      <div class="stat-number">0<span class="stat-plus">+</span></div>
-      <div class="stat-label">Happy Customers</div>
-    </div>
-    <div class="stat-box" data-target="25">
-      <div class="stat-icon">🏗️</div>
-      <div class="stat-number">0<span class="stat-plus">+</span></div>
-      <div class="stat-label">Successful Projects</div>
-    </div>
-    <div class="stat-box" data-target="100">
-      <div class="stat-icon">📈</div>
-      <div class="stat-number">0<span class="stat-plus">%</span></div>
-      <div class="stat-label">Success Rate</div>
-    </div>
-  </div>
-</section>
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <video class="hero-video" autoplay muted playsinline loop>
+      <source src="videos/video1.mp4" type="video/mp4">
+      <source src="videos/video4.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>
+        Trusted Residential &<br>
+        <span>Commercial Developments</span>
+      </h1>
+      <p>
+        Platinum Projects and Estates operates as an integrated real estate
+        development and construction group delivering quality residential
+        and commercial projects with transparency and long-term value.
+      </p>
 
-<section id="vision-mission">
-  <h2 class="section-title">Core Values<br><span class="subtitle">Excellence built through passion and commitment</span></h2>
-  <div class="vm-grid">
-    <div class="vm-box">
-      👁️ <strong>Vision</strong>
-      <p>To become a trusted real estate brand delivering sustainable, high-quality developments that enhance lifestyles, ensure transparency, and create long-term value for customers and investors.</p>
+      <div class="hero-buttons">
+        <a href="about.html" class="btn primary-btn">About Us →</a>
+        <a href="platinum-avenue.html" class="btn secondary-btn">View Projects →</a>
+      </div>
     </div>
-    <div class="vm-box">
-      🎯 <strong>Mission</strong>
-      <p>To plan, develop, and deliver residential and commercial projects through quality construction, regulatory compliance, efficient execution, transparent practices, and customer-focused solutions with lasting value.</p>
-    </div>
-    <div class="vm-box">
-      🏁 <strong>Goals</strong>
-      <p>To achieve consistent project excellence, timely delivery, customer satisfaction, sustainable growth, strong partnerships, and long-term profitability across all real estate developments nationwide.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
+  <!-- ACHIEVEMENTS SECTION -->
+  <section class="achievements-section">
+    <h5 class="achievements-title">ACHIEVEMENTS</h5>
 
-<section id="about">
-  <h2 class="section-title">About Parnika Properties</h2>
-  <p>
-    Parnika Properties is a trusted name in premium real estate solutions, committed to delivering excellence, transparency, and long-term value.
-  </p>
-  <p>
-    We specialize in residential and commercial property services, offering carefully selected properties that meet modern lifestyle standards and investment expectations.
-  </p>
-  <p>
-    At Parnika Properties, we believe real estate is not just about buying and selling — it’s about building trust, creating opportunities, and helping our clients make confident decisions.
-  </p>
-  <p>
-    Our expert team combines market knowledge, ethical practices, and personalized service to ensure a seamless property journey from consultation to final transaction.
-  </p>
-  <div class="about-features">
-    <ul>
-      <li>Premium residential properties</li>
-      <li>High-growth investment opportunities</li>
-      <li>Commercial property solutions</li>
-      <li>End-to-end legal & documentation support</li>
-    </ul>
-  </div>
-  <p>
-    Our mission is to redefine property experiences with professionalism, integrity, and unmatched service quality.
-  </p>
-</section>
+    <div class="achievements-container">
 
-<section id="why">
-  <div class="container">
-    <h2 class="section-title">Why Choose Us</h2>
-
-    <div class="why-grid">
-
-      <div class="why-box">
-        <h3>Trusted & Transparent</h3>
-        <p>Complete transparency at every stage. No hidden costs. Just clear communication and honest guidance.</p>
+      <div class="achievement-card">
+        <div class="icon-circle">⭐</div>
+        <h3>15+</h3>
+        <p>Years Of Experience</p>
       </div>
 
-      <div class="why-box">
-        <h3>Market Expertise</h3>
-        <p>Strong real estate insights and pricing strategies that help you make confident and profitable decisions.</p>
+      <div class="achievement-card">
+        <div class="icon-circle">👥</div>
+        <h3>10k+</h3>
+        <p>Happy Customers</p>
       </div>
 
-      <div class="why-box">
-        <h3>Premium Portfolio</h3>
-        <p>Carefully curated residential and commercial properties aligned with modern lifestyle standards.</p>
+      <div class="achievement-card">
+        <div class="icon-circle">🏢</div>
+        <h3>25+</h3>
+        <p>Successful Projects</p>
       </div>
 
-      <div class="why-box">
-        <h3>End-to-End Support</h3>
-        <p>From consultation to documentation and registration, we manage everything seamlessly.</p>
-      </div>
-
-      <div class="why-box">
-        <h3>Client-First Approach</h3>
-        <p>We focus on building long-term relationships through reliability and service excellence.</p>
-      </div>
-
-      <div class="why-box">
-        <h3>Professional Excellence</h3>
-        <p>High standards, ethical practices, and commitment to delivering premium service quality.</p>
+      <div class="achievement-card">
+        <div class="icon-circle">📊</div>
+        <h3>100%</h3>
+        <p>Success Rates</p>
       </div>
 
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="projects">
-  <h2 class="section-title">Featured Projects</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="Images/image 1.jpeg" alt="Platinum Vista – Manikonda">
-      <div class="content">
-        <h3>Platinum Vista I II& III– Manikonda</h3>
-        <p>Modern 2 BHK flats near IT hubs with premium amenities.</p>
-        <p><a href="https://www.google.com/maps/place/17.410528,78.379033" target="_blank" style="color:#2563eb;text-decoration:none">📍 Manikonda, Hyderabad, Telangana</a></p>
+  <section id="vision-mission">
+    <h2 class="section-title">Core Values<br><span class="subtitle">Excellence built through passion and
+        commitment</span></h2>
+    <div class="vm-grid">
+      <div class="vm-box">
+        👁️ <strong>Vision</strong>
+        <p>To become a trusted real estate brand delivering sustainable, high-quality developments that enhance
+          lifestyles, ensure transparency, and create long-term value for customers and investors.</p>
+      </div>
+      <div class="vm-box">
+        🎯 <strong>Mission</strong>
+        <p>To plan, develop, and deliver residential and commercial projects through quality construction, regulatory
+          compliance, efficient execution, transparent practices, and customer-focused solutions with lasting value.</p>
+      </div>
+      <div class="vm-box">
+        🏁 <strong>Goals</strong>
+        <p>To achieve consistent project excellence, timely delivery, customer satisfaction, sustainable growth, strong
+          partnerships, and long-term profitability across all real estate developments nationwide.</p>
       </div>
     </div>
-    <div class="card">
-      <img src="Images/image (2).png" alt="Platinum Avenue – Patancheru">
-      <div class="content">
-        <h3>Platinum Avenue I,II,III & IV – Patancheru</h3>
-        <p>Spacious apartments in a prime location, perfect for families.</p>
-        <p><a href="https://www.google.com/maps/place/17.53659732784227,78.25672744284006" target="_blank" style="color:#2563eb;text-decoration:none">📍 Patancheru, Hyderabad, Telangana</a></p>
+  </section>
+
+
+  <section id="about">
+    <h2 class="section-title">About Parnika Properties</h2>
+    <p>
+      Parnika Properties is a trusted name in premium real estate solutions, committed to delivering excellence,
+      transparency, and long-term value.
+    </p>
+    <p>
+      We specialize in residential and commercial property services, offering carefully selected properties that meet
+      modern lifestyle standards and investment expectations.
+    </p>
+    <p>
+      At Parnika Properties, we believe real estate is not just about buying and selling — it’s about building trust,
+      creating opportunities, and helping our clients make confident decisions.
+    </p>
+    <p>
+      Our expert team combines market knowledge, ethical practices, and personalized service to ensure a seamless
+      property journey from consultation to final transaction.
+    </p>
+    <div class="about-features">
+      <ul>
+        <li>Premium residential properties</li>
+        <li>High-growth investment opportunities</li>
+        <li>Commercial property solutions</li>
+        <li>End-to-end legal & documentation support</li>
+      </ul>
+    </div>
+    <p>
+      Our mission is to redefine property experiences with professionalism, integrity, and unmatched service quality.
+    </p>
+  </section>
+
+  <section id="why">
+    <div class="container">
+      <h2 class="section-title">Why Choose Us</h2>
+
+      <div class="why-grid">
+
+        <div class="why-box">
+          <h3>Trusted & Transparent</h3>
+          <p>Complete transparency at every stage. No hidden costs. Just clear communication and honest guidance.</p>
+        </div>
+
+        <div class="why-box">
+          <h3>Market Expertise</h3>
+          <p>Strong real estate insights and pricing strategies that help you make confident and profitable decisions.
+          </p>
+        </div>
+
+        <div class="why-box">
+          <h3>Premium Portfolio</h3>
+          <p>Carefully curated residential and commercial properties aligned with modern lifestyle standards.</p>
+        </div>
+
+        <div class="why-box">
+          <h3>End-to-End Support</h3>
+          <p>From consultation to documentation and registration, we manage everything seamlessly.</p>
+        </div>
+
+        <div class="why-box">
+          <h3>Client-First Approach</h3>
+          <p>We focus on building long-term relationships through reliability and service excellence.</p>
+        </div>
+
+        <div class="why-box">
+          <h3>Professional Excellence</h3>
+          <p>High standards, ethical practices, and commitment to delivering premium service quality.</p>
+        </div>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="gallery">
-  <h2 class="section-title">Gallery</h2>
-  <div class="grid">
-    <img src="Images/4.jpeg" alt="gallery 1">
-    <img src="Images/games.jpeg" alt="gallery 2">
-    <img src="Images/image 1.jpeg" alt="gallery 3">
-    <img src="Images/jym.jpeg" alt="Gallery 4">
-    <img src="Images/image (2).png" alt="Gallery 5">
-    <img src="Images/5.jpeg" alt="Gallery 6">
-  </div>
-</section>
+  <section class="projects-section">
+    <div class="projects-header">
+      <p class="mini-title">OUR PROJECTS</p>
+      <h2>Quality Projects. <span>Trusted Developments.</span></h2>
+    </div>
 
-<section id="contact">
-  <h2 class="section-title">Contact Us</h2>
-  <div class="contact-box">
-    <div class="box contact-info">
-      <h3>Get in Touch</h3>
-      <p><strong>Parnika Properties</strong></p>
+    <div class="projects-container">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img src="Images/image 1.jpeg" alt="Platinum Vista – Manikonda">
+        <div class="project-info">
+          <h3>Platinum Vista I, II, III @ Manikonda</h3>
+          <div class="project-meta">
+            <span>📅 Start: Dec 2023</span>
+            <span>🏁 Handover:Ready to move</span>
+          </div>
+        </div>
+      </div>
 
-      <p>📞 <a href="tel:+919866711002">+91 9866711002</a></p>
-      <p>📞 <a href="tel:+918897377477">+91 8897377477</a></p>
-      <p>📧 <a href="mailto:sales@parnikaproperties.com">sales@parnikaproperties.com</a></p>
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="Images/image (2).png" alt="Platinum Avenue – Patancheru">
+        <div class="project-info">
+          <h3>Platinum Avenue I, II, III, IV @ Patancheru</h3>
+          <div class="project-meta">
+            <span>📅 Start: Mar 2024</span>
+            <span>🏁 Handover:Ready to move</span>
+          </div>
+        </div>
+      </div>
 
-      <!-- single static map embed -->
-      <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.4968069189963!2d78.34433297493821!3d17.531517983380393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8d00182f0791%3A0x265b5d733b562217!2sMRI%20Residency!5e0!3m2!1sen!2sin!4v1772696730519!5m2!1sen!2sin" width="100%" height="450" style="border:0; border-radius:14px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <!-- Project 3 -->
+      <div class="project-card">
+        <img src="Images/4.jpeg" alt="Platinum Vista – Manikonda">
+        <div class="project-info">
+          <h3>Platinum Vista @ Manikonda</h3>
+          <div class="project-meta">
+            <span>📅 Start: May 2024</span>
+            <span>🏁 Handover: Ready to move</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card">
+        <img src="Images/IndividualHouse@Patancheruvu.webp" alt="Individual House – Patancheruvu">
+        <div class="project-info">
+          <h3>Individual House @ Patancheruvu</h3>
+          <div class="project-meta">
+            <span>📅 Start: Jun 2024</span>
+            <span>🏁 Handover: Ready to move</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="new-contact-section">
+    <div class="contact-overlay">
+      <div class="contact-content">
+        <h2>Ready to Find Your Dream Home?</h2>
+        <p>Contact us today to explore our premium properties and start your journey towards owning the perfect space.
+        </p>
+        <a href="contact.html" class="reach-us-btn">Reach Us Today</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <!-- Logo & About -->
+      <div class="footer-about">
+
+        <img src="Images/Logo.jpeg" class="footer-logo">
+
+        <p>
+          Developing high-quality residential communities and commercial spaces with innovation, trust, and excellence.
+        </p>
+
+        <h4>FOLLOW US ON :</h4>
+
+        <div class="social-icons">
+          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.407.593 24 1.324 24h11.495v-9.294H9.691v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.676V1.324C24 .593 23.407 0 22.676 0z" />
+            </svg>
+          </a>
+          <a href="https://in.pinterest.com/parnikapropertieshyd/" target="_blank" aria-label="Pinterest">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" fill="currentColor">
+              <path
+                d="M496 256c0 137-111 248-248 248S0 393 0 256 111 8 248 8s248 111 248 248zm-276.4 39.7c-5.1 22.3-10 43.5-21.4 64.5-6 11.3-13.3 22-23.9 28.3-7.3 4.3-16 4.9-23.7 3-17.5-4.1-18.2-17.3-9-32.6 6-10 10.9-20.6 14.3-31.5 4.4-15.4 8-30.9 11.2-46.5 3.2-15.4 6-31.2 8.7-46.9 1.9-11.1 3.6-22.3 5.4-33.4 3.1-19.8 6.4-39.6 9.7-59.4 1-5.9 1.8-12 .1-17.8-3.4-15-18.4-23-33.1-17.5-15.6 6-28.1 18-37.1 33.1-22.3 36.9-34.4 77.6-34.4 120.2 0 14.6 1.4 29.2 3.9 43.6 4.2 23.8 13.7 46.4 28.4 64.5 6.6 7.6 14.3 14.2 22.7 19.2 10.9 6.7 23 10.7 35.3 13.6 2.3 .6 4.6 1 6.9 1.4 13.1 2 26.6 3.6 39.8 5.4 14.9 1.9 28.4-4.3 34.8-17.9 6.3-13.6 3.8-27.5 2.2-41.4-2.6-22.4-5.2-44.7-7.5-67.1zm-104.8-86.7c-13.8-3.4-22.7-17-19.3-30.8 3.4-13.8 17-22.7 30.8-19.3 13.8 3.4 22.7 17 19.3 30.8-3.4 13.8-17 22.7-30.8 19.3z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/parnikaproperties_hyd/" target="_blank" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+              <path
+                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.6 339 255.9 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.3c0 14.9-12.1 27-27 27-14.9 0-27-12.1-27-27s12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.3-93.7s-58-34.6-93.7-36.3c-37-2.1-147.9-2.1-184.9 0-35.7 1.7-67.3 9.9-93.7 36.3s-34.6 58-36.3 93.7c-2.1 37-2.1 147.9 0 184.9 1.7 35.7 9.9 67.3 36.3 93.7s58 34.6 93.7 36.3c37 2.1 147.9 2.1 184.9 0 35.7-1.7 67.3-9.9 93.7-36.3s34.6-58 36.3-93.7c2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.4 42.4-29.4 11.7-99.2 9-132.4 9s-103 .2-132.4-9c-19.6-7.8-34.7-22.9-42.4-42.4-11.7-29.4-9-99.2-9-132.4s-.2-103 9-132.4c7.8-19.6 22.9-34.7 42.4-42.4 29.4-11.7 99.2-9 132.4-9s103-.2 132.4 9c19.6 7.8 34.7 22.9 42.4 42.4 11.7 29.4 9 99.2 9 132.4s.2 103-9 132.4z" />
+            </svg>
+          </a>
+          <a href="https://web.telegram.org/k/#@ParnikaHydFlats" target="_blank" aria-label="Telegram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+              <path
+                d="M446.7 74.3c-2.8-9.7-11.9-15.3-21.4-13.5L25.3 180.1c-10.4 2.4-17.5 12-16.3 22.5 1.2 10.4 9.9 18.1 20.3 18.1h79.1l-11.4 120.6c-1.6 16.9 13.1 30.6 30 28.1l41.9-8.7 80 94.3c10.8 12.7 29.1 8.4 34.1-7.9l153.1-449.2c2.5-7.2 .3-15-6-19.7z" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+
+      <!-- Quick Links -->
+      <div class="footer-column">
+
+        <h3>Quick links</h3>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="our-services.html">Services</a></li>
+          <li><a href="platinum-vista-gallery.html">Gallery Of Platinum Vista Projects</a></li>
+          <li><a href="platinum-avenue-gallery.html">Gallery Of Platinum Avenue Projects</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+
+      </div>
+
+
+      <!-- Services -->
+      <div class="footer-column">
+
+        <h3>Our Services</h3>
+        <a href="our-services.html">
+
+          <ul>
+            <li>Residential Building Construction</li>
+            <li>Commercial Construction</li>
+            <li>Real Estate Development</li>
+            <li>Property Promotion</li>
+            <li>Flats & Villas Development</li>
+            <li>Land Development & Plotting</li>
+            <li>Project Consultancy</li>
+            <li>Civil Construction Works</li>
+            <li>Property Sales & Marketing</li>
+          </ul>
+        </a>
+
+      </div>
+
+
+      <!-- Projects -->
+      <div class="footer-column">
+
+        <h3>Our Projects</h3>
+
+        <ul>
+          <li><a href="platinum-avenue.html">Platinum Avenue Projects</a></li>
+          <li><a href="platinum-vista.html">Platinum Vista Projects</a></li>
+        </ul>
+
+      </div>
+
+
+      <!-- Contact -->
+      <div class="footer-column">
+
+        <h3>Contact Us</h3>
+        <ul class="contact-info">
+          <li>
+            <span class="icon">📞</span>
+            <a href="tel:+919866711002">+91 98667 11002</a>
+          </li>
+
+          <li>
+            <span class="icon">📞</span>
+            <a href="tel:+918897377477">+91 88973 77477</a>
+          </li>
+
+          <li>
+            <span class="icon">✉</span>
+            <a href="mailto:sales@parnikaproperties.com">
+              sales@parnikaproperties.com
+            </a>
+          </li>
+
+          <ul class="contact-info">
+            <li>
+              <span class="icon">📍</span>
+              <a href="https://www.google.com/maps?q=MRI+Residency+Road+No.5+Sai+Anurag+Colony+Ameenpur+Miyapur+Sangareddy+Telangana+502033"
+                target="_blank" class="address-link">
+                Flat No.102, 1st Floor, Plot No.107,<br>
+                MRI Residency, Road No.5,<br>
+                Sai Anurag Colony, Ameenpur,<br>
+                Miyapur, Sangareddy District,<br>
+                Telangana State – 502033.
+              </a>
+            </li>
+          </ul>
+        </ul>
       </div>
 
     </div>
-    <!-- FORM -->
-    <div class="box">
-      <h3>Enquiry Form</h3>
-      <form onsubmit="sendWhatsApp(); return false;">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="tel" id="phone" placeholder="Phone Number" required>
-        <input type="email" id="email" placeholder="Email">
-        <textarea id="message" placeholder="Message"></textarea>
-        <button type="submit">Send Enquiry</button>
-      </form>
+
+
+    <!-- Bottom Footer -->
+
+    <div class="footer-bottom">
+
+      <p>© Copyright 2026 Platinum Projects. All Rights Reserved.</p>
+
+      <p>Design and Developed by Parnika Properties</p>
+
     </div>
-  </div>
-</section>
 
-<footer>
-  <p>© 2026 Parnika Properties. All Rights Reserved.</p>
-</footer>
-<a href="https://wa.me/918897377477" target="_blank" class="whatsapp-btn">💬</a>
+  </footer>
+  <a href="https://wa.me/918897377477" target="_blank" class="whatsapp-btn">💬</a>
 
-<script>
-// Hamburger Menu
-const hamburger = document.querySelector('.hamburger');
-const nav = document.querySelector('nav');
-const menuOverlay = document.querySelector('.menu-overlay');
+  <script>
+    // Hamburger Menu
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+    const menuOverlay = document.querySelector('.menu-overlay');
 
-function toggleMenu() {
-  hamburger.classList.toggle('active');
-  nav.classList.toggle('active');
-  menuOverlay.classList.toggle('active');
-}
-
-hamburger.addEventListener('click', toggleMenu);
-
-// Close menu when overlay is clicked
-menuOverlay.addEventListener('click', function(){
-  hamburger.classList.remove('active');
-  nav.classList.remove('active');
-  menuOverlay.classList.remove('active');
-});
-
-// Close menu when link is clicked
-nav.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', function(){
-    hamburger.classList.remove('active');
-    nav.classList.remove('active');
-    menuOverlay.classList.remove('active');
-  });
-});
-
-// animate header elements on load
-document.addEventListener('DOMContentLoaded', () => {
-  const logo = document.querySelector('.logo-section');
-  if (logo) {
-    logo.style.opacity = '1';
-    logo.style.animation = 'fadeInUp 0.8s ease-out forwards';
-  }
-  document.querySelectorAll('nav a').forEach((a, idx) => {
-    a.style.opacity = '1';
-    a.style.animation = 'fadeInUp 0.8s ease-out forwards';
-    a.style.animationDelay = (0.2 + idx * 0.1) + 's';
-  });
-});
-
-
-
-function sendWhatsApp() {
-  const name = document.getElementById("name").value;
-  const phone = document.getElementById("phone").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
-
-  const text =
-    `Hello Parnika Properties,
-Name: ${name}
-Phone: ${phone}
-Email: ${email}
-Message: ${message}`;
-
-  window.open(
-    "https://wa.me/918897377477?text=" + encodeURIComponent(text),
-    "_blank"
-  );
-}
-
-// animate elements when they scroll into view
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.style.opacity='1';
-      entry.target.style.animation='fadeInUp 0.8s ease-out forwards';
-      observer.unobserve(entry.target);
+    function toggleMenu() {
+      hamburger.classList.toggle('active');
+      nav.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
     }
-  });
-},{threshold:0.2});
 
-[...document.querySelectorAll('section, .card, .gallery-item, .project, .box, .about-block, .status-box, .hero-content, .features li, .why-box, .about-features li')].forEach(el=>observer.observe(el));
+    hamburger.addEventListener('click', toggleMenu);
 
-const stats = document.querySelectorAll('.stat-box');
+    // Close menu when overlay is clicked
+    menuOverlay.addEventListener('click', function () {
+      hamburger.classList.remove('active');
+      nav.classList.remove('active');
+      menuOverlay.classList.remove('active');
+    });
 
-const statsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
+    // Close menu when link is clicked
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function () {
+        hamburger.classList.remove('active');
+        nav.classList.remove('active');
+        menuOverlay.classList.remove('active');
+      });
+    });
 
-      const box = entry.target;
-      const numEl = box.querySelector('.stat-number');
-      const target = parseInt(box.dataset.target);
+    // animate header elements on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const logo = document.querySelector('.logo-section');
+      if (logo) {
+        logo.style.opacity = '1';
+        logo.style.animation = 'fadeInUp 0.8s ease-out forwards';
+      }
+      document.querySelectorAll('nav a').forEach((a, idx) => {
+        a.style.opacity = '1';
+        a.style.animation = 'fadeInUp 0.8s ease-out forwards';
+        a.style.animationDelay = (0.2 + idx * 0.1) + 's';
+      });
+    });
 
-      let count = 0;
-      const increment = Math.ceil(target / 80);
 
-      const interval = setInterval(() => {
-        count += increment;
 
-        if (count >= target) {
-          count = target;
-          clearInterval(interval);
+    // animate elements when they scroll into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    [...document.querySelectorAll('section, .card, .gallery-item, .project, .box, .about-block, .status-box, .hero-content, .features li, .why-box, .about-features li')].forEach(el => observer.observe(el));
+
+    const stats = document.querySelectorAll('.stat-box');
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+
+          const box = entry.target;
+          const numEl = box.querySelector('.stat-number');
+          const target = parseInt(box.dataset.target);
+
+          let count = 0;
+          const increment = Math.ceil(target / 80);
+
+          const interval = setInterval(() => {
+            count += increment;
+
+            if (count >= target) {
+              count = target;
+              clearInterval(interval);
+            }
+
+            // 🔥 K FORMAT LOGIC
+            if (target >= 1000) {
+              numEl.childNodes[0].data = Math.floor(count / 1000) + "k";
+            } else {
+              numEl.childNodes[0].data = count;
+            }
+
+          }, 20);
+
+          statsObserver.unobserve(box);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    stats.forEach(stat => statsObserver.observe(stat));
+
+    // Counter animation
+    const counters = document.querySelectorAll('.counter');
+
+    counters.forEach(counter => {
+
+      counter.innerText = '0';
+
+      const updateCounter = () => {
+
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+
+        const increment = target / 100;
+
+        if (count < target) {
+          counter.innerText = `${Math.ceil(count + increment)}`;
+          setTimeout(updateCounter, 20);
+        }
+        else {
+          counter.innerText = target;
         }
 
-        // 🔥 K FORMAT LOGIC
-        if (target >= 1000) {
-          numEl.childNodes[0].data = Math.floor(count / 1000) + "k";
-        } else {
-          numEl.childNodes[0].data = count;
+      };
+
+      updateCounter();
+
+    });
+
+    // smooth page transitions
+    document.querySelectorAll("a").forEach(link => {
+
+      link.addEventListener("click", function (e) {
+
+        const target = this.getAttribute("href");
+
+        if (target && target.endsWith(".html")) {
+
+          e.preventDefault();
+
+          document.body.style.opacity = "0";
+
+          setTimeout(() => {
+            window.location = target;
+          }, 300);
+
         }
 
-      }, 20);
+      });
 
-      statsObserver.unobserve(box);
-    }
-  });
-}, { threshold: 0.5 });
+    });
 
-stats.forEach(stat => statsObserver.observe(stat));
+    // Hero video playlist
+    const heroVideo = document.getElementById("heroVideo");
 
-// Hero video playlist
-const heroVideo = document.getElementById("heroVideo");
+    const videoList = [
+      "videos/video1.mp4",
+      "videos/video4.mp4"
+    ];
 
-const videoList = [
-  "videos/video1.mp4",
-  "videos/video4.mp4"
-];
+    let currentVideo = 0;
 
-let currentVideo = 0;
+    heroVideo.addEventListener("ended", function () {
+      currentVideo++;
 
-heroVideo.addEventListener("ended", function () {
-  currentVideo++;
-  
-  if (currentVideo >= videoList.length) {
-    currentVideo = 0; // start again from first video
-  }
+      if (currentVideo >= videoList.length) {
+        currentVideo = 0; // start again from first video
+      }
 
-  heroVideo.src = videoList[currentVideo];
-  heroVideo.play();
-});
+      heroVideo.src = videoList[currentVideo];
+      heroVideo.play();
+    });
 
-</script>
+    const scrollBtn = document.getElementById("scrollTopBtn");
+
+    window.onscroll = function () {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollBtn.style.display = "flex";
+      }
+      else {
+        scrollBtn.style.display = "none";
+      }
+    };
+
+    scrollBtn.onclick = function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    };
+  </script>
+
+  <script src="script.js"></script>
+
+  <div id="scrollTopBtn">▲</div>
 
 </body>
+
 </html>

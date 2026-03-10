@@ -1,1023 +1,1895 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Parnika Properties</title>
-    <meta name="description" content="Parnika Properties is a trusted Hyderabad real estate developer delivering premium yet affordable homes with transparency and quality.">
-    <style>
-:root {
-  --h1-size: clamp(2rem, 5vw, 3.5rem);
-  --h2-size: clamp(1.5rem, 4vw, 2.5rem);
-  --h3-size: clamp(1.25rem, 3vw, 2rem);
-}
 
-    * { margin:0; padding:0; box-sizing:border-box; }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Parnika Properties</title>
+  <meta name="description"
+    content="Parnika Properties is a trusted Hyderabad real estate developer delivering premium yet affordable homes with transparency and quality.">
+  <style>
+    :root {
+      --h1-size: clamp(2rem, 5vw, 3.5rem);
+      --h2-size: clamp(1.5rem, 4vw, 2.5rem);
+      --h3-size: clamp(1.25rem, 3vw, 2rem);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     /* reset list styles to avoid default numbers or bullets */
-    ul, ol { list-style:none; padding-left:0; }
+    ul,
+    ol {
+      list-style: none;
+      padding-left: 0;
+    }
 
-/* professional fade-in animation for every element */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    /* professional fade-in animation for every element */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
 
-.animate, section, .card, .gallery-item, .project, .box, .about-block, .status-box, .hero-content, .features li, .why-box, .about-features li {
-  opacity:0;
-  animation: fadeIn 0.8s ease-out forwards;
-}
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-/* bumped sizes to align with services page */
-h2 { font-size: clamp(1.75rem, 4vw, 3rem); }
-h3 { font-size: 30px; }
+    @keyframes pageLoad {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-h1 { font-size: var(--h1-size); transition: color 0.3s ease; }
-h2 { font-size: var(--h2-size); transition: color 0.3s ease; }
-h3 { font-size: var(--h3-size); }
+    .animate,
+    section,
+    .card,
+    .gallery-item,
+    .project,
+    .box,
+    .about-block,
+    .status-box,
+    .hero-content,
+    .features li,
+    .why-box,
+    .about-features li {
+      opacity: 0;
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    /* bumped sizes to align with services page */
+    h2 {
+      font-size: clamp(1.75rem, 4vw, 3rem);
+    }
+
+    h3 {
+      font-size: 30px;
+    }
+
+    h1 {
+      font-size: var(--h1-size);
+      transition: color 0.3s ease;
+    }
+
+    h2 {
+      font-size: var(--h2-size);
+      transition: color 0.3s ease;
+    }
+
+    h3 {
+      font-size: var(--h3-size);
+    }
 
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
-      background:#f4f6f9;
-      color:#1e293b;
-      line-height:1.6;
+      background: #f4f6f9;
+      color: #1e293b;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      transform: translateY(15px);
+      animation: pageLoad .6s forwards;
     }
-    header {
-      background:#0f172a;
-      color:#fff;
-      padding:16px 60px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
-      position:sticky;
-      top:0;
-      z-index:1000;
-      border-radius:8px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.15);
-    }
-    header, header * { font-size:16px; }
 
-    
-    .logo-section {
-      display:flex;
-      align-items:center;
-      gap:12px;
-      white-space:nowrap;
+    header {
+      background: #0f172a;
+      color: #fff;
+      padding: 16px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
+
+    header,
+    header * {
+      font-size: 16px;
+    }
+
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+    }
+
     .logo-section img {
-      height:50px;
-      width:auto;
-      object-fit:contain;
-      flex-shrink:0;
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
     }
+
     .logo-section h2 {
-      font-size:24px;
-      font-weight:600;
-      margin:0;
-      white-space:nowrap;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0;
+      white-space: nowrap;
     }
+
     .logo-section {
-      text-decoration:none;
-      color:inherit;
-      cursor:pointer;
-      transition:opacity 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
     }
+
     .logo-section:hover {
-      opacity:0.8;
+      opacity: 0.8;
     }
-    nav{
-      display:flex;
-      align-items:center;
-      gap:20px;
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
+
     nav a {
-      color:#fff;
-      margin-left:20px;
-      text-decoration:none;
-      font-weight:500;
-      font-size:18px; /* match services page */
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      /* match services page */
       animation: fadeInUp 0.8s ease-out forwards;
-      animation-delay:0.2s;
+      animation-delay: 0.2s;
     }
-    nav a:hover { text-decoration:underline; }
+
+    nav>a:nth-of-type(1) {
+      animation-delay: 0.2s;
+    }
+
+    nav>a:nth-of-type(2) {
+      animation-delay: 0.4s;
+    }
+
+    nav>a:nth-of-type(3) {
+      animation-delay: 0.6s;
+    }
+
+    nav>a:nth-of-type(4) {
+      animation-delay: 1.2s;
+    }
+
+    .projects-btn {
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 0.8s;
+    }
+
+    .gallery-btn {
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 1.0s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
 
     .social-icons {
-      display:flex;
-      gap:12px;
+      display: flex;
+      gap: 12px;
     }
+
     .social-icons a {
-      color:#fff;
-      width:24px;
-      height:24px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      transition:opacity 0.3s;
+      color: #fff;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s;
     }
-    .social-icons a:hover { opacity:0.7; }
+
+    .social-icons a:hover {
+      opacity: 0.7;
+    }
 
     .hamburger {
-      display:none;
-      flex-direction:column;
-      cursor:pointer;
-      gap:6px;
-      position:relative;
-      z-index:1001;
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      position: relative;
+      z-index: 1001;
     }
+
     .hamburger span {
-      width:28px;
-      height:3px;
-      background:#facc15;
-      border-radius:2px;
-      transition:all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      transform-origin:center;
+      width: 28px;
+      height: 3px;
+      background: #facc15;
+      border-radius: 2px;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-origin: center;
     }
+
     .hamburger.active span:nth-child(1) {
-      transform:translateY(10px) rotate(45deg);
+      transform: translateY(10px) rotate(45deg);
     }
+
     .hamburger.active span:nth-child(2) {
-      opacity:0;
-      transform:scaleX(0);
+      opacity: 0;
+      transform: scaleX(0);
     }
+
     .hamburger.active span:nth-child(3) {
-      transform:translateY(-10px) rotate(-45deg);
+      transform: translateY(-10px) rotate(-45deg);
     }
 
     .menu-overlay {
-      display:none;
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      background:rgba(0,0,0,0.5);
-      z-index:999;
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
     }
 
     .menu-overlay.active {
-      display:block;
+      display: block;
     }
 
-    @media(max-width:768px){
-      header{
-        padding:14px 20px;
+    @media(max-width:768px) {
+      header {
+        padding: 14px 20px;
       }
-      .hamburger{
-        display:flex;
-      }
-      nav{
-        position:fixed;
-        top:70px;
-        right:0;
-        width:70%;
-        max-width:250px;
-        height:auto;
-        max-height:calc(100vh - 70px);
-        background:#0f172a;
-        flex-direction:column;
-        gap:0;
-        padding:20px 20px 20px 20px;
-        transform:translateX(100%);
-        transition:transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        box-shadow:-8px 0 16px rgba(0,0,0,0.3);
-        z-index:1000;
-        overflow-y:auto;
-      }
-      nav.active{
-        transform:translateX(0);
-      }
-      nav a{
-        margin:0;
-        padding:16px 0;
-        border-bottom:1px solid rgba(255,255,255,0.1);
-        display:block;
-        font-size:16px;
-      }
-      nav a::after{
-        display:none;
-      }
-    }
-
-.hero {
-  position: relative;
-  width: 100%;
-  min-height: 600px;
-  margin-top: 20px; /* add gap from sticky header */
-  margin-bottom: 40px; /* more space below for separation */
-  border-radius: 20px; /* curved corners for better aesthetics */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  padding: 60px 0; /* add vertical breathing room */
-}
-
-.hero-content { padding: 0 30px 40px; /* extra bottom space */ }
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* very light overlay so video shows clearly */
-  background: rgba(0,0,0,0.10);
-  z-index: 1;
-}
-
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: blur(2px);
-  z-index: 0;
-}
-
-/* simple drop‑in animation for hero content */
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.hero-content.animate { animation: fadeInDown 1s ease-out forwards; }
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  max-width: 900px;
-  padding: 0 30px;
-  color: #fff;
-}
-
-.hero-content h1, .hero-content p {
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-}
-
-.hero-content h1 {
-  font-size: 64px;
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 24px;
-  letter-spacing: -1px;
-}
-
-.hero-content h1 span {
-  color: #eec00a;
-  display: block;
-  margin-top: 0.75em; /* more breathing room above second line */
-}
-
-.hero-content p {
-  font-size: 22px;
-  margin-bottom: 40px;
-  line-height: 1.6;
-  color: #e2e8f0;
-}
-
-.hero-buttons {
-  margin-bottom: 60px;
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.hero-buttons .btn {
-  padding: 16px 32px;
-  font-weight: 700;
-  font-size: 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  display: inline-block;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-/* achievements styling */
-#achievements { text-align: center; background: linear-gradient(135deg, #7896d6 0%, #262a35 100%); color:#fff; padding:40px 0; border-radius:8px; margin:0 auto; max-width:1200px; }
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
-  gap: 15px;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px 0 50px;
-  justify-items: center;
-}
-.stat-box {
-  background: #fff;
-  padding: 20px 15px;
-  border-radius: 4px; /* more rectangular */
-  box-shadow: 0 8px 24px rgba(0,0,0,.08);
-  text-align: center;
-  font-size: 14px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: default;
-  min-width: 180px;
-}
-@keyframes blink {
-  0%,50%,100% { opacity:1; }
-  25%,75% { opacity:0.3; }
-}
-.stat-icon { font-size: 36px; margin-bottom: 8px; animation: blink 1.5s infinite; }
-.stat-number {
-  font-size: 40px;
-  font-weight: 700;
-  color: #2563eb;
-  margin-bottom: 8px;
-  display: block;
-}
-.stat-label { font-size: 16px; color:#111; }
-.stat-plus { font-size: 40px;  }
-
-.stat-box:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12x 36px rgba(0,0,0,.12);
-}
-
-/* count-up animation (simple scale) */
-@keyframes popIn {
-  from { transform: scale(0.6); opacity:0; }
-  to { transform: scale(1); opacity:1; }
-}
-.stat-number { animation: popIn 0.6s ease-out forwards; }
-.stat-box:nth-child(1) .stat-number { animation-delay: 0.1s; }
-.stat-box:nth-child(2) .stat-number { animation-delay: 0.3s; }
-.stat-box:nth-child(3) .stat-number { animation-delay: 0.5s; }
-.stat-box:nth-child(4) .stat-number { animation-delay: 0.7s; }
-
-/* vision/mission/goals */
-#vision-mission { background: #f8f9fb; padding: 40px 20px; }
-#vision-mission .section-title { margin-bottom: 40px; }
-#vision-mission .subtitle { display: block; font-size: 0.8em; font-weight:400; margin-top: 8px; color:#555; }
-.vm-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: left;
-  padding: 0;
-}
-.vm-box {
-  background: #fff;
-  padding: 25px 20px;
-  border-radius: 4px; /* straighter edges */
-  box-shadow: 0 4px 16px rgba(0,0,0,.06);
-  font-size: 18px;
-  line-height: 1.6;
-  opacity:0;
-  animation: fadeInUp 0.8s ease-out forwards;
-  transition: background 0.3s, color 0.3s;
-}
-.vm-box:hover {
-  background: #2563eb;
-  color: #fff;
-}
-.vm-box:hover .stat-icon,
-.vm-box:hover strong { color: #fff; }
-/* staggered entry */
-.vm-box:nth-child(1) { animation-delay: 0.2s; }
-.vm-box:nth-child(2) { animation-delay: 0.4s; }
-.vm-box:nth-child(3) { animation-delay: 0.6s; }
-.vm-box strong { display: block; margin-bottom: 8px; font-size: 20px; }
-.vm-box:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,.12); }
-
-@media(max-width:768px) {
-  .vm-box { font-size: 16px; padding: 20px; }
-  #vision-mission .section-title { font-size: 28px; }
-  #vision-mission .subtitle { font-size: 0.75em; }
-  /* achievement numbers resizing */
-  .stat-number { font-size: 32px; }
-}
-
-@media(max-width:600px) {
-  #vision-mission { padding: 40px 16px; }
-  .vm-box { font-size: 15px; padding: 18px; }
-  #vision-mission .section-title { font-size: 24px; }
-}
-
-.primary-btn {
-  background: #facc15;
-  color: #0f172a;
-}
-
-.primary-btn:hover {
-  background: #eab308;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(250,204,21,0.3);
-}
-
-.secondary-btn {
-  background: rgba(255,255,255,0.15);
-  border: 2px solid #facc15;
-  color: #fff;
-  backdrop-filter: blur(10px);
-}
-
-.secondary-btn:hover {
-  background: #facc15;
-  color: #0f172a;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(250,204,21,0.4);
-}
-
-.scroll-down {
-  margin-top: 40px;
-}
-
-.scroll-down span {
-  display: inline-block;
-  font-size: 28px;
-  animation: bounce 2s infinite;
-  color: #facc15;
-}
-    /* Sections */
-    section {
-      padding:60px 20px;
-      max-width:1200px;
-      margin:auto;
-    }
-    .section-title {
-      text-align:center;
-      font-size:42px;
-      font-weight:600;
-      margin-bottom:40px;
-      letter-spacing:1px;
-      color:#111;
-      position:relative;
-    }
-    .section-title::after {
-      content:'';
-      display:block;
-      width:80px;
-      height:4px;
-      background:#2563eb;
-      margin:12px auto 0;
-      border-radius:2px;
-    }
-    .features {
-      max-width:800px;
-      margin:auto;
-      list-style:none;
-      padding-left:0;
-    }
-  
-      body{
-        margin:0;
-        font-family:'Segoe UI',Arial,sans-serif;
-        background:#f4f6f9;
-        color:#1e293b;
-        line-height:1.7;
-      }
-      .top-bar {
-        background: #1e293b;
-        color: #fff;
-        font-size: 0.9rem;
-        text-align: center;
-        padding: 4px 0;
-        position: sticky;
-        top: 0;
-        z-index: 1002;
-      }
-      .top-bar .contact-info {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
-      }
-      .top-bar a { color: #facc15; text-decoration: none; }
-      .top-bar a:hover { text-decoration: underline; }
-
-      /* animations & fluid typography */
-      @keyframes fadeInUp {
-        from { opacity:0; transform:translateY(20px); }
-        to { opacity:1; transform:translateY(0); }
-      }
-      section, .about-block, .card, .status-box, h1, h2, h3 {
-        opacity:0;
-        animation:fadeInUp 0.8s ease-out forwards;
-      }
-      h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-      h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
-      h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
-
-p { text-align: justify; }
-.section-title, .about-block p { text-align: center; }
-      header{
-        background:#0f172a;
-        color:#fff;
-        padding:16px 60px;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        gap:20px;
-        position:sticky;
-        top:0;
-        z-index:1000;
-        border-radius:8px;
-        box-shadow:0 4px 12px rgba(0,0,0,0.15);
-      }
-      nav a { text-decoration:none; }
-      .logo-section {
-        display:flex;
-        align-items:center;
-        gap:12px;
-        white-space:nowrap;
-      }
-      .logo-section img {
-        height:50px;
-        width:auto;
-        object-fit:contain;
-        flex-shrink:0;
-      }
-      .logo-section h2 {
-        font-size:24px;
-        font-weight:600;
-        margin:0;
-        white-space:nowrap;
-      }
-      .logo-section {
-        text-decoration:none;
-        color:inherit;
-        cursor:pointer;
-        transition:opacity 0.3s ease;
-      }
-      .logo-section:hover {
-        opacity:0.8;
-      }
-      nav{
-        display:flex;
-        align-items:center;
-        gap:20px;
-      }
-      nav a{
-        color:#fff;
-        margin-left:20px;
-        text-decoration:none;
-        font-weight:500;
-      }
-      nav a:hover{text-decoration:underline}
 
       .hamburger {
-        display:none;
-        flex-direction:column;
-        cursor:pointer;
-        gap:6px;
-        position:relative;
-        z-index:1001;
-      }
-      .hamburger span {
-        width:28px;
-        height:3px;
-        background:#facc15;
-        border-radius:2px;
-        transition:all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        transform-origin:center;
-      }
-      .hamburger.active span:nth-child(1) {
-        transform:translateY(10px) rotate(45deg);
-      }
-      .hamburger.active span:nth-child(2) {
-        opacity:0;
-        transform:scaleX(0);
-      }
-      .hamburger.active span:nth-child(3) {
-        transform:translateY(-10px) rotate(-45deg);
+        display: flex;
       }
 
-      .menu-overlay {
-        display:none;
-        position:fixed;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        background:rgba(0,0,0,0.5);
-        z-index:999;
+      nav {
+        position: fixed;
+        top: 70px;
+        right: 0;
+        width: 70%;
+        max-width: 250px;
+        height: auto;
+        max-height: calc(100vh - 70px);
+        background: #0f172a;
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 20px 20px 20px;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        box-shadow: -8px 0 16px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        overflow-y: auto;
       }
 
-      .menu-overlay.active {
-        display:block;
+      nav.active {
+        transform: translateX(0);
       }
 
-      @media(max-width:768px){
-        .top-bar .contact-info { flex-direction: column; gap:8px; font-size:0.85rem; }
-        header{padding:14px 20px}
-        .hamburger{display:flex}
-        nav{
-          position:fixed;
-          top:70px;
-          right:0;
-          width:70%;
-          max-width:250px;
-          height:auto;
-          max-height:calc(100vh - 70px);
-          background:#0f172a;
-          flex-direction:column;
-          gap:0;
-          padding:20px 20px 20px 20px;
-          transform:translateX(100%);
-          transition:transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-          box-shadow:-8px 0 16px rgba(0,0,0,0.3);
-          z-index:1000;
-          overflow-y:auto;
-        }
-        nav.active{transform:translateX(0)}
-        nav a{
-          margin:0;
-          padding:16px 0;
-          border-bottom:1px solid rgba(255,255,255,0.1);
-          display:block;
-          font-size:16px;
-        }
+      nav a {
+        margin: 0;
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: block;
+        font-size: 16px;
       }
 
-      section{
-        padding:70px 20px;
-        max-width:1200px;
-        margin:auto;
+      nav a::after {
+        display: none;
+      }
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 600px;
+      margin-top: 20px;
+      /* add gap from sticky header */
+      margin-bottom: 40px;
+      /* more space below for separation */
+      border-radius: 20px;
+      /* curved corners for better aesthetics */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      padding: 60px 0;
+      /* add vertical breathing room */
+    }
+
+    .hero-content {
+      padding: 0 30px 40px;
+      /* extra bottom space */
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* very light overlay so video shows clearly */
+      background: rgba(0, 0, 0, 0.10);
+      z-index: 1;
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(2px);
+      z-index: 0;
+    }
+
+    /* simple drop‑in animation for hero content */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
       }
 
-      .section-title{
-        text-align:center;
-        font-size:34px;
-        margin-bottom:50px;
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-content.animate {
+      animation: fadeInDown 1s ease-out forwards;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 900px;
+      padding: 0 30px;
+      color: #fff;
+    }
+
+    .hero-content h1,
+    .hero-content p {
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-content h1 {
+      font-size: 64px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .hero-content h1 span {
+      color: #eec00a;
+      display: block;
+      margin-top: 0.75em;
+      /* more breathing room above second line */
+    }
+
+    .hero-content p {
+      font-size: 22px;
+      margin-bottom: 40px;
+      line-height: 1.6;
+      color: #e2e8f0;
+    }
+
+    .hero-buttons {
+      margin-bottom: 60px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-buttons .btn {
+      padding: 16px 32px;
+      font-weight: 700;
+      font-size: 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* achievements styling */
+    #achievements {
+      text-align: center;
+      background: linear-gradient(135deg, #7896d6 0%, #262a35 100%);
+      color: #fff;
+      padding: 40px 0;
+      border-radius: 8px;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 0 50px;
+      justify-items: center;
+    }
+
+    .stat-box {
+      background: #fff;
+      padding: 20px 15px;
+      border-radius: 4px;
+      /* more rectangular */
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+      text-align: center;
+      font-size: 14px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: default;
+      min-width: 180px;
+    }
+
+    @keyframes blink {
+
+      0%,
+      50%,
+      100% {
+        opacity: 1;
       }
 
-      .highlight{
-        color:#0f172a;
-        font-weight:600;
+      25%,
+      75% {
+        opacity: 0.3;
+      }
+    }
+
+    .stat-icon {
+      font-size: 36px;
+      margin-bottom: 8px;
+      animation: blink 1.5s infinite;
+    }
+
+    .stat-number {
+      font-size: 40px;
+      font-weight: 700;
+      color: #2563eb;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 16px;
+      color: #111;
+    }
+
+    .stat-plus {
+      font-size: 40px;
+    }
+
+    .stat-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12x 36px rgba(0, 0, 0, .12);
+    }
+
+    /* count-up animation (simple scale) */
+    @keyframes popIn {
+      from {
+        transform: scale(0.6);
+        opacity: 0;
       }
 
-      .quote {
-        font-style:italic;
-        text-align:center;
-        max-width:800px;
-        margin:40px auto;
-        color:#475569;
-        font-size:1.1rem;
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .stat-number {
+      animation: popIn 0.6s ease-out forwards;
+    }
+
+    .stat-box:nth-child(1) .stat-number {
+      animation-delay: 0.1s;
+    }
+
+    .stat-box:nth-child(2) .stat-number {
+      animation-delay: 0.3s;
+    }
+
+    .stat-box:nth-child(3) .stat-number {
+      animation-delay: 0.5s;
+    }
+
+    .stat-box:nth-child(4) .stat-number {
+      animation-delay: 0.7s;
+    }
+
+    /* vision/mission/goals */
+    #vision-mission {
+      background: linear-gradient(135deg, #728edb, #02081e);
+      padding: 60px 40px;
+      border-radius: 30px;
+      margin: 25px;
+      max-width: 100%;
+      color: #fff;
+      text-align: center;
+    }
+
+    #vision-mission .section-title {
+      margin-bottom: 40px;
+      letter-spacing: 4px;
+      font-size: 25px;
+      opacity: 0.8;
+      color: #fff;
+    }
+
+    #vision-mission .subtitle {
+      display: block;
+      font-size: 0.8em;
+      font-weight: 400;
+      margin-top: 8px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .vm-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: left;
+      padding: 0;
+    }
+
+    .vm-box {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 16px;
+      padding: 30px 20px;
+      font-size: 18px;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      transition: background 0.3s, color 0.3s, transform 0.3s;
+      color: #fff;
+    }
+
+    .vm-box:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-5px);
+    }
+
+    .vm-box:hover .stat-icon,
+    .vm-box:hover strong {
+      color: #fff;
+    }
+
+    /* staggered entry */
+    .vm-box:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .vm-box:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .vm-box:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .vm-box strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .vm-box:hover {
+      transform: translateY(-5px);
+    }
+
+    @media(max-width:768px) {
+      #vision-mission {
+        padding: 40px 20px;
       }
 
-      .about-block{
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:40px;
-        align-items:center;
-        margin-bottom:70px;
+      .vm-box {
+        font-size: 16px;
+        padding: 20px;
       }
 
-      .about-block img{
-        width:80%;
-        border-radius:18px;
-        box-shadow:0 12px 30px rgba(0,0,0,.15);
+      #vision-mission .section-title {
+        font-size: 28px;
       }
 
-      .card{
-        background:#fff;
-        padding:35px;
-        border-radius:20px;
-        box-shadow:0 12px 30px rgba(0,0,0,.08);
-        margin-bottom:40px;
+      #vision-mission .subtitle {
+        font-size: 0.75em;
       }
 
-      ul{
-        padding-left:20px;
+      /* achievement numbers resizing */
+      .stat-number {
+        font-size: 32px;
       }
-      ul li{
-        margin-bottom:10px;
+    }
+
+    @media(max-width:480px) {
+      #vision-mission {
+        padding: 30px 15px;
+        margin: 20px auto;
       }
 
-      .status-section{
-        background:#ffffff;
-        padding:60px 20px;
-        margin-top:80px;
-        border-radius:20px;
-        box-shadow:0 12px 30px rgba(0,0,0,.08);
+      .vm-box {
+        font-size: 15px;
+        padding: 18px;
       }
 
-      .status-grid{
-        display:grid;
-        grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
-        gap:30px;
-        max-width:1000px;
-        margin:auto;
-        text-align:center;
+      #vision-mission .section-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+      }
+    }
+
+    .primary-btn {
+      background: #facc15;
+      color: #0f172a;
+    }
+
+    .primary-btn:hover {
+      background: #eab308;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(250, 204, 21, 0.3);
+    }
+
+    .secondary-btn {
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid #facc15;
+      color: #fff;
+      backdrop-filter: blur(10px);
+    }
+
+    .secondary-btn:hover {
+      background: #facc15;
+      color: #0f172a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(250, 204, 21, 0.4);
+    }
+
+    .scroll-down {
+      margin-top: 40px;
+    }
+
+    .scroll-down span {
+      display: inline-block;
+      font-size: 28px;
+      animation: bounce 2s infinite;
+      color: #facc15;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 42px;
+      font-weight: 600;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+      color: #111;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #2563eb;
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+
+    .features {
+      max-width: 800px;
+      margin: auto;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6f9;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+
+    .top-bar {
+      background: #1e293b;
+      color: #fff;
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 4px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1002;
+    }
+
+    .top-bar .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .top-bar a {
+      color: #facc15;
+      text-decoration: none;
+    }
+
+    .top-bar a:hover {
+      text-decoration: underline;
+    }
+
+    /* animations & fluid typography */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
       }
 
-      .status-box{
-        background:#fff;
-        padding:25px 15px;
-        border-radius:14px;
-        box-shadow:0 8px 24px rgba(0,0,0,.06);
-        transition:transform 0.3s, box-shadow 0.3s;
-        text-align:center;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-      .status-box:hover{
-        transform: translateY(-6px);
-        box-shadow:0 12px 32px rgba(0,0,0,.1);
-      }
-      .status-box h3{
-        font-size:36px;
-        color:#0f172a;
-        margin-bottom:10px;
+    }
+
+    section,
+    .about-block,
+    .card,
+    .status-box,
+    h1,
+    h2,
+    h3 {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
+
+    h3 {
+      font-size: clamp(1.25rem, 3vw, 2rem);
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    .section-title,
+    .about-block p {
+      text-align: center;
+    }
+
+    /* PROJECT MENU */
+    .projects-menu {
+      position: relative;
+    }
+
+    .projects-btn {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    /* MEGA DROPDOWN */
+
+    .mega-projects {
+
+      position: absolute;
+      top: 60px;
+      left: 0;
+
+      width: 200px;
+
+      background: #fff;
+
+      border-radius: 16px;
+
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+
+      /* display:flex; */
+
+      overflow: hidden;
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      transform: translateY(10px);
+
+      transition: all .35s ease;
+
+    }
+
+    /* show dropdown */
+
+    .projects-menu:hover .mega-projects {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .project-link {
+
+      display: block;
+
+      padding: 20px;
+
+      border-bottom: 1px solid #e5e7eb;
+
+      text-decoration: none;
+
+      transition: all .3s ease;
+
+    }
+
+    .project-link:hover {
+      background: #fff;
+      padding-left: 26px;
+    }
+
+    .project-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .project-location {
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    @media (max-width:768px) {
+
+      .mega-projects {
+        position: static;
+        flex-direction: column;
+        width: 100%;
+        box-shadow: none;
       }
 
-      .status-box p{
-        font-size:16px;
-        color:#475569;
-        font-weight:500;
+      .project-preview {
+        display: none;
       }
 
-      .status-icon{
-        font-size:48px;
-        margin-bottom:14px;
-        display:block;
+      .projects-menu:hover .mega-projects {
+        display: block;
+        opacity: 1;
+        visibility: visible;
       }
 
-      footer{
-        background:#0f172a;
-        color:#fff;
-        text-align:center;
-        padding:10px;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-      }
-      footer p{ margin:0; }
+    }
 
-      @media(max-width:900px){
-        .about-block{
-          grid-template-columns:1fr;
-        }
+    /* GALLERY MENU */
+    .gallery-menu {
+      position: relative;
+    }
+
+    .gallery-btn {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .mega-gallery {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 270px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all .35s ease;
+    }
+
+    .gallery-menu:hover .mega-gallery {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .gallery-link {
+      display: block;
+      padding: 20px;
+      border-bottom: 1px solid #e5e7eb;
+      text-decoration: none;
+      transition: all .3s ease;
+    }
+
+    .gallery-link:hover {
+      background: #fff;
+      padding-left: 26px;
+    }
+
+    .gallery-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .gallery-location {
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    @media (max-width:768px) {
+
+      .mega-gallery {
+        position: static;
+        flex-direction: column;
+        width: 100%;
+        box-shadow: none;
       }
-      @media(max-width:768px){
-        .top-bar .contact-info { flex-direction: column; gap:8px; font-size:0.85rem; }
-        header{padding:14px 20px}
-        section{padding:50px 20px}
-        .section-title{font-size:26px}
-        .about-block{margin-bottom:50px}
-        .card{padding:25px}
-        .status-grid{gap:20px}
-        .status-box h3{font-size:28px}
+
+      .gallery-menu:hover .mega-gallery {
+        display: block;
+        opacity: 1;
+        visibility: visible;
       }
-      @media(max-width:600px){
-        header{padding:12px 16px}
-        section{padding:30px 16px}
-        .section-title{font-size:22px}
-        .about-block img{width:100%}
-        .card{padding:20px}
-        .status-box{margin-bottom:20px}
-        .status-box h3{font-size:24px}
-        .status-box p{font-size:14px}
+
+    }
+
+    header {
+      background: #0f172a;
+      color: #fff;
+      padding: 16px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    nav a {
+      text-decoration: none;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+    }
+
+    .logo-section img {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .logo-section h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .logo-section {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+
+    .logo-section:hover {
+      opacity: 0.8;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      position: relative;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 28px;
+      height: 3px;
+      background: #facc15;
+      border-radius: 2px;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-origin: center;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    .menu-overlay.active {
+      display: block;
+    }
+
+    @media(max-width:768px) {
+      .top-bar .contact-info {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.85rem;
       }
-    </style>
-  </head>
-  <body>
-    <header>
-      <a href="index.html" class="logo-section">
-        <img src="Images/Logo.jpeg" alt="Parnika Properties Logo">
-        <h2>Parnika Properties</h2>
+
+      header {
+        padding: 14px 20px
+      }
+
+      .hamburger {
+        display: flex
+      }
+
+      nav {
+        position: fixed;
+        top: 70px;
+        right: 0;
+        width: 70%;
+        max-width: 250px;
+        height: auto;
+        max-height: calc(100vh - 70px);
+        background: #0f172a;
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 20px 20px 20px;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        box-shadow: -8px 0 16px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        overflow-y: auto;
+      }
+
+      nav.active {
+        transform: translateX(0)
+      }
+
+      nav a {
+        margin: 0;
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: block;
+        font-size: 16px;
+      }
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 50px;
+    }
+
+    .highlight {
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    .quote {
+      font-style: italic;
+      text-align: center;
+      max-width: 800px;
+      margin: 40px auto;
+      color: #475569;
+      font-size: 1.1rem;
+    }
+
+    .about-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+
+    .about-block img {
+      width: 80%;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .15);
+    }
+
+    .card {
+      background: #fff;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
+      margin-bottom: 40px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      margin: 30px 30px 0 30px;
+      border-radius: 30px;
+      background: #be8b5c;
+      color: white;
+      padding-top: 60px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .footer-container {
+      max-width: 1300px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      padding: 0 40px;
+    }
+
+    .footer-logo {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    .footer-about p {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .footer-column h3 {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column a {
+      list-style: none;
+      text-decoration: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #e2e8f0;
+    }
+
+    .footer-column ul li a {
+      color: #e2e8f0;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .footer-column ul li a:hover {
+      color: #fff;
+      padding-left: 5px;
+    }
+
+    @media(max-width:900px) {
+
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+    }
+
+    .contact li {
+      line-height: 1.6;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      width: 32px;
+      height: 32px;
+      background: white;
+      color: #2f3f9f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-weight: 600;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .social-icons a:hover {
+      background: #facc15;
+      color: #000;
+    }
+
+    .footer-bottom {
+      margin-top: 50px;
+      background: #3182ce;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      font-size: 13px;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    @media(max-width:900px) {
+      .about-block {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width:768px) {
+      .top-bar .contact-info {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.85rem;
+      }
+
+      header {
+        padding: 14px 20px
+      }
+
+      section {
+        padding: 50px 20px
+      }
+
+      .section-title {
+        font-size: 26px
+      }
+
+      .about-block {
+        margin-bottom: 50px
+      }
+
+      .card {
+        padding: 25px
+      }
+
+      .status-grid {
+        gap: 20px
+      }
+
+      .status-box h3 {
+        font-size: 28px
+      }
+    }
+
+    @media(max-width:600px) {
+      header {
+        padding: 12px 16px
+      }
+
+      section {
+        padding: 30px 16px
+      }
+
+      .section-title {
+        font-size: 22px
+      }
+
+      .about-block img {
+        width: 100%
+      }
+
+      .card {
+        padding: 20px
+      }
+
+      .status-box {
+        margin-bottom: 20px
+      }
+
+      .status-box h3 {
+        font-size: 24px
+      }
+
+      .status-box p {
+        font-size: 14px
+      }
+    }
+
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 45px;
+      height: 45px;
+      background: #2f6edb;
+      color: white;
+      font-size: 20px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      z-index: 999;
+    }
+
+    #scrollTopBtn:hover {
+      background: #1c4fb5;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="logo-section">
+      <img src="Images/Logo.jpeg" alt="Parnika Properties Logo">
+      <h2>Parnika Properties</h2>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="our-services.html">Our Services</a>
+      <div class="projects-menu">
+
+        <a href="#" class="projects-btn">Our Projects ▾</a>
+
+        <div class="mega-projects">
+
+          <div class="project-list">
+
+            <a href="platinum-avenue.html" class="project-link">
+              <div class="project-title">Platinum Avenue</div>
+              <div class="project-location"></div>
+            </a>
+
+            <a href="platinum-vista.html" class="project-link">
+              <div class="project-title">Platinum Vista</div>
+              <div class="project-location"></div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+      <!-- <a href="gallery.html">Gallery</a> -->
+      <div class="gallery-menu">
+
+        <a href="#" class="gallery-btn">Gallery ▾</a>
+
+        <div class="mega-gallery">
+
+          <div class="gallery-list">
+
+            <a href="platinum-avenue-gallery.html" class="gallery-link">
+              <div class="gallery-title">Platinum Avenue Gallery</div>
+              <div class="gallery-location"></div>
+            </a>
+
+            <a href="platinum-vista-gallery.html" class="gallery-link">
+              <div class="gallery-title">Platinum Vista Gallery</div>
+              <div class="gallery-location"></div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.407.593 24 1.324 24h11.495v-9.294H9.691v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.676V1.324C24 .593 23.407 0 22.676 0z" />
+        </svg>
       </a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="our-services.html">Services</a>
-        <a href="projects.html">Projects</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.407.593 24 1.324 24h11.495v-9.294H9.691v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.676V1.324C24 .593 23.407 0 22.676 0z"/>
-          </svg>
-        </a>
-        <a href="https://in.pinterest.com/parnikapropertieshyd/" target="_blank" aria-label="Pinterest">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" fill="currentColor">
-            <path d="M496 256c0 137-111 248-248 248S0 393 0 256 111 8 248 8s248 111 248 248zm-276.4 39.7c-5.1 22.3-10 43.5-21.4 64.5-6 11.3-13.3 22-23.9 28.3-7.3 4.3-16 4.9-23.7 3-17.5-4.1-18.2-17.3-9-32.6 6-10 10.9-20.6 14.3-31.5 4.4-15.4 8-30.9 11.2-46.5 3.2-15.4 6-31.2 8.7-46.9 1.9-11.1 3.6-22.3 5.4-33.4 3.1-19.8 6.4-39.6 9.7-59.4 1-5.9 1.8-12 .1-17.8-3.4-15-18.4-23-33.1-17.5-15.6 6-28.1 18-37.1 33.1-22.3 36.9-34.4 77.6-34.4 120.2 0 14.6 1.4 29.2 3.9 43.6 4.2 23.8 13.7 46.4 28.4 64.5 6.6 7.6 14.3 14.2 22.7 19.2 10.9 6.7 23 10.7 35.3 13.6 2.3 .6 4.6 1 6.9 1.4 13.1 2 26.6 3.6 39.8 5.4 14.9 1.9 28.4-4.3 34.8-17.9 6.3-13.6 3.8-27.5 2.2-41.4-2.6-22.4-5.2-44.7-7.5-67.1zm-104.8-86.7c-13.8-3.4-22.7-17-19.3-30.8 3.4-13.8 17-22.7 30.8-19.3 13.8 3.4 22.7 17 19.3 30.8-3.4 13.8-17 22.7-30.8 19.3z"/>
-          </svg>
-        </a>
-        <a href="https://www.instagram.com/parnikaproperties_hyd/" target="_blank" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
-            <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.6 339 255.9 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.3c0 14.9-12.1 27-27 27-14.9 0-27-12.1-27-27s12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.3-93.7s-58-34.6-93.7-36.3c-37-2.1-147.9-2.1-184.9 0-35.7 1.7-67.3 9.9-93.7 36.3s-34.6 58-36.3 93.7c-2.1 37-2.1 147.9 0 184.9 1.7 35.7 9.9 67.3 36.3 93.7s58 34.6 93.7 36.3c37 2.1 147.9 2.1 184.9 0 35.7-1.7 67.3-9.9 93.7-36.3s34.6-58 36.3-93.7c2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.4 42.4-29.4 11.7-99.2 9-132.4 9s-103 .2-132.4-9c-19.6-7.8-34.7-22.9-42.4-42.4-11.7-29.4-9-99.2-9-132.4s-.2-103 9-132.4c7.8-19.6 22.9-34.7 42.4-42.4 29.4-11.7 99.2-9 132.4-9s103-.2 132.4 9c19.6 7.8 34.7 22.9 42.4 42.4 11.7 29.4 9 99.2 9 132.4s.2 103-9 132.4z"/>
-          </svg>
-        </a>
-        <a href="https://web.telegram.org/k/#@ParnikaHydFlats" target="_blank" aria-label="Telegram">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
-            <path d="M446.7 74.3c-2.8-9.7-11.9-15.3-21.4-13.5L25.3 180.1c-10.4 2.4-17.5 12-16.3 22.5 1.2 10.4 9.9 18.1 20.3 18.1h79.1l-11.4 120.6c-1.6 16.9 13.1 30.6 30 28.1l41.9-8.7 80 94.3c10.8 12.7 29.1 8.4 34.1-7.9l153.1-449.2c2.5-7.2 .3-15-6-19.7z"/>
-          </svg>
-        </a>
-      </div>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </header>
-    <div class="menu-overlay"></div>
-    <section>
+      <a href="https://in.pinterest.com/parnikapropertieshyd/" target="_blank" aria-label="Pinterest">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" fill="currentColor">
+          <path
+            d="M496 256c0 137-111 248-248 248S0 393 0 256 111 8 248 8s248 111 248 248zm-276.4 39.7c-5.1 22.3-10 43.5-21.4 64.5-6 11.3-13.3 22-23.9 28.3-7.3 4.3-16 4.9-23.7 3-17.5-4.1-18.2-17.3-9-32.6 6-10 10.9-20.6 14.3-31.5 4.4-15.4 8-30.9 11.2-46.5 3.2-15.4 6-31.2 8.7-46.9 1.9-11.1 3.6-22.3 5.4-33.4 3.1-19.8 6.4-39.6 9.7-59.4 1-5.9 1.8-12 .1-17.8-3.4-15-18.4-23-33.1-17.5-15.6 6-28.1 18-37.1 33.1-22.3 36.9-34.4 77.6-34.4 120.2 0 14.6 1.4 29.2 3.9 43.6 4.2 23.8 13.7 46.4 28.4 64.5 6.6 7.6 14.3 14.2 22.7 19.2 10.9 6.7 23 10.7 35.3 13.6 2.3 .6 4.6 1 6.9 1.4 13.1 2 26.6 3.6 39.8 5.4 14.9 1.9 28.4-4.3 34.8-17.9 6.3-13.6 3.8-27.5 2.2-41.4-2.6-22.4-5.2-44.7-7.5-67.1zm-104.8-86.7c-13.8-3.4-22.7-17-19.3-30.8 3.4-13.8 17-22.7 30.8-19.3 13.8 3.4 22.7 17 19.3 30.8-3.4 13.8-17 22.7-30.8 19.3z" />
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/parnikaproperties_hyd/" target="_blank" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+          <path
+            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.6 339 255.9 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.3c0 14.9-12.1 27-27 27-14.9 0-27-12.1-27-27s12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.3-93.7s-58-34.6-93.7-36.3c-37-2.1-147.9-2.1-184.9 0-35.7 1.7-67.3 9.9-93.7 36.3s-34.6 58-36.3 93.7c-2.1 37-2.1 147.9 0 184.9 1.7 35.7 9.9 67.3 36.3 93.7s58 34.6 93.7 36.3c37 2.1 147.9 2.1 184.9 0 35.7-1.7 67.3-9.9 93.7-36.3s34.6-58 36.3-93.7c2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.4 42.4-29.4 11.7-99.2 9-132.4 9s-103 .2-132.4-9c-19.6-7.8-34.7-22.9-42.4-42.4-11.7-29.4-9-99.2-9-132.4s-.2-103 9-132.4c7.8-19.6 22.9-34.7 42.4-42.4 29.4-11.7 99.2-9 132.4-9s103-.2 132.4 9c19.6 7.8 34.7 22.9 42.4 42.4 11.7 29.4 9 99.2 9 132.4s.2 103-9 132.4z" />
+        </svg>
+      </a>
+      <a href="https://web.telegram.org/k/#@ParnikaHydFlats" target="_blank" aria-label="Telegram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+          <path
+            d="M446.7 74.3c-2.8-9.7-11.9-15.3-21.4-13.5L25.3 180.1c-10.4 2.4-17.5 12-16.3 22.5 1.2 10.4 9.9 18.1 20.3 18.1h79.1l-11.4 120.6c-1.6 16.9 13.1 30.6 30 28.1l41.9-8.7 80 94.3c10.8 12.7 29.1 8.4 34.1-7.9l153.1-449.2c2.5-7.2 .3-15-6-19.7z" />
+        </svg>
+      </a>
+    </div>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+  <div class="menu-overlay"></div>
+  <section>
 
-      <h2 class="section-title">About Parnika Properties</h2>
+    <h2 class="section-title">About Parnika Properties</h2>
 
-      <div class="about-block">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Real Estate Building">
-        <div>
-          <h3>Who We Are</h3>
-          <p>
-            Parnika Properties is a forward-thinking real estate company dedicated to delivering premium property solutions with integrity and precision.
-          </p>
-          <p>
-            We specialize in residential and commercial real estate services, guiding clients through every stage of their property journey with professionalism and care. Our foundation is built on trust, market expertise, and a commitment to long-term relationships.
-          </p>
-          <p>
-            We don’t just facilitate transactions — we create value-driven experiences that help individuals and investors make confident, informed decisions.
-          </p>
-        </div>
-      </div>
-
-  
-      <div class="about-block">
-        <div>
-          <h3>Our Experience & Approach</h3>
-          <p>
-            At Parnika Properties, our approach combines strategic market insight with personalized service.
-          </p>
-          <p>
-            With strong industry understanding and deep knowledge of evolving property trends, we ensure every client receives tailored solutions aligned with their goals.
-          </p>
-          <p>Our approach is :-</p>
-          <ul class="approach-list">
-            <li>✔ Client-centric and relationship-focused</li>
-            <li>✔ Transparent in communication and documentation</li>
-            <li>✔ Data-driven in pricing and investment analysis</li>
-            <li>✔ Detail-oriented from consultation to final registration</li>
-          </ul>
-          <p>
-            We believe success in real estate comes from clarity, strategy, and execution and that’s exactly what we deliver.
-          </p>
-        </div>
-        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc" alt="Construction Planning">
-      </div>
-
-      <div class="card">
-        <h3>Our Vision</h3>
+    <div class="about-block">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Real Estate Building">
+      <div>
+        <h3>Who We Are</h3>
         <p>
-          To become a trusted and respected real estate brand known for excellence, transparency, and sustainable growth.
+          Parnika Properties is a forward-thinking real estate company dedicated to delivering premium property
+          solutions with integrity and precision.
         </p>
         <p>
-          We envision creating communities, building investment confidence, and setting new standards in property services through innovation and ethical practices.
+          We specialize in residential and commercial real estate services, guiding clients through every stage of their
+          property journey with professionalism and care. Our foundation is built on trust, market expertise, and a
+          commitment to long-term relationships.
         </p>
-
-        <h3>Our Mission</h3>
         <p>
-          Our mission is to simplify the property journey by offering premium services, expert guidance, and seamless execution.
+          We don’t just facilitate transactions — we create value-driven experiences that help individuals and investors
+          make confident, informed decisions.
         </p>
-        <p>We aim to :- </p>
+      </div>
+    </div>
+
+
+    <div class="about-block">
+      <div>
+        <h3>Our Experience & Approach</h3>
+        <p>
+          At Parnika Properties, our approach combines strategic market insight with personalized service.
+        </p>
+        <p>
+          With strong industry understanding and deep knowledge of evolving property trends, we ensure every client
+          receives tailored solutions aligned with their goals.
+        </p>
+        <p>Our approach is :-</p>
+        <ul class="approach-list">
+          <li>✔ Client-centric and relationship-focused</li>
+          <li>✔ Transparent in communication and documentation</li>
+          <li>✔ Data-driven in pricing and investment analysis</li>
+          <li>✔ Detail-oriented from consultation to final registration</li>
+        </ul>
+        <p>
+          We believe success in real estate comes from clarity, strategy, and execution and that’s exactly what we
+          deliver.
+        </p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc" alt="Construction Planning">
+    </div>
+
+    <div class="card">
+      <h3>Our Vision</h3>
+      <p>
+        To become a trusted and respected real estate brand known for excellence, transparency, and sustainable growth.
+      </p>
+      <p>
+        We envision creating communities, building investment confidence, and setting new standards in property services
+        through innovation and ethical practices.
+      </p>
+
+      <h3>Our Mission</h3>
+      <p>
+        Our mission is to simplify the property journey by offering premium services, expert guidance, and seamless
+        execution.
+      </p>
+      <p>We aim to :- </p>
+      <ul>
+        <li>Provide carefully curated property options</li>
+        <li>Deliver transparent and reliable transactions</li>
+        <li>Build long-term client relationships</li>
+        <li>Create sustainable value for homeowners and investors</li>
+      </ul>
+    </div>
+
+
+    <div class="about-block">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Teamwork">
+      <div>
+        <h3>Our Core Values</h3>
         <ul>
-          <li>Provide carefully curated property options</li>
-          <li>Deliver transparent and reliable transactions</li>
-          <li>Build long-term client relationships</li>
-          <li>Create sustainable value for homeowners and investors</li>
+          <li><strong>Integrity:</strong> We operate with honesty, ethics, and complete transparency in every
+            transaction.</li>
+          <li><strong>Excellence:</strong> We strive for superior service quality and professional standards in
+            everything we do.</li>
+          <li><strong>Commitment:</strong> We are dedicated to delivering results and exceeding client expectations.
+          </li>
+          <li><strong>Accountability:</strong> We take full responsibility for every step of the process, ensuring
+            clarity and trust.</li>
+          <li><strong>Customer First:</strong> Our clients are at the center of our business. Their goals become our
+            priority.</li>
         </ul>
       </div>
+    </div>
+    <p class="quote">“At Parnika Properties, we don’t just sell properties — we build trust, create opportunities, and
+      shape futures.”</p>
 
-    
-      <div class="about-block">
-        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Teamwork">
-        <div>
-          <h3>Our Core Values</h3>
-          <ul>
-            <li><strong>Integrity:</strong> We operate with honesty, ethics, and complete transparency in every transaction.</li>
-            <li><strong>Excellence:</strong> We strive for superior service quality and professional standards in everything we do.</li>
-            <li><strong>Commitment:</strong> We are dedicated to delivering results and exceeding client expectations.</li>
-            <li><strong>Accountability:</strong> We take full responsibility for every step of the process, ensuring clarity and trust.</li>
-            <li><strong>Customer First:</strong> Our clients are at the center of our business. Their goals become our priority.</li>
-          </ul>
-        </div>
-      </div>
-      <p class="quote">“At Parnika Properties, we don’t just sell properties — we build trust, create opportunities, and shape futures.”</p>
 
-      <div class="status-section">
-        <h2 class="section-title">Our Status</h2>
-
-        <div class="status-grid">
-          <div class="status-box">
-            <div class="status-icon">🏗️</div>
-            <h3 class="counter" data-target="5">0</h3>
-            <p>Years of Experience</p>
-          </div>
-          <div class="status-box">
-            <div class="status-icon">🏘️</div>
-            <h3 class="counter" data-target="5">0</h3>
-            <p>Projects Delivered</p>
-          </div>
-          <div class="status-box">
-            <div class="status-icon">😊</div>
-            <h3 class="counter" data-target="300">0</h3>
-            <p>Happy Families</p>
-          </div>
-          <div class="status-box">
-            <div class="status-icon">🤝</div>
-            <h3 class="counter" data-target="100">0</h3>
-            <p>Trust & Transparency</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer>
+  </section>
+  <!-- <footer>
       <p>© 2026 Parnika Properties. All Rights Reserved.</p>
-    </footer>
-    <a href="https://wa.me/919866711002" target="_blank"
+    </footer> -->
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <!-- Logo & About -->
+      <div class="footer-about">
+
+        <img src="Images/Logo.jpeg" class="footer-logo">
+
+        <p>
+          Developing high-quality residential communities and commercial spaces with innovation, trust, and excellence.
+        </p>
+
+        <h4>FOLLOW US ON :</h4>
+
+        <div class="social-icons">
+          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.407.593 24 1.324 24h11.495v-9.294H9.691v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.676V1.324C24 .593 23.407 0 22.676 0z" />
+            </svg>
+          </a>
+          <a href="https://in.pinterest.com/parnikapropertieshyd/" target="_blank" aria-label="Pinterest">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" fill="currentColor">
+              <path
+                d="M496 256c0 137-111 248-248 248S0 393 0 256 111 8 248 8s248 111 248 248zm-276.4 39.7c-5.1 22.3-10 43.5-21.4 64.5-6 11.3-13.3 22-23.9 28.3-7.3 4.3-16 4.9-23.7 3-17.5-4.1-18.2-17.3-9-32.6 6-10 10.9-20.6 14.3-31.5 4.4-15.4 8-30.9 11.2-46.5 3.2-15.4 6-31.2 8.7-46.9 1.9-11.1 3.6-22.3 5.4-33.4 3.1-19.8 6.4-39.6 9.7-59.4 1-5.9 1.8-12 .1-17.8-3.4-15-18.4-23-33.1-17.5-15.6 6-28.1 18-37.1 33.1-22.3 36.9-34.4 77.6-34.4 120.2 0 14.6 1.4 29.2 3.9 43.6 4.2 23.8 13.7 46.4 28.4 64.5 6.6 7.6 14.3 14.2 22.7 19.2 10.9 6.7 23 10.7 35.3 13.6 2.3 .6 4.6 1 6.9 1.4 13.1 2 26.6 3.6 39.8 5.4 14.9 1.9 28.4-4.3 34.8-17.9 6.3-13.6 3.8-27.5 2.2-41.4-2.6-22.4-5.2-44.7-7.5-67.1zm-104.8-86.7c-13.8-3.4-22.7-17-19.3-30.8 3.4-13.8 17-22.7 30.8-19.3 13.8 3.4 22.7 17 19.3 30.8-3.4 13.8-17 22.7-30.8 19.3z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/parnikaproperties_hyd/" target="_blank" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+              <path
+                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.6 339 255.9 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.3c0 14.9-12.1 27-27 27-14.9 0-27-12.1-27-27s12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.3-93.7s-58-34.6-93.7-36.3c-37-2.1-147.9-2.1-184.9 0-35.7 1.7-67.3 9.9-93.7 36.3s-34.6 58-36.3 93.7c-2.1 37-2.1 147.9 0 184.9 1.7 35.7 9.9 67.3 36.3 93.7s58 34.6 93.7 36.3c37 2.1 147.9 2.1 184.9 0 35.7-1.7 67.3-9.9 93.7-36.3s34.6-58 36.3-93.7c2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.4 42.4-29.4 11.7-99.2 9-132.4 9s-103 .2-132.4-9c-19.6-7.8-34.7-22.9-42.4-42.4-11.7-29.4-9-99.2-9-132.4s-.2-103 9-132.4c7.8-19.6 22.9-34.7 42.4-42.4 29.4-11.7 99.2-9 132.4-9s103-.2 132.4 9c19.6 7.8 34.7 22.9 42.4 42.4 11.7 29.4 9 99.2 9 132.4s.2 103-9 132.4z" />
+            </svg>
+          </a>
+          <a href="https://web.telegram.org/k/#@ParnikaHydFlats" target="_blank" aria-label="Telegram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+              <path
+                d="M446.7 74.3c-2.8-9.7-11.9-15.3-21.4-13.5L25.3 180.1c-10.4 2.4-17.5 12-16.3 22.5 1.2 10.4 9.9 18.1 20.3 18.1h79.1l-11.4 120.6c-1.6 16.9 13.1 30.6 30 28.1l41.9-8.7 80 94.3c10.8 12.7 29.1 8.4 34.1-7.9l153.1-449.2c2.5-7.2 .3-15-6-19.7z" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+
+      <!-- Quick Links -->
+      <div class="footer-column">
+
+        <h3>Quick links</h3>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="our-services.html">Services</a></li>
+          <li><a href="platinum-vista-gallery.html">Gallery Of Platinum Vista Projects</a></li>
+          <li><a href="platinum-avenue-gallery.html">Gallery Of Platinum Avenue Projects</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+
+      </div>
+
+
+      <!-- Services -->
+      <div class="footer-column">
+
+        <h3>Our Services</h3>
+        <a href="our-services.html">
+
+          <ul>
+            <li>Residential Building Construction</li>
+            <li>Commercial Construction</li>
+            <li>Real Estate Development</li>
+            <li>Property Promotion</li>
+            <li>Flats & Villas Development</li>
+            <li>Land Development & Plotting</li>
+            <li>Project Consultancy</li>
+            <li>Civil Construction Works</li>
+            <li>Property Sales & Marketing</li>
+          </ul>
+        </a>
+
+      </div>
+    </div>
+
+
+    <!-- Projects -->
+    <div class="footer-column">
+
+      <h3>Our Projects</h3>
+
+      <ul>
+        <li><a href="platinum-avenue.html">Platinum Avenue Projects</a></li>
+        <li><a href="platinum-vista.html">Platinum Vista Projects</a></li>
+      </ul>
+
+    </div>
+
+
+    <!-- Contact -->
+    <div class="footer-column">
+
+      <h3>Contact Us</h3>
+      <ul class="contact-info">
+        <li>
+          <span class="icon">📞</span>
+          <a href="tel:+919866711002">+91 9866711002</a>
+        </li>
+
+        <li>
+          <span class="icon">📞</span>
+          <a href="tel:+918897377477">+91 8897377477</a>
+        </li>
+
+        <li>
+          <span class="icon">✉</span>
+          <a href="mailto:sales@parnikaproperties.com">
+            sales@parnikaproperties.com
+          </a>
+        </li>
+
+        <ul class="contact-info">
+          <li>
+            <span class="icon">📍</span>
+            <a href="https://www.google.com/maps?q=MRI+Residency+Road+No.5+Sai+Anurag+Colony+Ameenpur+Miyapur+Sangareddy+Telangana+502033"
+              target="_blank" class="address-link">
+              Flat No.102, 1st Floor, Plot No.107,<br>
+              MRI Residency, Road No.5,<br>
+              Sai Anurag Colony, Ameenpur,<br>
+              Miyapur, Sangareddy District,<br>
+              Telangana State – 502033.
+            </a>
+          </li>
+        </ul>
+      </ul>
+
+    </div>
+
+    </div>
+
+
+    <!-- Bottom Footer -->
+
+    <div class="footer-bottom">
+
+      <p>© Copyright 2026 Platinum Projects. All Rights Reserved.</p>
+
+      <p>Design and Developed by Parnika Properties</p>
+
+    </div>
+
+  </footer>
+  <a href="https://wa.me/919866711002" target="_blank"
     style="position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;padding:14px 18px;border-radius:50px;font-weight:600;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.3)">
     💬
-    </a>
+  </a>
 
-    <script>
-      const hamburger = document.querySelector('.hamburger');
-      const nav = document.querySelector('nav');
-      const menuOverlay = document.querySelector('.menu-overlay');
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+    const menuOverlay = document.querySelector('.menu-overlay');
 
-      function toggleMenu() {
-        hamburger.classList.toggle('active');
-        nav.classList.toggle('active');
-        menuOverlay.classList.toggle('active');
-      }
+    function toggleMenu() {
+      hamburger.classList.toggle('active');
+      nav.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+    }
 
-      hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('click', toggleMenu);
 
-      menuOverlay.addEventListener('click', function(){
+    menuOverlay.addEventListener('click', function () {
+      hamburger.classList.remove('active');
+      nav.classList.remove('active');
+      menuOverlay.classList.remove('active');
+    });
+
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function () {
         hamburger.classList.remove('active');
         nav.classList.remove('active');
         menuOverlay.classList.remove('active');
       });
+    });
 
-      nav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function(){
-          hamburger.classList.remove('active');
-          nav.classList.remove('active');
-          menuOverlay.classList.remove('active');
-        });
+    // animate header elements on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const logo = document.querySelector('.logo-section');
+      if (logo) {
+        logo.style.opacity = '1';
+        logo.style.animation = 'fadeInUp 0.8s ease-out forwards';
+      }
+      document.querySelectorAll('nav a').forEach((a, idx) => {
+        a.style.opacity = '1';
+        a.style.animation = 'fadeInUp 0.8s ease-out forwards';
+        a.style.animationDelay = (0.2 + idx * 0.1) + 's';
       });
+    });
 
-      // animate header elements on load
-      document.addEventListener('DOMContentLoaded', () => {
-        const logo = document.querySelector('.logo-section');
-        if (logo) {
-          logo.style.opacity = '1';
-          logo.style.animation = 'fadeInUp 0.8s ease-out forwards';
-        }
-        document.querySelectorAll('nav a').forEach((a, idx) => {
-          a.style.opacity = '1';
-          a.style.animation = 'fadeInUp 0.8s ease-out forwards';
-          a.style.animationDelay = (0.2 + idx * 0.1) + 's';
-        });
-      });
+    const counters = document.querySelectorAll('.counter');
+    const speed = 300;
 
-      const counters = document.querySelectorAll('.counter');
-      const speed = 300;
+    const startCounters = () => {
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+          const inc = Math.max(1, Math.floor(target / speed));
 
-      const startCounters = () => {
-        counters.forEach(counter => {
-          const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            const inc = Math.max(1, Math.floor(target / speed));
-
-            if(count < target){
-              counter.innerText = count + inc;
-              setTimeout(updateCount, 30);
-            } else {
-              counter.innerText = target + "+";
-            }
-          };
-          updateCount();
-        });
-      };
-
-      const observer = new IntersectionObserver(entries => {
-        if(entries[0].isIntersecting){
-          startCounters();
-          observer.disconnect();
-        }
-      },{threshold:0.4});
-
-      observer.observe(document.querySelector('.status-section'));
-
-      // animate other elements on scroll
-      const animObs = new IntersectionObserver((entries)=>{
-        entries.forEach(entry=>{
-          if(entry.isIntersecting){
-            entry.target.style.opacity='1';
-            entry.target.style.animation='fadeInUp 0.8s ease-out forwards';
-            animObs.unobserve(entry.target);
+          if (count < target) {
+            counter.innerText = count + inc;
+            setTimeout(updateCount, 30);
+          } else {
+            counter.innerText = target + "+";
           }
-        });
-      },{threshold:0.2});
-      [...document.querySelectorAll('section, .about-block, .card, .status-box')].forEach(el=>animObs.observe(el));
-    </script>
-  </body>
+        };
+        updateCount();
+      });
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        startCounters();
+        observer.disconnect();
+      }
+    }, { threshold: 0.4 });
+
+    observer.observe(document.querySelector('.status-section'));
+
+    // animate other elements on scroll
+    const animObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+          animObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    [...document.querySelectorAll('section, .about-block, .card, .status-box')].forEach(el => animObs.observe(el));
+
+    // smooth page transitions
+    document.querySelectorAll("a").forEach(link => {
+
+      link.addEventListener("click", function (e) {
+
+        const target = this.getAttribute("href");
+
+        if (target && target.endsWith(".html")) {
+
+          e.preventDefault();
+
+          document.body.style.opacity = "0";
+
+          setTimeout(() => {
+            window.location = target;
+          }, 300);
+
+        }
+
+      });
+
+    });
+
+    const scrollBtn = document.getElementById("scrollTopBtn");
+
+    window.onscroll = function () {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollBtn.style.display = "flex";
+      }
+      else {
+        scrollBtn.style.display = "none";
+      }
+    };
+
+    scrollBtn.onclick = function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    };
+  </script>
+
+</body>
+
 </html>
