@@ -214,6 +214,20 @@
             transform: translateY(-10px) rotate(-45deg);
         }
 
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .menu-overlay.active {
+            display: block;
+        }
 
         /* PROJECT MENU */
         .projects-menu {
@@ -273,15 +287,72 @@
         }
 
         @media (max-width:768px) {
+            header {
+                padding: 14px 20px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            nav {
+                position: fixed;
+                top: 50px;
+                right: 0;
+                width: 100%;
+                max-width: 250px;
+                height: auto;
+                max-height: calc(100vh - 50px);
+                background: #0f172a;
+                flex-direction: column;
+                gap: 0;
+                padding: 20px 20px 20px 20px;
+                transform: translateX(100%);
+                transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                box-shadow: -8px 0 16px rgba(0, 0, 0, 0.3);
+                z-index: 1000;
+                overflow-y: auto;
+            }
+
+            nav.active {
+                transform: translateX(0);
+            }
+
+            nav a {
+                margin: 0;
+                padding: 16px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                display: block;
+                font-size: 16px;
+                animation: fadeInUp 0.5s ease-out forwards !important;
+            }
+
+            nav a::after {
+                display: none;
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+
             .mega-projects {
                 position: static;
                 flex-direction: column;
                 width: 100%;
                 box-shadow: none;
+                background: #1a2942;
+                border-radius: 0;
+                margin-top: 10px;
             }
 
-            .project-preview {
-                display: none;
+            .mega-projects.active {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .project-link {
+                padding: 15px 0;
             }
 
             .projects-menu:hover .mega-projects {
@@ -354,6 +425,19 @@
                 flex-direction: column;
                 width: 100%;
                 box-shadow: none;
+                background: #1a2942;
+                border-radius: 0;
+                margin-top: 10px;
+            }
+
+            .mega-gallery.active {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .gallery-link {
+                padding: 15px 0;
             }
 
             .gallery-menu:hover .mega-gallery {
@@ -366,7 +450,7 @@
         header {
             background: #0f172a;
             color: #fff;
-            padding: 16px 60px;
+            padding: clamp(10px, 3vw, 16px) clamp(15px, 4vw, 60px);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -374,6 +458,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            min-height: 55px;
         }
 
         .logo-section {
@@ -466,7 +551,7 @@
         .project-hero h1 {
             position: relative;
             z-index: 1;
-            font-size: 38px;
+            font-size: clamp(24px, 6vw, 38px);
             font-weight: 700;
             color: #fff;
         }
@@ -702,29 +787,29 @@
         }
 
         .projects-section {
-            padding: 80px 40px;
+            padding: clamp(30px, 6vw, 80px) clamp(20px, 5vw, 40px);
             font-family: 'Poppins', sans-serif;
             background: #e0bfd0;
             max-width: 100%;
-            margin: 25px;
+            margin: clamp(15px, 4vw, 25px);
             border-radius: 30px;
         }
 
         .projects-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: clamp(25px, 5vw, 40px);
         }
 
         .mini-title {
             letter-spacing: 3px;
-            font-size: 40px;
+            font-size: clamp(24px, 5vw, 40px);
             color: #3b5bdb;
-            margin-bottom: 10px;
+            margin-bottom: clamp(8px, 2vw, 10px);
             font-weight: 600;
         }
 
         .projects-header h2 {
-            font-size: 42px;
+            font-size: clamp(24px, 6vw, 42px);
             font-weight: 600;
             color: #111;
             margin-bottom: 0;
@@ -736,9 +821,9 @@
 
         .projects-container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: clamp(18px, 4vw, 25px);
+            margin-top: clamp(25px, 5vw, 40px);
         }
 
         .project-card {
@@ -756,35 +841,35 @@
 
         .project-card img {
             width: 100%;
-            height: 220px;
+            height: clamp(180px, 40vw, 220px);
             object-fit: cover;
             display: block;
         }
 
         .project-info {
-            padding: 20px;
+            padding: clamp(15px, 3vw, 20px);
         }
 
         .project-info h3 {
-            font-size: 18px;
-            margin-bottom: 12px;
+            font-size: clamp(14px, 3.5vw, 18px);
+            margin-bottom: clamp(8px, 2vw, 12px);
             color: #0f172a;
             font-weight: 600;
         }
 
         .project-info p {
-            font-size: 15px;
+            font-size: clamp(13px, 2.5vw, 15px);
             color: #555;
-            margin-bottom: 15px;
+            margin-bottom: clamp(12px, 2vw, 15px);
             line-height: 1.6;
         }
 
         .project-meta {
-            font-size: 14px;
+            font-size: clamp(12px, 2vw, 14px);
             color: #666;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: clamp(4px, 1vw, 6px);
         }
 
         @media(max-width: 1100px) {
@@ -913,7 +998,14 @@
                 </svg>
             </a>
         </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
+
+    <div class="menu-overlay"></div>
 
     <section class="project-hero">
         <h1>Projects Built on Quality Assurance</h1>

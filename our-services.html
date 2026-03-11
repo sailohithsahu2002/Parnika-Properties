@@ -319,6 +319,10 @@
       nav a::after {
         display: none;
       }
+
+      nav a:last-child {
+        border-bottom: none;
+      }
     }
 
     /* SECTION */
@@ -499,17 +503,77 @@
 
     /* Responsive */
     @media(max-width:768px) {
+      header {
+        padding: 12px 16px;
+      }
+
       .section-title {
         font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .services-subtitle {
+        font-size: 16px;
+        margin-bottom: 40px;
       }
 
       .services-grid {
         grid-template-columns: 1fr;
-        /* stack cards on small screens */
+        gap: 20px;
+        max-width: 100%;
+        padding: 0 10px;
+      }
+
+      .service-card {
+        margin: 10px 0;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px) scale(1.01);
+      }
+
+      .service-card img {
+        height: 180px;
+      }
+
+      .service-content {
+        padding: 20px;
+      }
+
+      .service-content h3 {
+        font-size: 18px;
+      }
+
+      .service-content p {
+        font-size: 14px;
+      }
+
+      .services-hero {
+        height: 300px;
+        margin: 10px;
+        padding: 15px 20px;
+        border-radius: 15px;
+      }
+
+      .services-hero .hero-content {
+        height: 200px;
+        margin: 0;
+        padding: 10px;
       }
 
       .services-hero .hero-content h1 {
-        font-size: clamp(2rem, 7vw, 3.2rem);
+        font-size: clamp(1.5rem, 5vw, 2.2rem);
+        margin-bottom: 10px;
+      }
+
+      .services-hero .hero-content p {
+        font-size: clamp(0.9rem, 3vw, 1.3rem);
+      }
+
+      #services {
+        margin: 10px;
+        padding: 20px;
       }
     }
 
@@ -600,6 +664,13 @@
         flex-direction: column;
         width: 100%;
         box-shadow: none;
+        background: #1a2942;
+        border-radius: 0;
+        margin-top: 10px;
+      }
+
+      .project-link {
+        padding: 15px 0;
       }
 
       .project-preview {
@@ -678,6 +749,13 @@
         flex-direction: column;
         width: 100%;
         box-shadow: none;
+        background: #1a2942;
+        border-radius: 0;
+        margin-top: 10px;
+      }
+
+      .gallery-link {
+        padding: 15px 0;
       }
 
       .gallery-menu:hover .mega-gallery {
@@ -685,12 +763,14 @@
         opacity: 1;
         visibility: visible;
       }
-
     }
 
-
-    /* footer and whatsapp button styling from index.html */
-
+      .gallery-menu:hover .mega-gallery {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+      }
+      
     /* footer and whatsapp button styling from index.html */
     .whatsapp-btn {
       position: fixed;
