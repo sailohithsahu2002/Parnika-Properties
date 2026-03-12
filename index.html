@@ -1571,6 +1571,133 @@
       font-family: 'Poppins', sans-serif;
     }
 
+    /* SECTION BACKGROUND */
+
+    .trust-section {
+      max-width: 100%;
+      padding: 0 20px;
+      margin: 25px;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+    }
+
+    /* subtle background pattern */
+
+    .trust-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 30px;
+      margin: auto;
+      z-index: -2;
+    }
+
+    /* CONTAINER */
+
+    .trust-container {
+      max-width: 1300px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* IMAGE */
+
+    .trust-image img {
+      width: 100%;
+      height: 450px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      transition: .4s;
+    }
+
+    .trust-image img:hover {
+      transform: scale(1.03);
+    }
+
+    /* CONTENT */
+
+    .trust-content h2 {
+      font-size: 32px;
+      margin-top: 20px;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 30px;
+
+    }
+
+    .trust-content strong {
+      color:  rgb(5, 129, 9);
+      font-size: 26px;
+      display: block;
+    }
+
+    .trust-content p {
+      color: black;
+      line-height: 1.7;
+      font-size: 16px;}
+
+    /* heading line */
+
+    .line {
+      width: 2px;
+      height: 40px;
+      background: #434c80;
+      display: inline-block;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    /* FEATURE GRID */
+
+    .trust-features {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    /* FEATURE BOX */
+
+    .feature-box {
+      background: #fff;
+      padding: 16px 20px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      transition: .3s;
+      cursor: pointer;
+    }
+
+    .feature-box span {
+      font-size: 20px;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    /* ACTIVE BLUE BOX */
+
+    .feature-box.active {
+      background: linear-gradient(135deg, #4b67ff, #5f7bff);
+      color: #fff;
+    }
+
     .footer-container {
       max-width: 1300px;
       margin: auto;
@@ -2147,9 +2274,78 @@
           </div>
         </div>
       </div>
+
+      <!-- Project 5 -->
+      <div class="project-card">
+        <img src="Images/arow road.jpeg" alt="Platinum Grande – Bachupally">
+        <div class="project-info">
+          <h3>Platinum Grande @ Bachupally</h3>
+          <div class="project-meta">
+            <span>📅 Start: Jun 2024</span>
+            <span>🏁 Expected Handover: June 2026</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
+  <section class="trust-section">
+    <div class="trust-container">
+
+      <!-- Left Image -->
+      <div class="trust-image">
+        <img src="Images/image 1.jpeg" alt="Residential Building">
+      </div>
+
+      <!-- Right Content -->
+      <div class="trust-content">
+
+        <h2>
+          <span class="line"></span>
+          Building Trust Through Quality,<br>
+          <strong>Consistency, And Timely Delivery</strong>
+        </h2>
+
+        <p>
+          We deliver quality-driven residential and commercial developments through
+          transparent practices, regulatory compliance, and structured project
+          management across all stages of construction.
+        </p>
+
+        <p>
+          With experienced execution, systematic planning, and timely delivery,
+          we create well-planned developments that ensure long-term value,
+          customer satisfaction, and dependable project outcomes.
+        </p>
+
+        <div class="trust-features">
+
+          <div class="feature-box active">
+            <span>🏢</span>
+            Quality Construction Assurance
+          </div>
+
+          <div class="feature-box">
+            <span>⭐</span>
+            Trusted Industry Experience
+          </div>
+
+          <div class="feature-box">
+            <span>📋</span>
+            Regulatory Compliance Standards
+          </div>
+
+          <div class="feature-box active">
+            <span>🤝</span>
+            Customer-Focused Approach
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <section class="new-contact-section">
     <div class="contact-overlay">
@@ -2304,7 +2500,7 @@
 
     <div class="footer-bottom">
 
-      <p>© Copyright 2026 Platinum Projects. All Rights Reserved.</p>
+      <p>© Copyright 2026 Parnika Properties. All Rights Reserved.</p>
 
       <p>Design and Developed by Parnika Properties</p>
 
@@ -2498,6 +2694,19 @@
         behavior: "smooth"
       });
     };
+
+    // simple hover highlight effect
+
+    const boxes = document.querySelectorAll(".feature-box");
+
+    boxes.forEach(box => {
+      box.addEventListener("click", () => {
+
+        boxes.forEach(b => b.classList.remove("active"));
+        box.classList.add("active");
+
+      });
+    });
   </script>
 
   <script src="script.js"></script>
