@@ -21,6 +21,177 @@
       animation: pageLoad .6s forwards;
     }
 
+    header {
+      background: #0f172a;
+      color: #fff;
+      padding: 16px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    header,
+    header * {
+      font-size: 16px;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+    }
+
+    .logo-section img {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .logo-section h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .logo-section {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+
+    .logo-section:hover {
+      opacity: 0.8;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav .projects-btn,
+    nav .gallery-btn {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      cursor: pointer;
+      animation: fadeInUp 0.8s ease-out forwards;
+      border: none;
+      background: none;
+    }
+
+    nav>a:nth-of-type(1) {
+      animation-delay: 0.2s;
+    }
+
+    nav>a:nth-of-type(2) {
+      animation-delay: 0.4s;
+    }
+
+    nav>a:nth-of-type(3) {
+      animation-delay: 0.6s;
+    }
+
+    nav>a:nth-of-type(4) {
+      animation-delay: 1.2s;
+    }
+
+    .projects-btn {
+      animation-delay: 0.8s;
+    }
+
+    .gallery-btn {
+      animation-delay: 1.0s;
+    }
+
+    /* HEADER SOCIAL ICONS */
+    header .social-icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    header .social-icons a {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    header .social-icons a:hover {
+      background: #facc15;
+      color: #000;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    header .social-icons svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      position: relative;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 28px;
+      height: 3px;
+      background: #7ac7dd;
+      border-radius: 2px;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-origin: center;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    .menu-overlay.active {
+      display: block;
+    }
+
     .footer {
       margin: 25px 25px 0 25px !important;
       border-radius: 18px;
@@ -66,201 +237,6 @@
       border: 0;
       display: block;
     }
-
-    @media (max-width: 768px) {
-      .map-container {
-        height: 250px;
-        border-radius: 10px;
-      }
-
-      .contact-banner {
-        padding: 25px 15px !important;
-        margin: 15px 12px 15px 12px !important;
-        border-radius: 14px;
-      }
-
-      .contact-section {
-        padding: 8px 0 25px 0 !important;
-        margin: 12px !important;
-      }
-
-      .contact-container {
-        padding: 25px 20px;
-        gap: 25px;
-        border-radius: 16px;
-      }
-
-      .contact-form {
-        padding: 25px;
-        border-radius: 16px;
-      }
-
-      .contact-form h2 {
-        font-size: 24px;
-        color: #ffffff;
-      }
-
-      .contact-form label {
-        font-size: 14px;
-        color: #e8eef7;
-      }
-
-      .contact-form input,
-      .contact-form textarea {
-        padding: 12px;
-        font-size: 14px;
-      }
-
-      .contact-info {
-        padding: 25px;
-        border-radius: 16px;
-      }
-
-      .contact-info h3 {
-        font-size: clamp(18px, 4vw, 26px);
-        margin-bottom: 12px;
-      }
-
-      .contact-info>p {
-        font-size: 13px;
-        margin-bottom: 20px;
-      }
-
-      .info-item {
-        padding: 16px;
-        margin: 18px 0;
-        gap: 14px;
-        border-radius: 12px;
-      }
-
-      .info-item:hover {
-        transform: translateX(8px) translateY(-2px);
-      }
-
-      .info-item span {
-        font-size: 24px;
-      }
-
-      .info-item strong {
-        font-size: 13px;
-      }
-
-      .info-item p {
-        font-size: 13px;
-      }
-
-      .footer {
-        margin: 15px 12px 0 12px !important;
-        border-radius: 16px;
-        padding-top: 30px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .map-container {
-        height: 200px;
-        border-radius: 10px;
-      }
-
-      .contact-banner {
-        padding: 20px 10px !important;
-        margin: 5px 5px 5px 5px !important;
-        border-radius: 10px;
-      }
-
-      .contact-section {
-        padding: 8px 0 20px 0 !important;
-        margin: 8px !important;
-      }
-
-      .contact-container {
-        padding: 16px 12px;
-        gap: 18px;
-        border-radius: 12px;
-      }
-
-      .contact-form {
-        padding: 16px;
-        border-radius: 12px;
-      }
-
-      .contact-form h2 {
-        font-size: 20px;
-      }
-
-      .contact-form label {
-        font-size: 13px;
-      }
-
-      .contact-form input,
-      .contact-form textarea {
-        padding: 10px 12px;
-        font-size: 13px;
-        gap: 12px;
-      }
-
-      .contact-form button {
-        padding: 11px 20px;
-        font-size: 13px;
-        width: 100%;
-        align-self: stretch;
-      }
-
-      .contact-info {
-        padding: 16px;
-        border-radius: 12px;
-      }
-
-      .contact-info h3 {
-        font-size: 18px;
-      }
-
-      .contact-info>p {
-        font-size: 12px;
-      }
-
-      .info-item {
-        padding: 12px;
-        margin: 12px 0;
-        gap: 12px;
-        border-radius: 10px;
-      }
-
-      .info-item span {
-        font-size: 20px;
-        min-width: 32px;
-      }
-
-      .info-item strong {
-        font-size: 12px;
-      }
-
-      .info-item p {
-        font-size: 12px;
-        line-height: 1.5;
-      }
-
-      .footer {
-        margin: 8px 5px 0 5px !important;
-        border-radius: 10px;
-        padding-top: 20px;
-      }
-
-      .footer-container {
-        padding: 0 12px;
-        gap: 18px;
-      }
-
-      .footer-column h3 {
-        font-size: 14px;
-      }
-
-      .footer-bottom {
-        padding: 10px 12px;
-        font-size: 11px;
-      }
-    }
-
 
     /* animations & responsive typography */
     @keyframes fadeInUp {
@@ -344,10 +320,23 @@
       transition: all .35s ease;
     }
 
-    .projects-menu:hover .mega-projects {
+    .projects-menu:hover .mega-projects,
+    .gallery-menu:hover .mega-gallery,
+    .projects-menu.active .mega-projects,
+    .gallery-menu.active .mega-gallery {
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
+    }
+
+    /* disable hover when no-hover class is present */
+    .projects-menu.no-hover:hover .mega-projects,
+    .gallery-menu.no-hover:hover .mega-gallery {
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(10px);
     }
 
     .project-link {
@@ -372,25 +361,6 @@
     .project-location {
       font-size: 14px;
       color: #64748b;
-    }
-
-    @media (max-width:768px) {
-      .mega-projects {
-        position: static;
-        flex-direction: column;
-        width: 100%;
-        box-shadow: none;
-      }
-
-      .project-preview {
-        display: none;
-      }
-
-      .projects-menu:hover .mega-projects {
-        display: block;
-        opacity: 1;
-        visibility: visible;
-      }
     }
 
     /* GALLERY MENU */
@@ -450,25 +420,10 @@
       color: #64748b;
     }
 
-    @media (max-width:768px) {
-      .mega-gallery {
-        position: static;
-        flex-direction: column;
-        width: 100%;
-        box-shadow: none;
-      }
-
-      .gallery-menu:hover .mega-gallery {
-        display: block;
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-
     header {
       background: #0f172a;
       color: #fff;
-      padding: 16px 60px;
+      padding: clamp(10px, 3vw, 16px) clamp(15px, 4vw, 60px);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -479,6 +434,7 @@
       animation: fadeInUp 0.8s ease-out forwards;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      min-height: 55px;
     }
 
     .logo-section {
@@ -564,37 +520,6 @@
       opacity: 0.7;
     }
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 6px;
-      position: relative;
-      z-index: 1001;
-    }
-
-    .hamburger span {
-      width: 28px;
-      height: 3px;
-      background: #facc15;
-      border-radius: 2px;
-      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      transform-origin: center;
-    }
-
-    .hamburger.active span:nth-child(1) {
-      transform: translateY(10px) rotate(45deg);
-    }
-
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-      transform: scaleX(0);
-    }
-
-    .hamburger.active span:nth-child(3) {
-      transform: translateY(-10px) rotate(-45deg);
-    }
-
     .menu-overlay {
       display: none;
       position: fixed;
@@ -608,74 +533,6 @@
 
     .menu-overlay.active {
       display: block;
-    }
-
-    @media(max-width:768px) {
-      header {
-        padding: 14px 20px;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      nav {
-        position: fixed;
-        top: 70px;
-        right: 0;
-        width: 100%;
-        max-width: 250px;
-        height: auto;
-        max-height: calc(100vh - 70px);
-        background: #0f172a;
-        flex-direction: column;
-        gap: 0;
-        padding: 20px 20px 20px 20px;
-        transform: translateX(100%);
-        transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        box-shadow: -8px 0 16px rgba(0, 0, 0, 0.3);
-        z-index: 1000;
-        overflow-y: auto;
-      }
-
-      nav.active {
-        transform: translateX(0);
-      }
-
-      nav a {
-        margin: 0;
-        padding: 16px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        display: block;
-        font-size: 16px;
-        animation: fadeInUp 0.5s ease-out forwards !important;
-      }
-
-      nav a::after {
-        display: none;
-      }
-
-      nav a:last-child {
-        border-bottom: none;
-      }
-
-      .mega-projects,
-      .mega-gallery {
-        position: static;
-        width: 100%;
-        background: #1a2942;
-        border-radius: 0;
-        margin-top: 10px;
-        box-shadow: none;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-      }
-
-      .project-link,
-      .gallery-link {
-        padding: 15px 0;
-      }
     }
 
     /* PAGE HEADER (removed - using banner instead) */
@@ -694,181 +551,6 @@
 
     form {
       margin-top: 20px;
-    }
-
-    @media(max-width:900px) {
-      .contact-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 40px 30px;
-      }
-
-      .contact-banner {
-        padding: 30px 20px !important;
-        margin: 15px 10px 15px 10px !important;
-        border-radius: 18px;
-      }
-
-      .banner-content h1 {
-        font-size: clamp(1.8rem, 5vw, 2.5rem);
-      }
-
-      .banner-content p {
-        font-size: 13px;
-        letter-spacing: 2px;
-      }
-
-      .contact-form {
-        padding: 30px;
-        border-radius: 18px;
-      }
-
-      .contact-form h2 {
-        font-size: 28px;
-      }
-
-      .contact-info {
-        padding: 30px;
-        border-radius: 20px;
-      }
-
-      .contact-info h3 {
-        font-size: clamp(20px, 4vw, 28px);
-      }
-
-      .info-item {
-        padding: 16px;
-        margin: 20px 0;
-        gap: 15px;
-      }
-    }
-
-    @media(max-width:600px) {
-      header {
-        padding: 12px 16px;
-      }
-
-      .contact-banner {
-        padding: 40px 16px !important;
-        margin: 8px !important;
-        border-radius: 12px;
-        box-shadow: 0 12px 30px rgba(37, 99, 235, 0.18);
-      }
-
-      .banner-content h1 {
-        font-size: clamp(1.5rem, 4vw, 2rem);
-        line-height: 1.3;
-      }
-
-      .banner-content p {
-        font-size: 12px;
-        letter-spacing: 1.5px;
-        margin-bottom: 10px;
-      }
-
-      .contact-section {
-        padding: 12px 0 40px 0 !important;
-        margin: 15px !important;
-      }
-
-      .contact-container {
-        grid-template-columns: 1fr;
-        padding: 20px 16px;
-        gap: 25px;
-        border-radius: 15px;
-      }
-
-      .contact-form {
-        padding: 20px;
-        border-radius: 15px;
-        background: linear-gradient(135deg, #7993da 0%, #294278 50%, #495d94 100%);
-      }
-
-      .contact-form h2 {
-        font-size: clamp(20px, 4vw, 26px);
-        margin-bottom: 20px;
-        color: #ffffff;
-      }
-
-      .contact-form label {
-        font-size: clamp(14px, 3vw, 16px);
-        color: #e8eef7;
-        margin-bottom: 6px;
-      }
-
-      .contact-form input,
-      .contact-form textarea {
-        padding: 12px 14px;
-        font-size: 14px;
-        border-radius: 6px;
-      }
-
-      .contact-form button {
-        padding: 12px 24px;
-        font-size: 14px;
-        margin-top: 8px;
-        width: 100%;
-        align-self: stretch;
-      }
-
-      .contact-info {
-        padding: 20px;
-        border-radius: 15px;
-        background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #1d4ed8 100%);
-      }
-
-      .contact-info h3 {
-        font-size: clamp(18px, 4vw, 24px);
-        margin-bottom: 12px;
-      }
-
-      .contact-info>p {
-        font-size: clamp(13px, 2.5vw, 14px);
-        margin-bottom: 20px;
-      }
-
-      .info-item {
-        padding: 14px;
-        margin: 15px 0;
-        gap: 12px;
-        border-radius: 12px;
-      }
-
-      .info-item span {
-        font-size: clamp(20px, 4vw, 26px);
-        min-width: 35px;
-      }
-
-      .info-item strong {
-        font-size: clamp(12px, 2.5vw, 14px);
-        margin-bottom: 4px;
-      }
-
-      .info-item p {
-        font-size: clamp(12px, 2vw, 13px);
-      }
-
-      .map-section {
-        margin: 8px !important;
-        padding: 12px !important;
-      }
-
-      .map-container {
-        height: 250px;
-        border-radius: 12px;
-      }
-
-      .footer {
-        margin: 10px 8px 0 8px !important;
-        border-radius: 12px;
-        padding-top: 20px;
-      }
-
-      .footer-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 0 15px;
-      }
     }
 
     .footer {
@@ -975,86 +657,6 @@
       margin: 0;
     }
 
-    @media(max-width:900px) {
-      .footer-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-      }
-    }
-
-    @media(max-width:768px) {
-      .footer {
-        margin: 20px 15px 0 15px;
-        border-radius: 20px;
-        padding-top: 40px;
-      }
-
-      .footer-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 0 20px;
-      }
-
-      .footer-column h3 {
-        font-size: 16px;
-        margin-bottom: 15px;
-      }
-
-      .footer-column ul li {
-        font-size: 13px;
-      }
-
-      .footer-bottom {
-        padding: 12px 20px;
-        font-size: 12px;
-      }
-    }
-
-    @media(max-width:600px) {
-      .footer {
-        margin: 15px 10px 0 10px;
-        border-radius: 15px;
-        padding-top: 30px;
-      }
-
-      .footer-container {
-        padding: 0 15px;
-        gap: 20px;
-      }
-
-      .footer-logo {
-        width: 100px;
-      }
-
-      .footer-about p {
-        font-size: 13px;
-        margin-bottom: 15px;
-      }
-
-      .footer-column h3 {
-        font-size: 15px;
-        margin-bottom: 12px;
-      }
-
-      .footer-column ul li {
-        font-size: 12px;
-        margin-bottom: 8px;
-      }
-
-      .footer-bottom {
-        padding: 10px 15px;
-        font-size: 11px;
-        flex-direction: column;
-        gap: 8px;
-      }
-    }
-
     #scrollTopBtn {
       position: fixed;
       bottom: 30px;
@@ -1146,22 +748,6 @@
       opacity: 0;
       animation: fadeInUp 0.8s ease-out forwards;
       animation-delay: 0.2s;
-    }
-
-    /* Responsive Grid */
-    @media (max-width: 1100px) {
-      .contact-container {
-        gap: 40px;
-        padding: 40px;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .contact-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 40px 30px;
-      }
     }
 
     /* Contact Form */
@@ -1375,363 +961,508 @@
       display: block;
     }
 
+    /* ================= TABLET ================= */
 
-    /* ===== Tablet ===== */
-    @media (max-width: 1000px) {
+    @media (max-width:1024px) {
+
+      header {
+        padding: 16px 30px;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 16px;
+        margin-left: 10px;
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .contact-form {
+        order: 2;
+      }
+
+      .contact-info {
+        order: 1;
+      }
+
+      .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 0 20px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+      }
+
       .map-section {
-        padding: 50px 20px;
+        margin: 20px;
       }
 
-      .map-container {
-        height: 400px;
-      }
     }
 
+    /* ================= MOBILE ================= */
 
-    /* ===== Mobile ===== */
-    @media (max-width: 768px) {
+    @media (max-width:768px) {
+
+      header {
+        padding: 14px 20px;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 260px;
+        height: 100vh;
+        background: #0f172a;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 90px 25px;
+        gap: 18px;
+        transition: 0.4s;
+        /* z-index: 1000; */
+      }
+
+      nav.active {
+        right: 0;
+      }
+
+      nav a,
+      .projects-btn,
+      .gallery-btn {
+        margin: 0;
+        font-size: 16px;
+        width: 100%;
+      }
+
+      /* Mobile: dropdowns become in-flow so other items shift down */
+      .mega-projects,
+      .mega-gallery {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+        margin-top: 10px;
+        display: none;
+      }
+
+      .projects-menu.active .mega-projects,
+      .gallery-menu.active .mega-gallery {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .contact-section {
+        margin: 15px;
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+
+      .contact-form h2 {
+        font-size: 26px;
+      }
+
+      .contact-info {
+        border-radius: 20px;
+      }
+
       .map-section {
-        padding: 40px 20px;
+        margin: 15px;
       }
 
-      .map-container {
-        height: 350px;
-        border-radius: 16px;
+      .footer {
+        margin: 20px;
       }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .social-icons {
+        justify-content: center;
+      }
+
     }
 
+    /* ================= SMALL MOBILE ================= */
 
-    /* ===== Small Mobile ===== */
-    @media (max-width: 480px) {
-      .map-container {
-        height: 300px;
-        border-radius: 14px;
+    @media (max-width:480px) {
+
+      .logo-section h2 {
+        font-size: 18px;
       }
+
+      .logo-section img {
+        height: 40px;
+      }
+
+      .banner-content h1 {
+        font-size: 26px;
+        line-height: 1.4;
+      }
+
+      .contact-form button {
+        width: 100%;
+      }
+
+      .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .info-item span {
+        font-size: 24px;
+      }
+
+      .footer-bottom {
+        font-size: 12px;
+        padding: 12px;
+      }
+
     }
   </style>
 </head>
 
 <body>
-  <div class="main-container">
-    <header>
-      <a href="index.html" class="logo-section">
-        <img src="Images/Logo.jpeg" alt="Parnika Properties Logo">
-        <h2>Parnika Properties</h2>
+  <header>
+    <a href="index.html" class="logo-section">
+      <img src="Images/Logo.jpeg" alt="Parnika Properties Logo">
+      <h2>Parnika Properties</h2>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="our-services.html">Our Services</a>
+      <div class="projects-menu">
+
+        <button id="projects-btn" class="projects-btn">Our Projects ▾</button>
+
+        <div class="mega-projects">
+
+          <div class="project-list">
+
+            <a href="platinum-avenue.html" class="project-link">
+              <div class="project-title">Platinum Avenue</div>
+              <div class="project-location"></div>
+            </a>
+
+            <a href="platinum-vista.html" class="project-link">
+              <div class="project-title">Platinum Vista</div>
+              <div class="project-location"></div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+      <!-- <a href="gallery.html">Gallery</a> -->
+      <div class="gallery-menu">
+
+        <button id="gallery-btn" class="gallery-btn">Gallery ▾</button>
+
+        <div class="mega-gallery">
+
+          <div class="gallery-list">
+
+            <a href="platinum-avenue-gallery.html" class="gallery-link">
+              <div class="gallery-title">Platinum Avenue Gallery</div>
+              <div class="gallery-location"></div>
+            </a>
+
+            <a href="platinum-vista-gallery.html" class="gallery-link">
+              <div class="gallery-title">Platinum Vista Gallery</div>
+              <div class="gallery-location"></div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.407.593 24 1.324 24h11.495v-9.294H9.691v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.676V1.324C24 .593 23.407 0 22.676 0z" />
+        </svg>
       </a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="our-services.html">Our Services</a>
-        <div class="projects-menu">
+      <a href="https://in.pinterest.com/parnikapropertieshyd/" target="_blank" aria-label="Pinterest">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" fill="currentColor">
+          <path
+            d="M496 256c0 137-111 248-248 248S0 393 0 256 111 8 248 8s248 111 248 248zm-276.4 39.7c-5.1 22.3-10 43.5-21.4 64.5-6 11.3-13.3 22-23.9 28.3-7.3 4.3-16 4.9-23.7 3-17.5-4.1-18.2-17.3-9-32.6 6-10 10.9-20.6 14.3-31.5 4.4-15.4 8-30.9 11.2-46.5 3.2-15.4 6-31.2 8.7-46.9 1.9-11.1 3.6-22.3 5.4-33.4 3.1-19.8 6.4-39.6 9.7-59.4 1-5.9 1.8-12 .1-17.8-3.4-15-18.4-23-33.1-17.5-15.6 6-28.1 18-37.1 33.1-22.3 36.9-34.4 77.6-34.4 120.2 0 14.6 1.4 29.2 3.9 43.6 4.2 23.8 13.7 46.4 28.4 64.5 6.6 7.6 14.3 14.2 22.7 19.2 10.9 6.7 23 10.7 35.3 13.6 2.3 .6 4.6 1 6.9 1.4 13.1 2 26.6 3.6 39.8 5.4 14.9 1.9 28.4-4.3 34.8-17.9 6.3-13.6 3.8-27.5 2.2-41.4-2.6-22.4-5.2-44.7-7.5-67.1zm-104.8-86.7c-13.8-3.4-22.7-17-19.3-30.8 3.4-13.8 17-22.7 30.8-19.3 13.8 3.4 22.7 17 19.3 30.8-3.4 13.8-17 22.7-30.8 19.3z" />
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/parnikaproperties_hyd/" target="_blank" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+          <path
+            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.6 339 255.9 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.3c0 14.9-12.1 27-27 27-14.9 0-27-12.1-27-27s12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.3-93.7s-58-34.6-93.7-36.3c-37-2.1-147.9-2.1-184.9 0-35.7 1.7-67.3 9.9-93.7 36.3s-34.6 58-36.3 93.7c-2.1 37-2.1 147.9 0 184.9 1.7 35.7 9.9 67.3 36.3 93.7s58 34.6 93.7 36.3c37 2.1 147.9 2.1 184.9 0 35.7-1.7 67.3-9.9 93.7-36.3s34.6-58 36.3-93.7c2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.4 42.4-29.4 11.7-99.2 9-132.4 9s-103 .2-132.4-9c-19.6-7.8-34.7-22.9-42.4-42.4-11.7-29.4-9-99.2-9-132.4s-.2-103 9-132.4c7.8-19.6 22.9-34.7 42.4-42.4 29.4-11.7 99.2-9 132.4-9s103-.2 132.4 9c19.6 7.8 34.7 22.9 42.4 42.4 11.7 29.4 9 99.2 9 132.4s.2 103-9 132.4z" />
+        </svg>
+      </a>
+      <a href="https://web.telegram.org/k/#@ParnikaHydFlats" target="_blank" aria-label="Telegram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+          <path
+            d="M446.7 74.3c-2.8-9.7-11.9-15.3-21.4-13.5L25.3 180.1c-10.4 2.4-17.5 12-16.3 22.5 1.2 10.4 9.9 18.1 20.3 18.1h79.1l-11.4 120.6c-1.6 16.9 13.1 30.6 30 28.1l41.9-8.7 80 94.3c10.8 12.7 29.1 8.4 34.1-7.9l153.1-449.2c2.5-7.2 .3-15-6-19.7z" />
+        </svg>
+      </a>
+    </div>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+  <div class="menu-overlay"></div>
 
-          <a href="#" class="projects-btn">Our Projects ▾</a>
+  <!-- Contact Banner -->
+  <section class="contact-banner">
+    <div class="banner-content">
+      <h1>Connect with us today and take the first step toward your dream property.</h1>
+    </div>
+  </section>
 
-          <div class="mega-projects">
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="contact-container">
 
-            <div class="project-list">
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h2>Contact Us for Project Insights</h2>
+        <form id="contactForm" onsubmit="sendWhatsApp(); return false;">
+          <label>Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required>
 
-              <a href="platinum-avenue.html" class="project-link">
-                <div class="project-title">Platinum Avenue</div>
-                <div class="project-location"></div>
-              </a>
+          <label>Phone Number</label>
+          <input type="tel" id="phone" placeholder="Enter phone number" required>
 
-              <a href="platinum-vista.html" class="project-link">
-                <div class="project-title">Platinum Vista</div>
-                <div class="project-location"></div>
-              </a>
+          <label>Email</label>
+          <input type="email" id="email" placeholder="Enter email" required>
 
-            </div>
-          </div>
-        </div>
-        <div class="gallery-menu">
+          <label>Comments / Message</label>
+          <textarea id="message" placeholder="Write your message"></textarea>
 
-          <a href="#" class="gallery-btn">Gallery ▾</a>
-
-          <div class="mega-gallery">
-
-            <div class="gallery-list">
-
-              <a href="platinum-avenue-gallery.html" class="gallery-link">
-                <div class="gallery-title">Platinum Avenue Gallery</div>
-                <div class="gallery-location"></div>
-              </a>
-
-              <a href="platinum-vista-gallery.html" class="gallery-link">
-                <div class="gallery-title">Platinum Vista Gallery</div>
-                <div class="gallery-location"></div>
-              </a>
-
-            </div>
-          </div>
-        </div>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.407.593 24 1.324 24h11.495v-9.294H9.691v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.676V1.324C24 .593 23.407 0 22.676 0z" />
-          </svg>
-        </a>
-        <a href="https://in.pinterest.com/parnikapropertieshyd/" target="_blank" aria-label="Pinterest">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" fill="currentColor">
-            <path
-              d="M496 256c0 137-111 248-248 248S0 393 0 256 111 8 248 8s248 111 248 248zm-276.4 39.7c-5.1 22.3-10 43.5-21.4 64.5-6 11.3-13.3 22-23.9 28.3-7.3 4.3-16 4.9-23.7 3-17.5-4.1-18.2-17.3-9-32.6 6-10 10.9-20.6 14.3-31.5 4.4-15.4 8-30.9 11.2-46.5 3.2-15.4 6-31.2 8.7-46.9 1.9-11.1 3.6-22.3 5.4-33.4 3.1-19.8 6.4-39.6 9.7-59.4 1-5.9 1.8-12 .1-17.8-3.4-15-18.4-23-33.1-17.5-15.6 6-28.1 18-37.1 33.1-22.3 36.9-34.4 77.6-34.4 120.2 0 14.6 1.4 29.2 3.9 43.6 4.2 23.8 13.7 46.4 28.4 64.5 6.6 7.6 14.3 14.2 22.7 19.2 10.9 6.7 23 10.7 35.3 13.6 2.3 .6 4.6 1 6.9 1.4 13.1 2 26.6 3.6 39.8 5.4 14.9 1.9 28.4-4.3 34.8-17.9 6.3-13.6 3.8-27.5 2.2-41.4-2.6-22.4-5.2-44.7-7.5-67.1zm-104.8-86.7c-13.8-3.4-22.7-17-19.3-30.8 3.4-13.8 17-22.7 30.8-19.3 13.8 3.4 22.7 17 19.3 30.8-3.4 13.8-17 22.7-30.8 19.3z" />
-          </svg>
-        </a>
-        <a href="https://www.instagram.com/parnikaproperties_hyd/" target="_blank" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
-            <path
-              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.6 339 255.9 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.3c0 14.9-12.1 27-27 27-14.9 0-27-12.1-27-27s12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.3-93.7s-58-34.6-93.7-36.3c-37-2.1-147.9-2.1-184.9 0-35.7 1.7-67.3 9.9-93.7 36.3s-34.6 58-36.3 93.7c-2.1 37-2.1 147.9 0 184.9 1.7 35.7 9.9 67.3 36.3 93.7s58 34.6 93.7 36.3c37 2.1 147.9 2.1 184.9 0 35.7-1.7 67.3-9.9 93.7-36.3s34.6-58 36.3-93.7c2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.4 42.4-29.4 11.7-99.2 9-132.4 9s-103 .2-132.4-9c-19.6-7.8-34.7-22.9-42.4-42.4-11.7-29.4-9-99.2-9-132.4s-.2-103 9-132.4c7.8-19.6 22.9-34.7 42.4-42.4 29.4-11.7 99.2-9 132.4-9s103-.2 132.4 9c19.6 7.8 34.7 22.9 42.4 42.4 11.7 29.4 9 99.2 9 132.4s.2 103-9 132.4z" />
-          </svg>
-        </a>
-        <a href="https://web.telegram.org/k/#@ParnikaHydFlats" target="_blank" aria-label="Telegram">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
-            <path
-              d="M446.7 74.3c-2.8-9.7-11.9-15.3-21.4-13.5L25.3 180.1c-10.4 2.4-17.5 12-16.3 22.5 1.2 10.4 9.9 18.1 20.3 18.1h79.1l-11.4 120.6c-1.6 16.9 13.1 30.6 30 28.1l41.9-8.7 80 94.3c10.8 12.7 29.1 8.4 34.1-7.9l153.1-449.2c2.5-7.2 .3-15-6-19.7z" />
-          </svg>
-        </a>
+          <button type="submit">Submit</button>
+        </form>
       </div>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </header>
-    <div class="menu-overlay"></div>
 
-    <!-- Contact Banner -->
-    <section class="contact-banner">
-      <div class="banner-content">
-        <h1>Connect with us today and take the first step toward your dream property.</h1>
-      </div>
-    </section>
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        <p>
+          Get in touch with our team for project details, site visits,
+          pricing information, and personalized real estate assistance.
+        </p>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
-      <div class="contact-container">
-
-        <!-- Contact Form -->
-        <div class="contact-form">
-          <h2>Contact Us for Project Insights</h2>
-          <form id="contactForm" onsubmit="sendWhatsApp(); return false;">
-            <label>Name</label>
-            <input type="text" id="name" placeholder="Enter your name" required>
-
-            <label>Phone Number</label>
-            <input type="tel" id="phone" placeholder="Enter phone number" required>
-
-            <label>Email</label>
-            <input type="email" id="email" placeholder="Enter email" required>
-
-            <label>Comments / Message</label>
-            <textarea id="message" placeholder="Write your message"></textarea>
-
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="contact-info">
-          <h3>Get In Touch</h3>
-          <p>
-            Get in touch with our team for project details, site visits,
-            pricing information, and personalized real estate assistance.
-          </p>
-
-          <div class="info-item">
-            <span>📞</span>
-            <div>
-              <strong>Phone 1</strong>
-              <p><a href="tel:+919866711002">+91 9866711002</a></p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <span>📞</span>
-            <div>
-              <strong>Phone 2</strong>
-              <p><a href="tel:+918897377477">+91 8897377477</a></p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <span>✉</span>
-            <div>
-              <strong>Email</strong>
-              <p><a href="mailto:sales@parnikaproperties.com">sales@parnikaproperties.com</a></p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <span>🏢</span>
-            <div>
-              <strong>Office Location</strong>
-              <p>H.No.102, 1st Floor, Road No:5,<br>
-                Sai Anurug Colony Ameenpur,<br>
-                Miyapur, Hyderabad - 502033</p>
-            </div>
+        <div class="info-item">
+          <span>📞</span>
+          <div>
+            <strong>Phone 1</strong>
+            <p><a href="tel:+919866711002">+91 9866711002</a></p>
           </div>
         </div>
 
-
-      </div>
-    </section>
-
-    <!-- Premium Map Section -->
-    <section class="map-section">
-      <div class="map-container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.4968069189963!2d78.34433297493821!3d17.531517983380393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8d00182f0791%3A0x265b5d733b562217!2sMRI%20Residency!5e0!3m2!1sen!2sin!4v1773036374709!5m2!1sen!2sin"
-          allowfullscreen="" loading="lazy">
-        </iframe>
-      </div>
-    </section>
-
-
-    <footer class="footer">
-
-      <div class="footer-container">
-
-        <!-- Logo & About -->
-        <div class="footer-about">
-
-          <img src="Images/Logo.jpeg" class="footer-logo">
-
-          <p>
-            Developing high-quality residential communities and commercial spaces with innovation, trust, and
-            excellence.
-          </p>
-
-          <h4>FOLLOW US ON :</h4>
-
-          <div class="social-icons">
-            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.407.593 24 1.324 24h11.495v-9.294H9.691v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.676V1.324C24 .593 23.407 0 22.676 0z" />
-              </svg>
-            </a>
-            <a href="https://in.pinterest.com/parnikapropertieshyd/" target="_blank" aria-label="Pinterest">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" fill="currentColor">
-                <path
-                  d="M496 256c0 137-111 248-248 248S0 393 0 256 111 8 248 8s248 111 248 248zm-276.4 39.7c-5.1 22.3-10 43.5-21.4 64.5-6 11.3-13.3 22-23.9 28.3-7.3 4.3-16 4.9-23.7 3-17.5-4.1-18.2-17.3-9-32.6 6-10 10.9-20.6 14.3-31.5 4.4-15.4 8-30.9 11.2-46.5 3.2-15.4 6-31.2 8.7-46.9 1.9-11.1 3.6-22.3 5.4-33.4 3.1-19.8 6.4-39.6 9.7-59.4 1-5.9 1.8-12 .1-17.8-3.4-15-18.4-23-33.1-17.5-15.6 6-28.1 18-37.1 33.1-22.3 36.9-34.4 77.6-34.4 120.2 0 14.6 1.4 29.2 3.9 43.6 4.2 23.8 13.7 46.4 28.4 64.5 6.6 7.6 14.3 14.2 22.7 19.2 10.9 6.7 23 10.7 35.3 13.6 2.3 .6 4.6 1 6.9 1.4 13.1 2 26.6 3.6 39.8 5.4 14.9 1.9 28.4-4.3 34.8-17.9 6.3-13.6 3.8-27.5 2.2-41.4-2.6-22.4-5.2-44.7-7.5-67.1zm-104.8-86.7c-13.8-3.4-22.7-17-19.3-30.8 3.4-13.8 17-22.7 30.8-19.3 13.8 3.4 22.7 17 19.3 30.8-3.4 13.8-17 22.7-30.8 19.3z" />
-              </svg>
-            </a>
-            <a href="https://www.instagram.com/parnikaproperties_hyd/" target="_blank" aria-label="Instagram">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
-                <path
-                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.6 339 255.9 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.3c0 14.9-12.1 27-27 27-14.9 0-27-12.1-27-27s12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.3-93.7s-58-34.6-93.7-36.3c-37-2.1-147.9-2.1-184.9 0-35.7 1.7-67.3 9.9-93.7 36.3s-34.6 58-36.3 93.7c-2.1 37-2.1 147.9 0 184.9 1.7 35.7 9.9 67.3 36.3 93.7s58 34.6 93.7 36.3c37 2.1 147.9 2.1 184.9 0 35.7-1.7 67.3-9.9 93.7-36.3s34.6-58 36.3-93.7c2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.4 42.4-29.4 11.7-99.2 9-132.4 9s-103 .2-132.4-9c-19.6-7.8-34.7-22.9-42.4-42.4-11.7-29.4-9-99.2-9-132.4s-.2-103 9-132.4c7.8-19.6 22.9-34.7 42.4-42.4 29.4-11.7 99.2-9 132.4-9s103-.2 132.4 9c19.6 7.8 34.7 22.9 42.4 42.4 11.7 29.4 9 99.2 9 132.4s.2 103-9 132.4z" />
-              </svg>
-            </a>
-            <a href="https://web.telegram.org/k/#@ParnikaHydFlats" target="_blank" aria-label="Telegram">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
-                <path
-                  d="M446.7 74.3c-2.8-9.7-11.9-15.3-21.4-13.5L25.3 180.1c-10.4 2.4-17.5 12-16.3 22.5 1.2 10.4 9.9 18.1 20.3 18.1h79.1l-11.4 120.6c-1.6 16.9 13.1 30.6 30 28.1l41.9-8.7 80 94.3c10.8 12.7 29.1 8.4 34.1-7.9l153.1-449.2c2.5-7.2 .3-15-6-19.7z" />
-              </svg>
-            </a>
+        <div class="info-item">
+          <span>📞</span>
+          <div>
+            <strong>Phone 2</strong>
+            <p><a href="tel:+918897377477">+91 8897377477</a></p>
           </div>
-
         </div>
 
-        <!-- Quick Links -->
-        <div class="footer-column">
-
-          <h3>Quick links</h3>
-
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="our-services.html">Services</a></li>
-            <li><a href="platinum-vista-gallery.html">Gallery Of Platinum Vista Projects</a></li>
-            <li><a href="platinum-avenue-gallery.html">Gallery Of Platinum Avenue Projects</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-
+        <div class="info-item">
+          <span>✉</span>
+          <div>
+            <strong>Email</strong>
+            <p><a href="mailto:sales@parnikaproperties.com">sales@parnikaproperties.com</a></p>
+          </div>
         </div>
 
-        <!-- Services -->
-        <div class="footer-column">
+        <div class="info-item">
+          <span>🏢</span>
+          <div>
+            <strong>Office Location</strong>
+            <p>H.No.102, 1st Floor, Road No:5,<br>
+              Sai Anurug Colony Ameenpur,<br>
+              Miyapur, Hyderabad - 502033</p>
+          </div>
+        </div>
+      </div>
 
-          <h3>Our Services</h3>
-          <a href="our-services.html">
 
-            <ul>
-              <li>Residential Building Construction</li>
-              <li>Commercial Construction</li>
-              <li>Real Estate Development</li>
-              <li>Property Promotion</li>
-              <li>Flats & Villas Development</li>
-              <li>Land Development & Plotting</li>
-              <li>Project Consultancy</li>
-              <li>Civil Construction Works</li>
-              <li>Property Sales & Marketing</li>
-            </ul>
+    </div>
+  </section>
+
+  <!-- Premium Map Section -->
+  <section class="map-section">
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.4968069189963!2d78.34433297493821!3d17.531517983380393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8d00182f0791%3A0x265b5d733b562217!2sMRI%20Residency!5e0!3m2!1sen!2sin!4v1773036374709!5m2!1sen!2sin"
+        allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <!-- Logo & About -->
+      <div class="footer-about">
+
+        <img src="Images/Logo.jpeg" class="footer-logo">
+
+        <p>
+          Developing high-quality residential communities and commercial spaces with innovation, trust, and
+          excellence.
+        </p>
+
+        <h4>FOLLOW US ON :</h4>
+
+        <div class="social-icons">
+          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.407.593 24 1.324 24h11.495v-9.294H9.691v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.676V1.324C24 .593 23.407 0 22.676 0z" />
+            </svg>
           </a>
-
+          <a href="https://in.pinterest.com/parnikapropertieshyd/" target="_blank" aria-label="Pinterest">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" fill="currentColor">
+              <path
+                d="M496 256c0 137-111 248-248 248S0 393 0 256 111 8 248 8s248 111 248 248zm-276.4 39.7c-5.1 22.3-10 43.5-21.4 64.5-6 11.3-13.3 22-23.9 28.3-7.3 4.3-16 4.9-23.7 3-17.5-4.1-18.2-17.3-9-32.6 6-10 10.9-20.6 14.3-31.5 4.4-15.4 8-30.9 11.2-46.5 3.2-15.4 6-31.2 8.7-46.9 1.9-11.1 3.6-22.3 5.4-33.4 3.1-19.8 6.4-39.6 9.7-59.4 1-5.9 1.8-12 .1-17.8-3.4-15-18.4-23-33.1-17.5-15.6 6-28.1 18-37.1 33.1-22.3 36.9-34.4 77.6-34.4 120.2 0 14.6 1.4 29.2 3.9 43.6 4.2 23.8 13.7 46.4 28.4 64.5 6.6 7.6 14.3 14.2 22.7 19.2 10.9 6.7 23 10.7 35.3 13.6 2.3 .6 4.6 1 6.9 1.4 13.1 2 26.6 3.6 39.8 5.4 14.9 1.9 28.4-4.3 34.8-17.9 6.3-13.6 3.8-27.5 2.2-41.4-2.6-22.4-5.2-44.7-7.5-67.1zm-104.8-86.7c-13.8-3.4-22.7-17-19.3-30.8 3.4-13.8 17-22.7 30.8-19.3 13.8 3.4 22.7 17 19.3 30.8-3.4 13.8-17 22.7-30.8 19.3z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/parnikaproperties_hyd/" target="_blank" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+              <path
+                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.6 339 255.9 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.3c0 14.9-12.1 27-27 27-14.9 0-27-12.1-27-27s12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.3-93.7s-58-34.6-93.7-36.3c-37-2.1-147.9-2.1-184.9 0-35.7 1.7-67.3 9.9-93.7 36.3s-34.6 58-36.3 93.7c-2.1 37-2.1 147.9 0 184.9 1.7 35.7 9.9 67.3 36.3 93.7s58 34.6 93.7 36.3c37 2.1 147.9 2.1 184.9 0 35.7-1.7 67.3-9.9 93.7-36.3s34.6-58 36.3-93.7c2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.4 42.4-29.4 11.7-99.2 9-132.4 9s-103 .2-132.4-9c-19.6-7.8-34.7-22.9-42.4-42.4-11.7-29.4-9-99.2-9-132.4s-.2-103 9-132.4c7.8-19.6 22.9-34.7 42.4-42.4 29.4-11.7 99.2-9 132.4-9s103-.2 132.4 9c19.6 7.8 34.7 22.9 42.4 42.4 11.7 29.4 9 99.2 9 132.4s.2 103-9 132.4z" />
+            </svg>
+          </a>
+          <a href="https://web.telegram.org/k/#@ParnikaHydFlats" target="_blank" aria-label="Telegram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+              <path
+                d="M446.7 74.3c-2.8-9.7-11.9-15.3-21.4-13.5L25.3 180.1c-10.4 2.4-17.5 12-16.3 22.5 1.2 10.4 9.9 18.1 20.3 18.1h79.1l-11.4 120.6c-1.6 16.9 13.1 30.6 30 28.1l41.9-8.7 80 94.3c10.8 12.7 29.1 8.4 34.1-7.9l153.1-449.2c2.5-7.2 .3-15-6-19.7z" />
+            </svg>
+          </a>
         </div>
 
-        <!-- Projects -->
-        <div class="footer-column">
+      </div>
 
-          <h3>Our Projects</h3>
+      <!-- Quick Links -->
+      <div class="footer-column">
+
+        <h3>Quick links</h3>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="our-services.html">Services</a></li>
+          <li><a href="platinum-vista-gallery.html">Gallery Of Platinum Vista Projects</a></li>
+          <li><a href="platinum-avenue-gallery.html">Gallery Of Platinum Avenue Projects</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+
+      </div>
+
+      <!-- Services -->
+      <div class="footer-column">
+
+        <h3>Our Services</h3>
+        <a href="our-services.html">
 
           <ul>
-            <li><a href="platinum-avenue.html">Platinum Avenue Projects</a></li>
-            <li><a href="platinum-vista.html">Platinum Vista Projects</a></li>
+            <li>Residential Building Construction</li>
+            <li>Commercial Construction</li>
+            <li>Real Estate Development</li>
+            <li>Property Promotion</li>
+            <li>Flats & Villas Development</li>
+            <li>Land Development & Plotting</li>
+            <li>Project Consultancy</li>
+            <li>Civil Construction Works</li>
+            <li>Property Sales & Marketing</li>
           </ul>
-
-        </div>
-
-        <!-- Contact -->
-        <div class="footer-column">
-
-          <h3>Contact Us</h3>
-          <ul class="contact-info-footer">
-            <li>
-              <span class="icon">📞</span>
-              <a href="tel:+919866711002">+91 9866711002</a>
-            </li>
-
-            <li>
-              <span class="icon">📞</span>
-              <a href="tel:+918897377477">+91 8897377477</a>
-            </li>
-
-            <li>
-              <span class="icon">✉</span>
-              <a href="mailto:sales@parnikaproperties.com">
-                sales@parnikaproperties.com
-              </a>
-            </li>
-
-            <li>
-              <span class="icon">📍</span>
-              <a href="https://www.google.com/maps?q=MRI+Residency+Road+No.5+Sai+Anurag+Colony+Ameenpur+Miyapur+Sangareddy+Telangana+502033"
-                target="_blank" class="address-link">
-                Flat No.102, 1st Floor, Plot No.107,<br>
-                MRI Residency, Road No.5,<br>
-                Sai Anurag Colony, Ameenpur,<br>
-                Miyapur, Sangareddy District,<br>
-                Telangana State – 502033.
-              </a>
-            </li>
-          </ul>
-
-        </div>
+        </a>
 
       </div>
 
-      <!-- Bottom Footer -->
-      <div class="footer-bottom">
+      <!-- Projects -->
+      <div class="footer-column">
 
-        <p>© Copyright 2026 Platinum Projects. All Rights Reserved.</p>
+        <h3>Our Projects</h3>
 
-        <p>Design and Developed by Parnika Properties</p>
+        <ul>
+          <li><a href="platinum-avenue.html">Platinum Avenue Projects</a></li>
+          <li><a href="platinum-vista.html">Platinum Vista Projects</a></li>
+        </ul>
 
       </div>
 
-    </footer>
+      <!-- Contact -->
+      <div class="footer-column">
+
+        <h3>Contact Us</h3>
+        <ul class="contact-info-footer">
+          <li>
+            <span class="icon">📞</span>
+            <a href="tel:+919866711002">+91 9866711002</a>
+          </li>
+
+          <li>
+            <span class="icon">📞</span>
+            <a href="tel:+918897377477">+91 8897377477</a>
+          </li>
+
+          <li>
+            <span class="icon">✉</span>
+            <a href="mailto:sales@parnikaproperties.com">
+              sales@parnikaproperties.com
+            </a>
+          </li>
+
+          <li>
+            <span class="icon">📍</span>
+            <a href="https://www.google.com/maps?q=MRI+Residency+Road+No.5+Sai+Anurag+Colony+Ameenpur+Miyapur+Sangareddy+Telangana+502033"
+              target="_blank" class="address-link">
+              Flat No.102, 1st Floor, Plot No.107,<br>
+              MRI Residency, Road No.5,<br>
+              Sai Anurag Colony, Ameenpur,<br>
+              Miyapur, Sangareddy District,<br>
+              Telangana State – 502033.
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="footer-bottom">
+
+      <p>© Copyright 2026 Platinum Projects. All Rights Reserved.</p>
+
+      <p>Design and Developed by Parnika Properties</p>
+
+    </div>
+    <div id="scrollTopBtn">↑</div>
+  </footer>
   </div>
 
   <a href="https://wa.me/918897377477" target="_blank" style="position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;
@@ -1773,10 +1504,88 @@
 
     nav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', function () {
+        // do not close the menu when the click is on a toggle button
+        if (link.classList.contains('projects-btn') || link.classList.contains('gallery-btn')) {
+          return;
+        }
         hamburger.classList.remove('active');
         nav.classList.remove('active');
         menuOverlay.classList.remove('active');
       });
+    });
+
+    // Dropdown toggle functionality
+    const projectBtn = document.getElementById('projects-btn');
+    const galleryBtn = document.getElementById('gallery-btn');
+    const projectsMenu = document.querySelector('.projects-menu');
+    const galleryMenu = document.querySelector('.gallery-menu');
+
+    // Function to close all dropdowns
+    function closeAllDropdowns() {
+      projectsMenu.classList.remove('active');
+      galleryMenu.classList.remove('active');
+      projectsMenu.classList.add('no-hover');
+      galleryMenu.classList.add('no-hover');
+    }
+
+    // Function to restore hover
+    function restoreHover() {
+      projectsMenu.classList.remove('no-hover');
+      galleryMenu.classList.remove('no-hover');
+    }
+
+    // Projects button click handler
+    projectBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (projectsMenu.classList.contains('active')) {
+        // Close projects menu
+        projectsMenu.classList.remove('active');
+        projectsMenu.classList.add('no-hover');
+      } else {
+        // Open projects menu, close gallery
+        closeAllDropdowns();
+        projectsMenu.classList.add('active');
+        projectsMenu.classList.remove('no-hover');
+      }
+    });
+
+    // Gallery button click handler
+    galleryBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (galleryMenu.classList.contains('active')) {
+        // Close gallery menu
+        galleryMenu.classList.remove('active');
+        galleryMenu.classList.add('no-hover');
+      } else {
+        // Open gallery menu, close projects
+        closeAllDropdowns();
+        galleryMenu.classList.add('active');
+        galleryMenu.classList.remove('no-hover');
+      }
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function (e) {
+      if (!projectsMenu.contains(e.target) && !galleryMenu.contains(e.target)) {
+        closeAllDropdowns();
+      }
+    });
+
+    // Restore hover on mouse leave
+    projectsMenu.addEventListener('mouseleave', restoreHover);
+    galleryMenu.addEventListener('mouseleave', restoreHover);
+
+    // Handle nav links to prevent navigation when clicking buttons
+    document.querySelectorAll('nav a').forEach(link => {
+      if (link !== projectBtn && link !== galleryBtn) {
+        link.addEventListener('click', function () {
+          closeAllDropdowns();
+        });
+      }
     });
 
     // services dropdown toggle with click-outside close
