@@ -98,15 +98,15 @@
             z-index: 2;
             text-align: left;
             color: #ffffff;
-            max-width: 800px;
+            max-width: 100%;
             padding: 20px;
-            animation: fadeUp 1.2s ease forwards;
+            animation: fadeIn 1.2s ease forwards;
             opacity: 0;
         }
 
         /* Heading */
         .hero-content h1 {
-            font-size: clamp(24px, 6vw, 36px);
+            font-size: clamp(24px, 6vw, 40px);
             font-weight: 700;
             margin-bottom: clamp(12px, 3vw, 20px);
             letter-spacing: 1px;
@@ -114,9 +114,7 @@
 
         /* Paragraph */
         .hero-content p {
-            font-size: clamp(16px, 4vw, 36px);
-            text-align: center;
-            font-weight: 600;
+            font-size: clamp(16px, 3.5vw, 36px);
             margin-bottom: clamp(20px, 5vw, 30px);
             line-height: 1.6;
         }
@@ -712,7 +710,7 @@
             }
 
             .hero-content h1 {
-                font-size: 32px;
+                font-size: 28px;
             }
 
             .gallery {
@@ -789,9 +787,9 @@
                 height: 250px;
                 margin: 10px;
             }
-
-            .hero-content {
-                text-align: center;
+           
+            .hero-content p {
+                font-size: 16px;
             }
 
             .hero-content p {
@@ -835,7 +833,7 @@
             }
 
             .hero-content h1 {
-                font-size: 26px;
+                font-size: 24px;
             }
 
             .page-header h1 {
@@ -950,12 +948,14 @@
     <div class="menu-overlay"></div>
 
     <section class="hero-section">
+        
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
             <h1>Find Your Dream Home</h1>
             <p>Elite Living Gallery</p>
         </div>
+        
     </section>
 
 
