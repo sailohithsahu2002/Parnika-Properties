@@ -663,7 +663,7 @@
       right: 30px;
       width: 45px;
       height: 45px;
-      background: #4880df;
+      background: #0a3d62;
       color: white;
       font-size: 20px;
       display: none;
@@ -677,23 +677,23 @@
     }
 
     #scrollTopBtn:hover {
-      background: #3971e3;
+      background: #0f4c75;
       transform: translateY(-3px);
     }
 
     .contact-banner {
-      background: linear-gradient(135deg, #030f31 0%, #33559d 50%, #a0a3ab 100%);
+      background: linear-gradient(135deg, #1e3a5f 0%, #2b6cb0 55%, #6d93d2 100%);
       background-attachment: fixed;
-      padding: clamp(15px, 6vw, 40px);
-      border-radius: 20px;
-      margin: clamp(15px, 4vw, 25px);
+      padding: clamp(20px, 5vw, 40px);
+      border-radius: 16px;
+      margin: clamp(20px, 4vw, 25px);
       max-width: 100%;
       text-align: center;
-      color: white;
+      color: #f0f7ff;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(35, 58, 107, 0.18),
-        0 0 20px rgba(15, 23, 42, 0.08);
+      box-shadow: 0 10px 30px rgba(13, 36, 71, 0.25),
+        0 0 20px rgba(31, 66, 106, 0.15);
       opacity: 0;
       animation: fadeInUp 0.8s ease-out forwards;
       animation-delay: 0.1s;
@@ -728,7 +728,7 @@
     }
 
     .banner-content h1 {
-      font-size: clamp(1.8rem, 6vw, 3.8rem);
+      font-size: 24px;
       margin: 0;
       font-weight: 700;
       letter-spacing: -0.5px;
@@ -741,7 +741,8 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: clamp(30px, 8vw, 50px);
-      background: #fff;
+      /* background: #ffffff; */
+      background: linear-gradient(135deg, #f8fbff, #eef3f9, #e3edf7);
       padding: clamp(25px, 6vw, 50px);
       border-radius: 20px;
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
@@ -752,7 +753,7 @@
 
     /* Contact Form */
     .contact-form h2 {
-      color: #ffffff;
+      color: #173f7a;
       margin-bottom: 20px;
       font-size: clamp(24px, 5vw, 38px);
       font-weight: 600;
@@ -767,7 +768,7 @@
     .contact-form label {
       font-size: clamp(14px, 2.5vw, 20px);
       font-weight: 600;
-      color: #edeff3;
+      color: #1f3a5f;
       margin-bottom: 8px;
     }
 
@@ -795,20 +796,20 @@
     }
 
     .contact-form {
-      border: 1px solid #110a90;
+      border: 1px solid #dbe4f2;
       padding: clamp(20px, 6vw, 30px);
       border-radius: 20px;
-      background: linear-gradient(135deg, #8397cf 0%, #15306c 50%, #3967e7 100%);
-      box-shadow: 0 15px 50px rgba(37, 99, 235, 0.2), 0 0 30px rgba(15, 23, 42, 0.1);
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(16, 44, 77, 0.12);
     }
 
     .contact-form button {
       margin-top: 10px;
       padding: 14px 28px;
       border: none;
-      background: #eff1f4;
-      border: 2px solid #1d4ed8;
-      color: black;
+      background: #0f4c75;
+      border: 2px solid #0d3d5b;
+      color: #ffffff;
       border-radius: 8px;
       cursor: pointer;
       font-size: 16px;
@@ -825,11 +826,10 @@
 
     /* Contact Info */
     .contact-info {
-      background: linear-gradient(135deg, #506293 0%, #395a9b 50%, #3d5599 100%);
+      background: linear-gradient(135deg, #eef4ff, #f6f9ff);
       padding: clamp(25px, 8vw, 50px);
       border-radius: 30px;
-      box-shadow: 0 15px 50px rgba(37, 99, 235, 0.2),
-        0 0 30px rgba(15, 23, 42, 0.1);
+      box-shadow: 0 14px 35px rgba(16, 46, 79, 0.1);
       opacity: 0;
       animation: fadeInUp 0.8s ease-out forwards;
       animation-delay: 0.3s;
@@ -850,7 +850,7 @@
     }
 
     .contact-info h3 {
-      color: #ffffff;
+      color: #0f3f77;
       font-size: clamp(20px, 6vw, 32px);
       margin-top: 0;
       margin-bottom: clamp(12px, 3vw, 15px);
@@ -862,7 +862,7 @@
 
     .contact-info>p {
       font-size: clamp(13px, 3vw, 16px);
-      color: rgba(255, 255, 255, 0.9);
+      color: #33475b;
       line-height: 1.8;
       margin-bottom: clamp(20px, 5vw, 35px);
       position: relative;
@@ -876,13 +876,13 @@
       margin: clamp(18px, 4vw, 28px) 0;
       align-items: flex-start;
       padding: clamp(14px, 4vw, 20px);
-      background: rgba(255, 255, 255, 0.08);
+      background: #ffffff;
       border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid #dce4ee;
+      transition: all 0.25s ease-in-out;
       position: relative;
       z-index: 2;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(6px);
     }
 
     .info-item:last-child {
@@ -905,7 +905,7 @@
 
     .info-item strong {
       display: block;
-      color: #ffffff;
+      color: black;
       font-weight: 700;
       margin-bottom: clamp(4px, 2vw, 6px);
       font-size: clamp(13px, 3vw, 16px);
@@ -913,7 +913,7 @@
     }
 
     .info-item p {
-      color: rgba(255, 255, 255, 0.85);
+      color: black;
       margin: 0;
       font-size: clamp(12px, 2.5vw, 15px);
       line-height: 1.7;
@@ -921,7 +921,7 @@
     }
 
     .info-item a {
-      color: lab(94.75% -0.35 0.95);
+      color: black;
       text-decoration: none;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       font-weight: 600;
@@ -940,7 +940,7 @@
     }
 
     .info-item a:hover {
-      color: #ffffff;
+      color: blue;
     }
 
     .info-item a:hover::after {
@@ -1015,6 +1015,10 @@
 
       header {
         padding: 14px 20px;
+      }
+
+      header .social-icons {
+        display: none;
       }
 
       .hamburger {
