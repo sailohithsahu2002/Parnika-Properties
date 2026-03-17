@@ -350,7 +350,7 @@
     .achievements-section {
       max-width: 100%;
       margin: 25px;
-      background: linear-gradient(135deg, #728edb, #02081e);
+      background: linear-gradient(135deg, #000000, #515050, #c9a227);
       padding: 60px 40px;
       border-radius: 30px;
       text-align: center;
@@ -490,7 +490,7 @@
 
     /* vision/mission/goals */
     #vision-mission {
-      background: #bcd3df;
+      background: linear-gradient(135deg, #eaf1f7, #dce6ef, #cfd9e3);
       border-radius: 30px;
       max-width: 100%;
       margin: 25px;
@@ -534,8 +534,8 @@
     }
 
     .vm-box:hover {
-      background: #7196e6;
-
+      /* background: #dd8ac0; */
+      background: linear-gradient(135deg, #1e293b, #334155, #475569);
       color: #fff;
     }
 
@@ -656,7 +656,7 @@
       padding: 60px 20px;
       max-width: 100%;
       margin: 25px;
-      background-color: #d9c9d3;
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe, #bae6fd);
       border-radius: 30px;
     }
 
@@ -665,7 +665,7 @@
       max-width: 900px;
       margin: 0 auto 18px;
       font-size: 16px;
-      color: black;
+      color: #000000;
       line-height: 1.7;
       text-align: justify;
     }
@@ -676,7 +676,7 @@
       margin: 20px auto 30px;
       list-style: disc inside;
       padding-left: 20px;
-      color: #1e293b;
+      color: #000000;
       font-size: 16px;
       line-height: 1.6;
     }
@@ -687,7 +687,7 @@
       border-radius: 30px;
       max-width: 100%;
       margin: 25px;
-      background: #d9c9d3;
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe, #bae6fd);
     }
 
     .container {
@@ -714,7 +714,7 @@
     .why-box h3 {
       font-size: 20px;
       margin-bottom: 15px;
-      color: #111;
+      color: #000000;
     }
 
     .why-box p {
@@ -1492,7 +1492,7 @@
     .reach-us-btn {
       display: inline-block;
       padding: 20px 40px;
-      background: #4f63e9;
+      background: linear-gradient(135deg, #0f172a, #1e293b, #c9a227);
       color: #ffff;
       border-radius: 20px;
       text-decoration: none;
@@ -1501,7 +1501,6 @@
     }
 
     .reach-us-btn:hover {
-      background: #3948c6;
       transform: translateY(-3px);
     }
 
@@ -1806,9 +1805,7 @@
 
   <!-- HERO SECTION -->
   <section class="hero-section">
-    <video class="hero-video" autoplay muted playsinline loop>
-      <source src="videos/video1.mp4" type="video/mp4">
-      <source src="videos/video4.mp4" type="video/mp4">
+    <video id="heroVideo" class="hero-video" autoplay muted playsinline>
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -2026,20 +2023,20 @@
 
         <h2>
           <span class="line"></span>
-          Building Trust Through Quality,<br>
-          <strong>Consistency, And Timely Delivery</strong>
+          Designed for Life. Built on Trust.<br>
+          <strong>Delivering with Discipline and Precision</strong>
         </h2>
 
         <p>
-          We deliver quality-driven residential and commercial developments through
-          transparent practices, regulatory compliance, and structured project
-          management across all stages of construction.
+          We create landmark residential and commercial developments defined by precision,
+          integrity, and elevated design standards.Every project is executed through a carefully structured framework
+          that blends regulatory excellence,
+          strategic planning, and flawless coordination across all phases.
         </p>
 
         <p>
-          With experienced execution, systematic planning, and timely delivery,
-          we create well-planned developments that ensure long-term value,
-          customer satisfaction, and dependable project outcomes.
+          Our focus is not just on delivery—but on crafting spaces that embody long-term value,
+          inspire confidence, and reflect a legacy of trust and quality.
         </p>
 
         <div class="trust-features">
@@ -2073,8 +2070,10 @@
   <section class="new-contact-section">
     <div class="contact-overlay">
       <div class="contact-content">
-        <h2>Ready to Find Your Dream Home?</h2>
-        <p>Contact us today to explore our premium properties and start your journey towards owning the perfect space.
+        <h2>Start Your Homeownership Journey Today</h2>
+
+        <p>Get in touch with our team to explore premium property options and make informed decisions toward your ideal
+          investment.
         </p>
         <a href="contact.html" class="reach-us-btn">Reach Us Today</a>
       </div>
@@ -2230,7 +2229,7 @@
     </div>
     <div id="scrollTopBtn">▲</div>
   </footer>
-  <a href="https://wa.me/918897377477" target="_blank" class="whatsapp-btn">💬</a>
+  <a href="https://wa.me/9866711002" target="_blank" class="whatsapp-btn">💬</a>
 
   <script>
     // Hamburger Menu
@@ -2465,7 +2464,6 @@
 
     });
 
-    // Hero video playlist
     const heroVideo = document.getElementById("heroVideo");
 
     const videoList = [
@@ -2475,14 +2473,21 @@
 
     let currentVideo = 0;
 
+    // 🔥 LOAD FIRST VIDEO PROPERLY
+    heroVideo.src = videoList[currentVideo];
+    heroVideo.load();
+    heroVideo.play();
+
+    // When video ends → switch
     heroVideo.addEventListener("ended", function () {
       currentVideo++;
 
       if (currentVideo >= videoList.length) {
-        currentVideo = 0; // start again from first video
+        currentVideo = 0;
       }
 
       heroVideo.src = videoList[currentVideo];
+      heroVideo.load();
       heroVideo.play();
     });
 
@@ -2516,6 +2521,8 @@
 
       });
     });
+
+
 
 
   </script>
