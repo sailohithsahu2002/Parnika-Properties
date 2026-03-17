@@ -1416,31 +1416,7 @@
     .footer-bottom p {
       margin: 0;
     }
-
-    #scrollTopBtn {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 45px;
-      height: 45px;
-      background: #2f6edb;
-      color: white;
-      font-size: 20px;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      border-radius: 6px;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      transition: 0.3s;
-      z-index: 999;
-    }
-
-    #scrollTopBtn:hover {
-      background: #1c4fb5;
-      transform: translateY(-3px);
-    }
-
+    
     /* ===== Premium Contact Section ===== */
 
     .new-contact-section {
@@ -2227,7 +2203,7 @@
       <p>Design and Developed by Parnika Properties</p>
 
     </div>
-    <div id="scrollTopBtn">▲</div>
+
   </footer>
   <a href="https://wa.me/9866711002" target="_blank" class="whatsapp-btn">💬</a>
 
@@ -2251,15 +2227,6 @@
       nav.classList.remove('active');
       menuOverlay.classList.remove('active');
     });
-
-    // // Close menu when link is clicked
-    // nav.querySelectorAll('a').forEach(link => {
-    //   link.addEventListener('click', function () {
-    //     hamburger.classList.remove('active');
-    //     nav.classList.remove('active');
-    //     menuOverlay.classList.remove('active');
-    //   });
-    // });
 
     nav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', function () {
@@ -2491,8 +2458,6 @@
       heroVideo.play();
     });
 
-    const scrollBtn = document.getElementById("scrollTopBtn");
-
     window.onscroll = function () {
       if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
         scrollBtn.style.display = "flex";
@@ -2527,7 +2492,7 @@
 
   </script>
 
-  <script src="script.js"></script>
+  <!-- <script src="script.js"></script> -->
 
 
 
